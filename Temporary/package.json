@@ -1,0 +1,11 @@
+{
+  "name": "temporary",
+  "version": "1.0.0",
+  "description": "Temporary backend for testing",
+  "main": "main.py",
+  "scripts": {
+    "test": "python3 main.py"
+  },
+  "author": "hitesjain, shubhamHippargi, saranShelke, prathamIngole",
+  "license": "ISC"
+}
