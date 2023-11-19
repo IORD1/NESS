@@ -52,9 +52,6 @@ function addInteractions() {
   map.addInteraction(snap);
 }
 
-/**
- * Handle change event.
- */
 typeSelect.onchange = function () {
   map.removeInteraction(draw);
   map.removeInteraction(snap);
