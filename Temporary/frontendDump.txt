@@ -68,5 +68,13 @@
       />
 
       ---------------------------------------
+      somebodies api key hahaa.
+      https://maps.googleapis.com/maps/api/place/search/json?rankby=distance&keyword=hospital&location=18.615431891779252,73.84296708984374&key=REMOVED_GOOGLE_KEY_2&sensor=false&libraries=places
 
-      
+
+      other api reqest : reverse geocoding:
+      https://api.opencagedata.com/geocode/v1/json?q=18.615431891779252+73.84296708984374&key=REMOVED_OPENCAGE_KEY
+
+
+      tom tom nearby search 
+      https://api.tomtom.com/search/2/nearbySearch/.json?key=REMOVED_TOMTOM_KEY&lat=18.615431891779252&lon=73.84296708984374
