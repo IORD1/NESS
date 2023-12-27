@@ -78,3 +78,31 @@
 
       tom tom nearby search 
       https://api.tomtom.com/search/2/nearbySearch/.json?key=xmxGMdoBMndNBwY7f657yHwqWb6e0VKG&lat=18.615431891779252&lon=73.84296708984374
+
+
+
+      POI:
+              "id": 7321,
+        "name": "Hospital",
+                "id": 9361,
+        "name": "Shop",
+                "id": 7332,
+        "name": "Market",
+                "id": 9932,
+        "name": "Public Amenity",
+                "id": 7377,
+        "name": "College/University",
+                "id": 7369,
+        "name": "Open Parking Area",
+                "id": 7372,
+        "name": "School",
+                "id": 7342,
+        "name": "Movie Theater",
+                "id": 9362,
+        "name": "Park & Recreation Area",
+                "id": 7339,
+        "name": "Place of Worship",
+                "id": 7376,
+        "name": "Tourist Attraction",
+                "id": 9942,
+        "name": "Public Transportation Stop",
