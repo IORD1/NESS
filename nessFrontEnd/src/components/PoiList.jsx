@@ -5942,7 +5942,7 @@ const getRandomIndex = () => Math.floor(Math.random() * backgroundColors.length)
   };
 
   return (
-    <div>
+    <div style={{padding:"20px"}}>
       <h2 style={{color:"black"}}>List of Point of Interest Names</h2>
       <div style={{display:'flex', flexWrap:"wrap", gap:"10px"}}>
         {poiCategories.map((category) => (
