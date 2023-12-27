@@ -1,6 +1,7 @@
 import React, { useState, useEffect }  from 'react';
 import { GoogleMap, useLoadScript, Marker,InfoWindow } from '@react-google-maps/api';
 import keys from "../keys.json";
+import MarkerList from './MarkerList';
 
 
 const mapContainerStyle = {
@@ -23,7 +24,6 @@ const Map2 = () => {
 
   const [markers, setMarkers] = useState([]);
   const [selectedMarker, setSelectedMarker] = useState(null);
-  const [locationInfo, setLocationInfo] = useState(null);
 
   const handleMapClick = async (event) => {
     const addMarker = async () => {
@@ -49,13 +49,11 @@ const Map2 = () => {
 
   const handleMarkerClick = (marker) => {
     setSelectedMarker(marker);
-    // setLocationInfo(null);
 
   };
 
   const handleInfoWindowClose = () => {
     setSelectedMarker(null);
-    setLocationInfo(null);
   };
 
   const fetchLocationInfo = async (lat, lng) => {
@@ -70,13 +68,10 @@ const Map2 = () => {
       const road = data.results[0]?.components?.road;
         // console.log( data.results[0]?.components);
       if (suburb) {
-        setLocationInfo(suburb);
         return suburb;
       } else if (town) {
-        setLocationInfo(town);
         return town;
       }else if(road){
-        setLocationInfo(road);
         return road;
       }
     } catch (error) {
@@ -119,6 +114,7 @@ const Map2 = () => {
           </InfoWindow>
         )}
       </GoogleMap>
+      <MarkerList markers={markers}/>
     </div>
   );
 };
