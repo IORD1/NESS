@@ -3,8 +3,7 @@ import React from 'react';
 
 const PoiList = () => {
 
-const backgroundColors = ["#ec3a5a", "#fb8231","#20bf6b","#349cdb","#3e6dd7","#8c59d0"];
-const fontColors = ["#ffffff","#ffffff","#ffffff","#ffffff","#ffffff","#ffffff",]
+  const backgroundColors = ["#ec3a5a", "#fb8231","#20bf6b","#349cdb","#3e6dd7","#8c59d0","#5f8670","#ef4040","#a367b1","#65b741","#b2533e"];
 
 const getRandomIndex = () => Math.floor(Math.random() * backgroundColors.length);
 
@@ -5935,31 +5934,144 @@ const getRandomIndex = () => Math.floor(Math.random() * backgroundColors.length)
         ]
       }
     ]
+
+
+    const poiImpCate = [
+      {
+        "name": "Hospital",
+        "id": 7321
+    },
+    {
+        "name": "Café/Pub",
+        "id": 9376
+    },
+    {
+        "name": "Health Care Service",
+        "id": 9663
+    },
+    {
+        "name": "Market",
+        "id": 7332
+    },
+    {
+        "name": "Public Amenity",
+        "id": 9932
+    },
+    {
+        "name": "College/University",
+        "id": 7377
+    },
+    {
+        "name": "Open Parking Area",
+        "id": 7369
+    },
+    {
+        "name": "School",
+        "id": 7372
+    },
+    {
+        "name": "Park & Recreation Area",
+        "id": 9362
+    },
+    {
+        "name": "Movie Theater",
+        "id": 7342
+    },
+    {
+        "name": "Place of Worship",
+        "id": 7339
+    },
+    {
+        "name": "Car Wash",
+        "id": 9155
+    },
+    {
+        "name": "Bank",
+        "id": 7328
+    },
+    {
+        "name": "Parking Garage",
+        "id": 7313
+    },
+    {
+        "name": "Police Station",
+        "id": 7322
+    },
+    {
+        "name": "Library",
+        "id": 9913
+    },
+    {
+        "name": "Shopping Center",
+        "id": 7373
+    },
+    {
+        "name": "Pharmacy",
+        "id": 7326
+    },
+    {
+        "name": "Swimming Pool",
+        "id": 7338
+    },
+    {
+        "name": "Golf Course",
+        "id": 9911
+    },
+    {
+        "name": "Fire Station",
+        "id": 7392
+    },
+    {
+        "name": "Taxi Stand",
+        "id": 9942003
+    },
+    {
+        "name": "Grocery Store",
+        "id": 9361023
+    },
+    {
+        "name": "Fast Food",
+        "id": 7315015
+    },
+    {
+        "name": "Dry Cleaner",
+        "id": 9361010
+    },
+    {
+        "name": "Convenience Store",
+        "id": 9361009
+    },
+    {
+        "name": "Banquet Rooms",
+        "id": 7315146
+    },
+    ]
   ;
 
-  const handleNameClick = (parentId) => {
-    console.log('Clicked on Parent ID:', parentId);
+  const handleNameClick = (id, name) => {
+    console.log(`Clicked on Parent ID: ${id}`);
+    console.log({ name, id });
   };
+    return (
+        <div style={{padding:"20px"}}>
+        <h2 style={{color:"black"}}>List of Point of Interest Names</h2>
+        <div style={{display:'flex', flexWrap:"wrap", gap:"10px"}}>
+            {poiImpCate.map((category) => (
+            <div key={category.id}>
+                 <button
+                    onClick={() => handleNameClick(category.id, category.name)}
+                    style={{
+                        color: "white",
+                        backgroundColor: backgroundColors[getRandomIndex()],
+                    }}
+                    >
+                    {category.name}
+                </button>
+            </div>
+            ))}
+        </div>
+        </div>
+    );
+    };
 
-  return (
-    <div style={{padding:"20px"}}>
-      <h2 style={{color:"black"}}>List of Point of Interest Names</h2>
-      <div style={{display:'flex', flexWrap:"wrap", gap:"10px"}}>
-        {poiCategories.map((category) => (
-          <div key={category.id}>
-            <button onClick={() => handleNameClick(category.id)}
-                style={{     
-            color: fontColors[getRandomIndex()],
-            backgroundColor: backgroundColors[getRandomIndex()],
-          }}
-            >
-              {category.name}
-            </button>
-          </div>
-        ))}
-      </div>
-    </div>
-  );
-};
-
-export default PoiList;
+    export default PoiList;

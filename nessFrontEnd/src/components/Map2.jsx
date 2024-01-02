@@ -57,7 +57,7 @@ const Map2 = () => {
   };
 
   const fetchLocationInfo = async (lat, lng) => {
-    const apiKey = '9f2a38022fd64d4c983d577de08c4926'; // Replace with your OpenCage API key
+    const apiKey = keys.openCageApiKey; 
     const apiUrl = `https://api.opencagedata.com/geocode/v1/json?q=${lat}+${lng}&key=${apiKey}`;
 
     try {
