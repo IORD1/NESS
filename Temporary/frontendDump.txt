@@ -78,7 +78,8 @@
 
       tom tom nearby search 
       https://api.tomtom.com/search/2/nearbySearch/.json?key=xmxGMdoBMndNBwY7f657yHwqWb6e0VKG&lat=18.615431891779252&lon=73.84296708984374
-
+      https://api.tomtom.com/search/2/nearbySearch/.json?key=xmxGMdoBMndNBwY7f657yHwqWb6e0VKG&lat=18.585997720873376&lon=73.73367631352035&radius=1000&limit=1&categorySet=7377
+        18.585997720873376, 73.73367631352035
 
 
       POI:
@@ -106,3 +107,5 @@
         "name": "Tourist Attraction",
                 "id": 9942,
         "name": "Public Transportation Stop",
+
+        

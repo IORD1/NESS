@@ -1,0 +1,224 @@
+{
+    "summary": {
+        "queryType": "NEARBY",
+        "queryTime": 26,
+        "numResults": 3,
+        "offset": 0,
+        "totalResults": 3,
+        "fuzzyLevel": 1,
+        "geoBias": {
+            "lat": 18.585997720873376,
+            "lon": 73.73367631352035
+        }
+    },
+    "results": [
+        {
+            "type": "POI",
+            "id": "y21Jsi8AoY9lfm6dAI1Wkg",
+            "score": 99.6502609253,
+            "dist": 349.733214,
+            "info": "search:ta:356009018978840-IN",
+            "poi": {
+                "name": "International Institute Information Technology",
+                "phone": "+91 91460 29800",
+                "categorySet": [
+                    {
+                        "id": 7377
+                    }
+                ],
+                "url": "www.isquareit.edu.in",
+                "categories": [
+                    "college/university"
+                ],
+                "classifications": [
+                    {
+                        "code": "COLLEGE_UNIVERSITY",
+                        "names": [
+                            {
+                                "nameLocale": "en-US",
+                                "name": "college/university"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "address": {
+                "streetName": "Rajiv Gandhi Infotech Park Hinjawadi",
+                "municipalitySubdivision": "Blue Ridge Paranjpe Scheme",
+                "municipality": "Pimpri Chinchwad",
+                "countrySecondarySubdivision": "Pune",
+                "countrySubdivision": "Maharashtra",
+                "countrySubdivisionName": "Maharashtra",
+                "countrySubdivisionCode": "MH",
+                "postalCode": "411057",
+                "countryCode": "IN",
+                "country": "India",
+                "countryCodeISO3": "IND",
+                "freeformAddress": "Rajiv Gandhi Infotech Park Hinjawadi, Blue Ridge Paranjpe Scheme, Pimpri Chinchwad 411057, Maharashtra",
+                "localName": "Pimpri Chinchwad"
+            },
+            "position": {
+                "lat": 18.583927,
+                "lon": 73.736174
+            },
+            "viewport": {
+                "topLeftPoint": {
+                    "lat": 18.58483,
+                    "lon": 73.73523
+                },
+                "btmRightPoint": {
+                    "lat": 18.58303,
+                    "lon": 73.73712
+                }
+            },
+            "entryPoints": [
+                {
+                    "type": "main",
+                    "position": {
+                        "lat": 18.58364,
+                        "lon": 73.73637
+                    }
+                }
+            ]
+        },
+        {
+            "type": "POI",
+            "id": "6mJLr4URggw7-OBnOJx7TQ",
+            "score": 99.5347976685,
+            "dist": 465.203779,
+            "info": "search:ta:356007000142352-IN",
+            "poi": {
+                "name": "Symbiosis Institute of International Business",
+                "categorySet": [
+                    {
+                        "id": 7377
+                    }
+                ],
+                "categories": [
+                    "college/university"
+                ],
+                "classifications": [
+                    {
+                        "code": "COLLEGE_UNIVERSITY",
+                        "names": [
+                            {
+                                "nameLocale": "en-US",
+                                "name": "college/university"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "address": {
+                "streetName": "Rajiv Gandhi Infotech Park Hinjawadi",
+                "municipalitySubdivision": "Blue Ridge Paranjpe Scheme",
+                "municipality": "Pimpri Chinchwad",
+                "countrySecondarySubdivision": "Pune",
+                "countrySubdivision": "Maharashtra",
+                "countrySubdivisionName": "Maharashtra",
+                "countrySubdivisionCode": "MH",
+                "postalCode": "411057",
+                "countryCode": "IN",
+                "country": "India",
+                "countryCodeISO3": "IND",
+                "freeformAddress": "Rajiv Gandhi Infotech Park Hinjawadi, Blue Ridge Paranjpe Scheme, Pimpri Chinchwad 411057, Maharashtra",
+                "localName": "Pimpri Chinchwad"
+            },
+            "position": {
+                "lat": 18.581871,
+                "lon": 73.734402
+            },
+            "viewport": {
+                "topLeftPoint": {
+                    "lat": 18.58277,
+                    "lon": 73.73345
+                },
+                "btmRightPoint": {
+                    "lat": 18.58097,
+                    "lon": 73.73535
+                }
+            },
+            "entryPoints": [
+                {
+                    "type": "main",
+                    "position": {
+                        "lat": 18.58204,
+                        "lon": 73.7344
+                    }
+                }
+            ]
+        },
+        {
+            "type": "POI",
+            "id": "jT79vRdBEMey-QNFOQPb-g",
+            "score": 99.3746032715,
+            "dist": 625.391758,
+            "info": "search:ta:356009038509545-IN",
+            "poi": {
+                "name": "New English School Junior College",
+                "categorySet": [
+                    {
+                        "id": 7377003
+                    }
+                ],
+                "categories": [
+                    "college/university",
+                    "junior college/community college"
+                ],
+                "classifications": [
+                    {
+                        "code": "COLLEGE_UNIVERSITY",
+                        "names": [
+                            {
+                                "nameLocale": "en-US",
+                                "name": "college/university"
+                            },
+                            {
+                                "nameLocale": "en-US",
+                                "name": "junior college/community college"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "address": {
+                "streetName": "Grampanchayat Water Tank Hinjawadi",
+                "municipalitySubdivision": "Rajiv Gandhi Infotech Park Phase I",
+                "municipality": "Pimpri Chinchwad",
+                "countrySecondarySubdivision": "Pune",
+                "countrySubdivision": "Maharashtra",
+                "countrySubdivisionName": "Maharashtra",
+                "countrySubdivisionCode": "MH",
+                "postalCode": "411057",
+                "countryCode": "IN",
+                "country": "India",
+                "countryCodeISO3": "IND",
+                "freeformAddress": "Grampanchayat Water Tank Hinjawadi, Rajiv Gandhi Infotech Park Phase I, Pimpri Chinchwad 411057, Maharashtra",
+                "localName": "Pimpri Chinchwad"
+            },
+            "position": {
+                "lat": 18.590851,
+                "lon": 73.736675
+            },
+            "viewport": {
+                "topLeftPoint": {
+                    "lat": 18.59175,
+                    "lon": 73.73573
+                },
+                "btmRightPoint": {
+                    "lat": 18.58995,
+                    "lon": 73.73762
+                }
+            },
+            "entryPoints": [
+                {
+                    "type": "main",
+                    "position": {
+                        "lat": 18.59074,
+                        "lon": 73.73646
+                    }
+                }
+            ]
+        }
+    ]
+}

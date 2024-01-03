@@ -13,7 +13,7 @@ const center = {
     lng: 73.8567,
 };
 
-const Map2 = () => {
+const Map2 = (props) => {
     const [ libraries ] = useState(['places']);
 
     const { isLoaded, loadError } = useLoadScript({
@@ -114,7 +114,7 @@ const Map2 = () => {
           </InfoWindow>
         )}
       </GoogleMap>
-      <MarkerList markers={markers}/>
+      <MarkerList markers={markers} isLoading={props.isLoading} setIsLoading={props.setIsLoading}/>
     </div>
   );
 };
