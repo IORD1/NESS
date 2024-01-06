@@ -1,7 +1,7 @@
 // PoiList.jsx
 import React from 'react';
 import keys from "../keys.json";
-
+import poiImpCate from "./assests.json";
 
 const PoiList = () => {
 
@@ -23,7 +23,7 @@ const getRandomIndex = () => Math.floor(Math.random() * backgroundColors.length)
         <div style={{padding:"20px"}}>
         <h2 style={{color:"black"}}>List of Point of Interest Names</h2>
         <div style={{display:'flex', flexWrap:"wrap", gap:"10px"}}>
-            {poiImpCate.map((category) => (
+            {poiImpCate.list.map((category) => (
             <div key={category.id}>
                  <button
                     onClick={() => handleNameClick(category.id, category.name)}

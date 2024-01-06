@@ -30,26 +30,50 @@ const MarkerList = (props) => {
       const data = await response.json();
       const count = data.summary.numResults;
         console.log(count)
+      return count;
     } catch (error) {
       console.error(`Error fetching amenity count for ${category.name}:`, error);
     }
   };
-
   async function getData() {
     props.setIsLoading(true);
+    const locationCounts = [];
+    const locationData = { locations: [] };
+
+
     for (const location of props.markers) {
       console.log(location.name);
+      const locationCount = { name: location.name };
+
       for (const ammenity of poiShort.list) {
         console.log(ammenity);
-        await fetchData(location.lat,location.lng,1000,80,ammenity.id);
+        const count = await fetchData(location.lat,location.lng,1000,80,ammenity.id);
+        locationCount[ammenity.id] = count;
         await sleep(1000);
       }
+      locationData.locations.push(locationCount);
       console.log("------^^^^^^^-------");
     }
+
+    console.log(locationCounts);
+    console.log(locationData);
+    await postDataToBackend(locationData);
     props.setIsLoading(false);
   }
 
 
+  async function postDataToBackend(data) {
+    const response = await fetch('http://localhost:5000/receive_data', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    });
+  
+    const result = await response.json();
+    console.log(result);
+  }
 
 
   return (
