@@ -15,8 +15,8 @@ function App() {
   return (
     <>
     {isLoading ? <div className="isLoading"><p>Loading....</p></div> : <></>}
-    {/* <Map2 isLoading={isLoading} setIsLoading={setIsLoading}/> */}
-      {/* <PoiList /> */}
+    <Map2 isLoading={isLoading} setIsLoading={setIsLoading}/>
+      <PoiList />
     </>
   )
 }

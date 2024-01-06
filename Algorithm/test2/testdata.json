@@ -1,0 +1,68 @@
+{
+    "locations": [
+      {
+        "name": "Location A",
+        "latitude": 37.7749,
+        "longitude": -122.4194,
+        "amenities": [
+          {
+            "type": "School",
+            "importance": 8,
+            "distance_km": 1.5,
+            "rating": 4.5
+          },
+          {
+            "type": "Supermarket",
+            "importance": 7,
+            "distance_km": 0.8,
+            "rating": 4.2
+          }
+        ]
+      },
+      {
+        "name": "Location B",
+        "latitude": 40.7128,
+        "longitude": -74.0060,
+        "amenities": [
+          {
+            "type": "Hospital",
+            "importance": 9,
+            "distance_km": 0.5,
+            "rating": 4.9
+          },
+          {
+            "type": "Library",
+            "importance": 6,
+            "distance_km": 1.2,
+            "rating": 4.0
+          }
+        ]
+      },
+      {
+        "name": "Location C",
+        "latitude": 34.0522,
+        "longitude": -118.2437,
+        "amenities": [
+          {
+            "type": "Shopping Mall",
+            "importance": 9,
+            "distance_km": 0.7,
+            "rating": 4.7
+          },
+          {
+            "type": "Restaurant",
+            "importance": 8,
+            "distance_km": 0.3,
+            "rating": 4.6
+          },
+          {
+            "type": "Gym",
+            "importance": 7,
+            "distance_km": 1.0,
+            "rating": 4.4
+          }
+        ]
+      }
+    ]
+  }
+  
