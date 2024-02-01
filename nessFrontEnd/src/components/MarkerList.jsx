@@ -1,6 +1,7 @@
 import React from 'react';
 import poi from './assests/poiShort.json';
 import poiShort from './assests/poiTemp.json';
+import poiShort2 from './assests/poiShort.json';
 import keys from '../keys.json';
 
 const MarkerList = (props) => {
@@ -47,7 +48,7 @@ const MarkerList = (props) => {
 
       for (const ammenity of poiShort.list) {
         console.log(ammenity);
-        const count = await fetchData(location.lat,location.lng,1000,80,ammenity.id);
+        const count = await fetchData(location.lat,location.lng,1000,100,ammenity.id);
         locationCount[ammenity.id] = count;
         await sleep(1000);
       }
@@ -81,7 +82,7 @@ const MarkerList = (props) => {
       <button onClick={handleClick} disabled={isButtonDisabled}>
         Analyze
       </button>
-      <h2>List of props.Markers</h2>
+      <h2>Locations selected</h2>
       <div style={{ display: 'flex', flexWrap: "wrap", gap: "10px" }}>
         {props.markers.map((marker, index) => (
           <div key={index}
