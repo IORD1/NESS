@@ -8,15 +8,13 @@ from sklearn.preprocessing import normalize
 
 
 app = Flask(__name__)
-CORS(app)  # Enable CORS for all routes
+CORS(app) 
 
 
-# Define a sample endpoint
 @app.route('/')
 def hello():
-    return 'try api/data'
+    return 'Open localhost:5173'
 
-# Define an endpoint that returns JSON data
 @app.route('/api/data')
 def get_data():
     data = {'message': 'This is JSON data from your backend server!'}
@@ -29,11 +27,11 @@ def calculate_scores(index, matrix, weights):
     df = pd.DataFrame(dict(
         w_vector=weights,
         criteria=["hospital", "cafe", "market"]))
+
+    #for weight figure
     fig = px.line_polar(df, r='w_vector', theta='criteria', line_close=True,
                    title="Importance of Each Criterion")
-
     fig.update_traces(fill='toself')
-
     fig.show()
 
     # Normalization
@@ -64,7 +62,8 @@ def receive_data():
     locations = data.get('locations', [])
     index = []
     matrix = []
-    # Iterate through each location and print the array
+
+    # creating dataframes 
     for location in locations:
         temp = []
         location_name = location.get('name')
@@ -77,7 +76,9 @@ def receive_data():
     print("Index:", index)
     print("Matrix:", matrix)
     weights = [0.45, 0.2, 0.35]
+    #passing dataframes to score function
     result = calculate_scores(index, matrix, weights)
+
     print(result)
     return jsonify({'message': 'Data received successfully!'})
 
