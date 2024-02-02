@@ -3,6 +3,7 @@ import poi from './assests/poiShort.json';
 import poiShort from './assests/poiTemp.json';
 import poiShort2 from './assests/poiShort.json';
 import keys from '../keys.json';
+import Button from "../components/Button";
 
 const MarkerList = (props) => {
   const isButtonDisabled = props.markers.length < 2;
@@ -30,7 +31,7 @@ const MarkerList = (props) => {
 
       const data = await response.json();
       const count = data.summary.numResults;
-        console.log(count)
+      console.log(count);
       return count;
     } catch (error) {
       console.error(`Error fetching amenity count for ${category.name}:`, error);
@@ -82,8 +83,9 @@ const MarkerList = (props) => {
       <button onClick={handleClick} disabled={isButtonDisabled}>
         Analyze
       </button>
-      <h2>Locations selected</h2>
+      <h2>Locations selected : </h2>
       <div style={{ display: 'flex', flexWrap: "wrap", gap: "10px" }}>
+      {/* <Button text="Submit"/> */}
         {props.markers.map((marker, index) => (
           <div key={index}
             style={{

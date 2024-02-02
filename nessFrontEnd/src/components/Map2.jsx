@@ -31,15 +31,14 @@ const Map2 = (props) => {
           lat: event.latLng.lat(),
           lng: event.latLng.lng(),
           serial: markers.length + 1,
-          name: "this",
+          name: "N/A",
         };
   
-        // Fetch suburb information from OpenCage Geocoding API
+        // Fetch location name from OpenCage API
         newMarker.name = await fetchLocationInfo(newMarker.lat, newMarker.lng);
   
         setMarkers((prevMarkers) => [...prevMarkers, newMarker]);
   
-        // Print the coordinates
         // console.log('Coordinates:', newMarker);
       };
   
@@ -66,7 +65,7 @@ const Map2 = (props) => {
       const suburb = data.results[0]?.components?.suburb;
       const town = data.results[0]?.components?.town;
       const road = data.results[0]?.components?.road;
-        // console.log( data.results[0]?.components);
+        console.log( data.results[0]?.components);
       if (suburb) {
         return suburb;
       } else if (town) {
@@ -108,8 +107,8 @@ const Map2 = (props) => {
             onCloseClick={handleInfoWindowClose}
           >
             {/*  zIndex does not work ig */}
-            <div style={{ color: 'black', zIndex:12 }}>
-            {selectedMarker.serial} : {selectedMarker.name}          
+            <div style={{ color: 'black', zIndex:12, paddingRight: "13px", fontWeight: "500"  }}>
+            {selectedMarker.serial}.  {selectedMarker.name}          
             </div>
           </InfoWindow>
         )}
