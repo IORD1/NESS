@@ -2,3 +2,6 @@ Map/node_modules/
 nessFrontEnd/key.env
 nessFrontEnd/src/keys.json
 nessFrontEnd/.env
+.idea
+.gitignore
+.vscode
