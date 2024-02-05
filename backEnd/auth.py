@@ -4,8 +4,12 @@ import hashlib
 from flask_jwt_extended import create_access_token, JWTManager, jwt_required, get_jwt_identity
 import datetime
 import os
+from flask_cors import CORS
+from utils import calculate_scores
+
 
 app = Flask(__name__)
+CORS(app)  # Enable CORS for all routes
 uri = os.environ.get('DATABASE_URL')
 # uri = "mongodb://localhost:27017"
 # Create a new client and connect to the server
@@ -73,6 +77,55 @@ def profile():
         return jsonify({'profile': user_from_db}), 200
     else:
         return jsonify({'msg': 'Profile not found'}), 404
+
+
+# Define a sample endpoint
+@app.route('/')
+def hello():
+    return 'try api/data'
+
+
+# Define an endpoint that returns JSON data
+@app.route('/api/v1/data')
+@jwt_required()
+def get_data():
+    # current_user = get_jwt_identity()
+    # if current_user:
+    #     data = {'message': 'This is JSON data from your backend server!'}
+    #     return jsonify(data)
+    # else:
+    #     return jsonify({"msg": "Auth error!!"})
+    data = {'message': 'This is JSON data from your backend server!'}
+    return jsonify(data)
+
+
+@app.route('/api/v1/receive_data', methods=['POST'])
+@jwt_required()
+def receive_data():
+    data = request.get_json()
+
+    # Access the 'locations' key
+    locations = data.get('locations', [])
+    index = []
+    matrix = []
+    # Iterate through each location and print the array
+    for location in locations:
+        temp = []
+        location_name = location.get('name')
+        amenity_counts = [location.get(key, 0) for key in ['7321', '7332', '9376']]
+
+        print(f"Location: {location_name}, Amenities: {amenity_counts}")
+        index.append(location_name)
+        matrix.append(amenity_counts)
+
+    print("Index:", index)
+    print("Matrix:", matrix)
+    weights = [0.45, 0.2, 0.35]
+    result = calculate_scores(index, matrix, weights)
+    print(result)
+    return jsonify({'message': 'Data received successfully!'})
+
+
 
 if __name__ == '__main__':
     app.run(debug=True)
