@@ -1,7 +1,14 @@
+import os
 import numpy as np
 import pandas as pd
 import plotly.express as px
 from sklearn.preprocessing import normalize
+from dotenv import load_dotenv
+import requests
+import json
+
+
+load_dotenv()
 
 
 def calculate_scores(index, matrix, weights):
@@ -36,3 +43,13 @@ def calculate_scores(index, matrix, weights):
     fig.show()
 
     return result_sorted
+
+
+def get_amenities(longitude, latitude, radius, limit, category_id):
+    tom_tom_key = os.environ.get('TOM_TOM_KEY')
+    try:
+        url = f'https://api.tomtom.com/search/2/nearbySearch/.json?key={tom_tom_key}&lat={latitude}&lon={longitude}&radius={radius}&limit={limit}&categorySet={category_id}'
+        response = requests.get(url)
+    except Exception as e:
+        return json.dumps({"Error": str(e)})
+    return response.json()

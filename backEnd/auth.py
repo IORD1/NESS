@@ -5,7 +5,7 @@ from flask_jwt_extended import create_access_token, JWTManager, jwt_required, ge
 import datetime
 import os
 from flask_cors import CORS
-from utils import calculate_scores
+from utils import calculate_scores, get_amenities
 
 
 app = Flask(__name__)
@@ -25,6 +25,7 @@ except Exception as e:
 db = client['ness']
 users = db["users"]
 
+
 @app.route("/api/v1/users", methods=["POST"])
 def register():
     try:
@@ -43,9 +44,11 @@ def register():
             "data": None,
         }, 500
 
+
 jwt = JWTManager(app)
 app.config['JWT_SECRET_KEY'] =  os.environ.get('JWT_SECRET_KEY')
 app.config['JWT_ACCESS_TOKEN_EXPIRES'] = datetime.timedelta(days=1)
+
 
 @app.route("/api/v1/login", methods=["POST"])
 def login():
@@ -67,6 +70,8 @@ def login():
             "error": str(e),
             "data": None
         }, 500
+
+
 @app.route("/api/v1/users", methods=['GET'])
 @jwt_required()
 def profile():
@@ -125,6 +130,16 @@ def receive_data():
     print(result)
     return jsonify({'message': 'Data received successfully!'})
 
+
+@app.route('/api/v1/get_amenities', methods=["GET"])
+@jwt_required()
+def send_amenities():
+    try:
+        request_json = request.args.to_dict()
+        amenities = get_amenities(request_json['longitude'], request_json['latitude'], request_json['radius'], request_json['limit'], request_json['category_id'])
+        return amenities, 201
+    except Exception as e:
+        return jsonify({"Error": str(e)}), 500
 
 
 if __name__ == '__main__':
