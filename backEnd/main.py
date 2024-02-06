@@ -27,7 +27,8 @@ def calculate_scores(index, matrix, weights):
     df = pd.DataFrame(dict(
         w_vector=weights,
         criteria=["hospital", "cafe", "market"]))
-
+    print("df : ")
+    print(df)
     #for weight figure
     fig = px.line_polar(df, r='w_vector', theta='criteria', line_close=True,
                    title="Importance of Each Criterion")
@@ -35,12 +36,20 @@ def calculate_scores(index, matrix, weights):
     fig.show()
 
     # Normalization
-    decision_matrix_norm = normalize(decision_matrix, axis=0, norm='max')
-
+    decision_matrix_norm = decision_matrix
+    # decision_matrix_norm = normalize(decision_matrix, axis=0)
+    print("dm : ")
+    print(decision_matrix)
+    print("--------------")
+    print(decision_matrix_norm)
+    print("-------------------")
+    print(decision_matrix_norm.transpose())
     # Calculate the result using dot product
     result = np.dot(weights, decision_matrix_norm.transpose())
     result_index = pd.DataFrame(data=result, index=index, columns=["value"])
     
+    print("resulted index")
+    print(result_index)
     # Sort the result
     result_sorted = result_index.sort_values(by=['value'], ascending=False)
 
@@ -79,7 +88,7 @@ def receive_data():
     #passing dataframes to score function
     result = calculate_scores(index, matrix, weights)
 
-    print(result)
+    # print(result)
     return jsonify({'message': 'Data received successfully!'})
 
 
