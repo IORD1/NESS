@@ -80,10 +80,10 @@ const MarkerList = (props) => {
 
   return (
     <div style={{ color: 'black', padding: "10px" }}>
+      <h2>Locations selected : </h2>
       <button onClick={handleClick} disabled={isButtonDisabled}>
         Analyze
       </button>
-      <h2>Locations selected : </h2>
       <div style={{ display: 'flex', flexWrap: "wrap", gap: "10px" }}>
       {/* <Button text="Submit"/> */}
         {props.markers.map((marker, index) => (
