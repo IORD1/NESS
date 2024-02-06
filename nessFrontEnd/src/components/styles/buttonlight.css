@@ -1,0 +1,32 @@
+
+#buttonunitLight:active{
+    border: none;
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
+    border-bottom: none;
+    box-shadow: 0px 0px 0px #504646;
+    /* position: fixed; */
+    /* position: absolute; */
+    margin: 5px auto auto auto;
+    border: 2px solid #272323;
+
+
+}
+
+
+#buttonunit:focus{
+border: none;
+outline: none;
+-webkit-tap-highlight-color: transparent;
+border: 2px solid #272323;
+
+}
+
+
+
+#buttonunitLight{
+    background-color: #E0DFDF;
+    box-shadow: 0px 5px 0px #504646;
+    transition: all ease 100ms;
+    border: 2px solid #272323;
+}
