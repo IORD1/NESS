@@ -1,0 +1,93 @@
+#markerListContainer{
+    /* background-color:    ; */
+    width: 100%;
+    margin: 0px;
+    height: 100%;
+
+}
+
+#markerListContainer>h2{
+    margin: 0px;
+    margin-left: 10px;
+    color: #504646;
+}
+
+#markerList{
+    height: 90%;
+    margin-top: 15px;
+    width: 90%;
+    margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    overflow: scroll;
+}
+
+#markerList::-webkit-scrollbar {
+    display: none;
+  }
+  
+  /* Hide scrollbar for IE, Edge and Firefox */
+  #markerList {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+
+
+.markers{
+    color: black;
+    padding: "0px 5px 0px 5px";
+    border-radius: "5px";
+    font-size: 1.3em;
+    height: 66px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    border: 2px solid #BCB8B8;
+    box-shadow: 0px 3px 0px #756767;
+    /* check this for deformation after overflow */
+    box-sizing:border-box;
+}
+
+#markerThumbnail{
+    height: 90%;
+    width: 20%;
+    background-image: url("../assests/markerThumbnail.png");
+    background-size: cover;
+    border: 3px solid lightgray;
+    border-radius: 9px;
+}
+
+
+#markerNameContainer{
+    height: 90%;
+    width: 75%;
+    /* background-color: aquamarine; */
+    padding-left: 5px;
+    position: relative;
+    overflow: hidden;
+}
+
+
+#markerName{
+    font-size: 1em;
+    font-weight: 600;
+}
+
+
+#markerCoordinates{
+    font-size: 0.6em;
+    margin-left: 2px;
+}
+
+#markerIndex{
+    font-family: "modak";
+    position: absolute;
+    right: 0px;
+    bottom: 16px;
+    font-size: 4em;
+    line-height: 0px;
+    rotate: -10deg;
+}
