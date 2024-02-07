@@ -9,7 +9,7 @@ import poiShort from './assests/poiTemp.json';
 
 
 const mapContainerStyle = {
-  width: '74vw',
+  width: '75vw',
   height: '100vh',
 };
 const center = {
@@ -83,6 +83,7 @@ const Map2 = (props) => {
     try {
       const response = await fetch(apiUrl);
       const data = await response.json();
+      console.log(data);
       const suburb = data.results[0]?.components?.suburb;
       const town = data.results[0]?.components?.town;
       const road = data.results[0]?.components?.road;
@@ -190,7 +191,7 @@ const Map2 = (props) => {
       </GoogleMap>
       <div id='MapDock'>
         <div id='mapDockLocationsContainer'>
-      <MarkerList markers={markers} isLoading={props.isLoading} setIsLoading={props.setIsLoading}/>
+          <MarkerList markers={markers} isLoading={props.isLoading} setIsLoading={props.setIsLoading}/>
 
         </div>
         <div id='mapDockButtonContainer'>
