@@ -1,0 +1,30 @@
+#mapContainer{
+    width: 100vw;
+    height: 100%;
+    /* background-color: aqua; */
+    display: flex;
+
+}
+
+#MapDock{
+    background-color: #E0DFDF;
+    width: 25vw;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#mapDockButtonContainer{
+    height: 30%;
+    width: 100%;
+}
+
+
+#buttonHolder{
+    height: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

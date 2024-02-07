@@ -1,0 +1,103 @@
+#loaderContainer{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#logoBorder{
+    border: 13px solid #272323;
+    display: flex;
+    border-radius: 28px;
+    justify-content: center;
+    align-items: center;
+    padding-top: 8px;
+    padding-left: 5px;
+    padding-right: 5px;
+    transition: all 1s ease;
+}
+
+
+@keyframes fade-in-right {
+    0% {
+      opacity: 0;
+      transform: translateX(-60px);
+      width: 0px;
+    }
+    50%{
+        opacity: 0;
+      transform: translateX(-20px);
+      width: 0px;
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+      width: auto;
+    }
+  }
+
+  @keyframes fade-in-left {
+    0% {
+      opacity: 0;
+      transform: translateX(30px);
+      width: 0px;
+    }
+    50%{
+        opacity: 0;
+      transform: translateX(10px);
+      width: 0px;
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+      width: auto;
+    }
+  }
+
+  @keyframes fade-up {
+    0% {
+      box-shadow: 5px 10px #888888;
+    }
+    100% {
+      box-shadow: none;
+      
+    }
+  }
+
+
+.logoLetter{
+    font-size: 80px;
+    font-family: "Modak";
+    color: #272323;
+    line-height: 80%;
+    opacity: 0;
+    animation: fade-in-right 1s ease forwards;
+
+}
+
+#logoLetterN{
+    animation: fade-in-left 1s ease forwards;
+
+}
+
+.logoEHolder{
+    width: 60px;
+    /* background-color: rebeccapurple; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 5px;
+    padding-bottom: 12px;
+    /* background-color: #e0dfdf80; */
+    z-index: 3;
+}
+
+.logoE{
+    height: 14px;
+    width: 85%;
+    background-color: #272323;
+    border-radius: 28px;
+    /* animation: fade-up 1s ease forwards; */
+}
