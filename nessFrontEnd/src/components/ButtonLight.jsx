@@ -1,8 +1,8 @@
 import React from 'react';
-import './styles/button.css';
+import './styles/buttonlight.css';
 
 
-const Button = ({ text,disable, onClick, style, ...otherProps }) => {
+const ButtonLight = ({ text, onClick, style, ...otherProps }) => {
   const defaultStyle = {
     display : "flex",
     flexDirection: "row",
@@ -21,18 +21,19 @@ const Button = ({ text,disable, onClick, style, ...otherProps }) => {
     lineHeight: "23px",
     letterSpacing: "0.05em",
     textTransform: "uppercase",
+    color: "#272323",
 
   };
 
   const mergedStyle = { ...defaultStyle, ...style };
 
   return (
-    <button id='buttonunit' disabled={disable} onClick={onClick} style={mergedStyle} {...otherProps}>
+    <button id='buttonunitLight' onClick={onClick} style={mergedStyle} {...otherProps}>
       {text}
     </button>
   );
 };
 
-export default Button;
+export default ButtonLight;
 
 
