@@ -5,9 +5,11 @@ import MarkerList from './MarkerList';
 import "./styles/map.css";
 import Button from './Button';
 import ButtonLight from './ButtonLight';
+import poiShort from './assests/poiTemp.json';
+
 
 const mapContainerStyle = {
-  width: '75vw',
+  width: '74vw',
   height: '100vh',
 };
 const center = {
@@ -24,8 +26,25 @@ const Map2 = (props) => {
   });
 
 
-  const [markers, setMarkers] = useState([]);
-  const [selectedMarker, setSelectedMarker] = useState(null);
+  function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+  }
+
+  
+    const [markers, setMarkers] = useState([]);
+    const [selectedMarker, setSelectedMarker] = useState(null);
+ 
+
+  const isButtonDisabled = markers.length < 2;
+  const handleClick = () => {
+    if (!isButtonDisabled) {
+      console.log("analyzing");
+      alert("hellow")
+      getData();
+
+    }
+  };
+
 
   const handleMapClick = async (event) => {
     const addMarker = async () => {
@@ -89,6 +108,60 @@ const Map2 = (props) => {
     return <div>Loading maps</div>;
   }
 
+  const fetchData = async (lat,lon,radius,limit,categoryId) =>{
+    try {
+      const response = await fetch(
+        `https://api.tomtom.com/search/2/nearbySearch/.json?key=${keys.tomTomKey}&lat=${lat}&lon=${lon}&radius=${radius}&limit=${limit}&categorySet=${categoryId}`
+      );
+
+      const data = await response.json();
+      const count = data.summary.numResults;
+      console.log(count);
+      return count;
+    } catch (error) {
+      console.error(`Error fetching amenity count for ${category.name}:`, error);
+    }
+  };
+  async function getData() {
+    props.setIsLoading(true);
+    const locationCounts = [];
+    const locationData = { locations: [] };
+
+
+    for (const location of markers) {
+      console.log(location.name);
+      const locationCount = { name: location.name };
+
+      for (const ammenity of poiShort.list) {
+        console.log(ammenity);
+        const count = await fetchData(location.lat,location.lng,1000,100,ammenity.id);
+        locationCount[ammenity.id] = count;
+        await sleep(1000);
+      }
+      locationData.locations.push(locationCount);
+      console.log("------^^^^^^^-------");
+    }
+
+    console.log(locationCounts);
+    console.log(locationData);
+    await postDataToBackend(locationData);
+    props.setIsLoading(false);
+  }
+
+
+  async function postDataToBackend(data) {
+    const response = await fetch('http://localhost:5000/receive_data', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    });
+  
+    const result = await response.json();
+    console.log(result);
+  }
+
   return (
     <div id='mapContainer'>
       <GoogleMap
@@ -123,6 +196,8 @@ const Map2 = (props) => {
         <div id='mapDockButtonContainer'>
           <div id='buttonHolder'>
             <Button text={"Compare"}
+            disable={isButtonDisabled}
+            onClick={()=>{handleClick()}}
             style={{
               fontSize: '15px',
               fontWeight: "600",

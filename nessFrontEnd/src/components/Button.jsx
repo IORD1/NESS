@@ -2,7 +2,7 @@ import React from 'react';
 import './styles/button.css';
 
 
-const Button = ({ text, onClick, style, ...otherProps }) => {
+const Button = ({ text,disable, onClick, style, ...otherProps }) => {
   const defaultStyle = {
     display : "flex",
     flexDirection: "row",
@@ -21,14 +21,13 @@ const Button = ({ text, onClick, style, ...otherProps }) => {
     lineHeight: "23px",
     letterSpacing: "0.05em",
     textTransform: "uppercase",
-    color: "#D9D9D9",
 
   };
 
   const mergedStyle = { ...defaultStyle, ...style };
 
   return (
-    <button id='buttonunit' onClick={onClick} style={mergedStyle} {...otherProps}>
+    <button id='buttonunit' disabled={disable} onClick={onClick} style={mergedStyle} {...otherProps}>
       {text}
     </button>
   );

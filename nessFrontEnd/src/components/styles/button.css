@@ -24,4 +24,11 @@ outline: none;
     background-color: #272323;
     box-shadow: 0px 5px 0px #504646;
     transition: all ease 100ms;
+
+    color: "#D9D9D9";
+}
+
+#buttonunit:disabled{
+    background-color: #201d1d;
+    color: rgb(122, 108, 108);
 }
