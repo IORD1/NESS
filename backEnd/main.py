@@ -4,16 +4,32 @@ import numpy as np
 import pandas as pd
 import plotly.express as px
 from sklearn.preprocessing import normalize
-
+import requests
 
 
 app = Flask(__name__)
 CORS(app) 
 
 
+def retunAirQuality(lat,long):
+    payload = {
+            "location": {
+                "latitude": lat,
+                "longitude": long
+            }
+        }
+    url = 'https://airquality.googleapis.com/v1/currentConditions:lookup?key=AIzaSyDRuGZrusl95uc4EBV2wUKApvV28J2NKvU'
+    headers = {'Content-Type': 'application/json'}
+    response = requests.post(url, json=payload, headers=headers)
+    print(response.json()['indexes'][0]['aqi'])
+
+    return response.json()
+
+
+
 @app.route('/')
 def hello():
-    return 'Open localhost:5173'
+    # return retunAirQuality(19.219012, 73.167206)
 
 @app.route('/api/data')
 def get_data():
