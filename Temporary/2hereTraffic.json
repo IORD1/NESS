@@ -1,0 +1,539 @@
+{
+    "sourceUpdated": "2024-02-14T15:53:32Z",
+    "results": [
+        {
+            "location": {
+                "description": "Abhiman Shree Road/Pashan Road",
+                "length": 1075.0,
+                "olr": "CCkBEAAlJDSAEA0vdwAJBQQCA7wACgUEAokRAPvG/z0ACQUEAgM8ADBRDQ=="
+            },
+            "currentFlow": {
+                "speed": 8.333334,
+                "speedUncapped": 8.333334,
+                "freeFlow": 10.555556,
+                "jamFactor": 3.0,
+                "confidence": 0.97,
+                "traversability": "open",
+                "subSegments": [
+                    {
+                        "length": 118.0,
+                        "speed": 5.8333335,
+                        "speedUncapped": 5.8333335,
+                        "freeFlow": 10.555556,
+                        "jamFactor": 6.1,
+                        "confidence": 0.97,
+                        "traversability": "open"
+                    },
+                    {
+                        "length": 957.0,
+                        "speed": 8.611112,
+                        "speedUncapped": 8.611112,
+                        "freeFlow": 10.555556,
+                        "jamFactor": 2.4,
+                        "confidence": 0.97,
+                        "traversability": "open"
+                    }
+                ]
+            }
+        },
+        {
+            "location": {
+                "description": "Gokhale Road/Late Sanggana Bramha Dhotre Path/Gokhale Cross Road",
+                "length": 168.0,
+                "olr": "CCoBEAAmJTSBaw0ulwAJBQQBA1wACgUEAYIqAADa/1UACQUEAQLaADAAgQI="
+            },
+            "currentFlow": {
+                "speed": 7.2222223,
+                "speedUncapped": 7.2222223,
+                "freeFlow": 10.833334,
+                "jamFactor": 3.5,
+                "confidence": 0.99,
+                "traversability": "open"
+            }
+        },
+        {
+            "location": {
+                "description": "Baner-Pashan Link Road",
+                "length": 488.0,
+                "olr": "CCoBEAAmJTSA+Q0u5AAJBQQBA+MACgUEAYY5AP2TAcQACQUEAQNYADCCUgA="
+            },
+            "currentFlow": {
+                "speed": 8.333334,
+                "speedUncapped": 13.888889,
+                "freeFlow": 7.777778,
+                "jamFactor": 0.0,
+                "confidence": 0.85,
+                "traversability": "open"
+            }
+        },
+        {
+            "location": {
+                "length": 443.0,
+                "olr": "CCkBEAAlJDSA0Q0vCQAJBQQBA1AACgUEAYM6AAFJ/wsACQUEAQPcADAAAA=="
+            },
+            "currentFlow": {
+                "speed": 6.9444447,
+                "speedUncapped": 6.9444447,
+                "freeFlow": 10.833334,
+                "jamFactor": 4.8,
+                "confidence": 0.99,
+                "traversability": "open"
+            }
+        },
+        {
+            "location": {
+                "description": "Late Vaikunthbhai Metha Chowk/Old Pune-Mumbai Highway",
+                "length": 31.0,
+                "olr": "CCgBEAAkIzSAdw0vPQAJBQQCAqwACgQDAh8A/+b/8wAJBQQCAiwAMAAA"
+            },
+            "currentFlow": {
+                "speed": 2.777778,
+                "speedUncapped": 2.777778,
+                "freeFlow": 6.111111,
+                "jamFactor": 2.7,
+                "confidence": 0.87,
+                "traversability": "open"
+            }
+        },
+        {
+            "location": {
+                "description": "Late Vaikunthbhai Metha Chowk/Old Pune-Mumbai Highway",
+                "length": 1066.0,
+                "olr": "CCkBEAAlJDSAVw0tlgAJBQQCAgEACgUEAoglAAA0A5YACQUEAgKlADAAAA=="
+            },
+            "currentFlow": {
+                "speed": 6.111111,
+                "speedUncapped": 6.111111,
+                "freeFlow": 10.555556,
+                "jamFactor": 5.7,
+                "confidence": 0.99,
+                "traversability": "open",
+                "subSegments": [
+                    {
+                        "length": 390.0,
+                        "speed": 6.388889,
+                        "speedUncapped": 6.388889,
+                        "freeFlow": 10.555556,
+                        "jamFactor": 1.1,
+                        "confidence": 0.99,
+                        "traversability": "open"
+                    },
+                    {
+                        "length": 432.0,
+                        "speed": 8.611112,
+                        "speedUncapped": 8.611112,
+                        "freeFlow": 10.555556,
+                        "jamFactor": 2.6,
+                        "confidence": 0.99,
+                        "traversability": "open"
+                    },
+                    {
+                        "length": 137.0,
+                        "speed": 6.388889,
+                        "speedUncapped": 6.388889,
+                        "freeFlow": 10.555556,
+                        "jamFactor": 1.1,
+                        "confidence": 0.99,
+                        "traversability": "open"
+                    },
+                    {
+                        "length": 107.0,
+                        "speed": 2.777778,
+                        "speedUncapped": 2.777778,
+                        "freeFlow": 10.555556,
+                        "jamFactor": 1.1,
+                        "confidence": 0.99,
+                        "traversability": "open"
+                    }
+                ]
+            }
+        },
+        {
+            "location": {
+                "description": "Late Vaikunthbhai Metha Chowk/S. B Road",
+                "length": 399.0,
+                "olr": "CCoBEAAmJTSBNQ0utgAJBQQBA9wACgUEAYYTAP2vAbAACQUEAQNdADBzghM="
+            },
+            "currentFlow": {
+                "speed": 1.1111112,
+                "speedUncapped": 1.1111112,
+                "freeFlow": 9.166667,
+                "jamFactor": 9.1,
+                "confidence": 0.91,
+                "traversability": "open"
+            }
+        },
+        {
+            "location": {
+                "description": "Pune Breman Maitry Chowk/Aundh Road/Dr Babasaheb Jaikar Path",
+                "length": 2304.0,
+                "olr": "CCkBEAAlJDR/2A0vtgAJBQQBAugACgUEAZF4APsnBqoACQUEAQJhADAAAA=="
+            },
+            "currentFlow": {
+                "speed": 8.333334,
+                "speedUncapped": 9.722222,
+                "freeFlow": 8.333334,
+                "jamFactor": 0.0,
+                "confidence": 0.99,
+                "traversability": "open"
+            }
+        },
+        {
+            "location": {
+                "description": "Late Vitthal Rao Tukaram Bhosle Chowk/Gokhale Road",
+                "length": 1032.0,
+                "olr": "CCkBEAAlJDSAaw0vNwAJBQQCAqoACgUEAogCAP/c/IIACQUEAgIEADAAAA=="
+            },
+            "currentFlow": {
+                "speed": 6.666667,
+                "speedUncapped": 6.666667,
+                "freeFlow": 9.722222,
+                "jamFactor": 4.2,
+                "confidence": 0.99,
+                "traversability": "open",
+                "subSegments": [
+                    {
+                        "length": 224.0,
+                        "speed": 5.8333335,
+                        "speedUncapped": 5.8333335,
+                        "freeFlow": 9.722222,
+                        "jamFactor": 5.6,
+                        "confidence": 0.99,
+                        "traversability": "open"
+                    },
+                    {
+                        "length": 421.0,
+                        "speed": 8.611112,
+                        "speedUncapped": 8.611112,
+                        "freeFlow": 9.722222,
+                        "jamFactor": 1.4,
+                        "confidence": 0.99,
+                        "traversability": "open"
+                    },
+                    {
+                        "length": 387.0,
+                        "speed": 5.8333335,
+                        "speedUncapped": 5.8333335,
+                        "freeFlow": 9.722222,
+                        "jamFactor": 5.5,
+                        "confidence": 0.99,
+                        "traversability": "open"
+                    }
+                ]
+            }
+        },
+        {
+            "location": {
+                "description": "Jawahar Nagar Chowk/Abil House Chowk/Range Hills Road",
+                "length": 425.0,
+                "olr": "CCkBEAAlJDSBnw0uYwAJBQQBA9wACgUEAYM+AP64AP0ACQUEAQNbADAAFQ=="
+            },
+            "currentFlow": {
+                "speed": 6.666667,
+                "speedUncapped": 6.666667,
+                "freeFlow": 11.111112,
+                "jamFactor": 5.4,
+                "confidence": 0.99,
+                "traversability": "open",
+                "subSegments": [
+                    {
+                        "length": 188.0,
+                        "speed": 7.777778,
+                        "speedUncapped": 7.777778,
+                        "freeFlow": 11.111112,
+                        "jamFactor": 3.9,
+                        "confidence": 0.99,
+                        "traversability": "open"
+                    },
+                    {
+                        "length": 237.0,
+                        "speed": 5.8333335,
+                        "speedUncapped": 5.8333335,
+                        "freeFlow": 11.111112,
+                        "jamFactor": 6.4,
+                        "confidence": 0.99,
+                        "traversability": "open"
+                    }
+                ]
+            }
+        },
+        {
+            "location": {
+                "description": "Ganesh Khind Road/Pune University Marg",
+                "length": 448.0,
+                "olr": "CCkBEAAlJDSBJQ0tzwAJBQQDAyEACgUEA4M/AAEFAT8ACQUEAwOcADAAAA=="
+            },
+            "currentFlow": {
+                "speed": 5.277778,
+                "speedUncapped": 5.277778,
+                "freeFlow": 6.111111,
+                "jamFactor": 0.0,
+                "confidence": 0.71,
+                "traversability": "open"
+            }
+        },
+        {
+            "location": {
+                "description": "Pune University Road",
+                "length": 887.0,
+                "olr": "CCkBEAAlJDSB8w0v/wAJBQQDAoEACgUEA4Z0AP4g/ZAACQUEAwMbADAAAA=="
+            },
+            "currentFlow": {
+                "speed": 8.055555,
+                "speedUncapped": 8.055555,
+                "freeFlow": 8.611112,
+                "jamFactor": 1.0,
+                "confidence": 0.78,
+                "traversability": "open",
+                "subSegments": [
+                    {
+                        "length": 755.0,
+                        "speed": 8.611112,
+                        "speedUncapped": 8.611112,
+                        "freeFlow": 8.611112,
+                        "jamFactor": 0.2,
+                        "confidence": 0.78,
+                        "traversability": "open"
+                    },
+                    {
+                        "length": 132.0,
+                        "speed": 6.111111,
+                        "speedUncapped": 6.111111,
+                        "freeFlow": 8.611112,
+                        "jamFactor": 4.1,
+                        "confidence": 0.78,
+                        "traversability": "open"
+                    }
+                ]
+            }
+        },
+        {
+            "location": {
+                "description": "Bahirat Patil Chowk",
+                "length": 457.0,
+                "olr": "CCkBEAAlJDSBnw0uYwAJBQQDA5wACgUEA4NjAP7m/rwACQUEAwRpADAbAA=="
+            },
+            "currentFlow": {
+                "speed": 5.8333335,
+                "speedUncapped": 5.8333335,
+                "freeFlow": 8.611112,
+                "jamFactor": 3.1,
+                "confidence": 0.9,
+                "traversability": "open"
+            }
+        },
+        {
+            "location": {
+                "description": "Baner-Pashan Link Road",
+                "length": 2489.0,
+                "olr": "CCkBEAAlJDR9oQ0yywAJBQQBAmYACgUEAZM1AAVn+PAACQUEAQPaADAAAA=="
+            },
+            "currentFlow": {
+                "speed": 8.055555,
+                "speedUncapped": 8.055555,
+                "freeFlow": 8.333334,
+                "jamFactor": 0.3,
+                "confidence": 0.99,
+                "traversability": "open",
+                "subSegments": [
+                    {
+                        "length": 2300.0,
+                        "speed": 8.333334,
+                        "speedUncapped": 9.722222,
+                        "freeFlow": 8.333334,
+                        "jamFactor": 0.0,
+                        "confidence": 0.99,
+                        "traversability": "open"
+                    },
+                    {
+                        "length": 189.0,
+                        "speed": 2.777778,
+                        "speedUncapped": 2.777778,
+                        "freeFlow": 8.333334,
+                        "jamFactor": 8.4,
+                        "confidence": 0.99,
+                        "traversability": "open"
+                    }
+                ]
+            }
+        },
+        {
+            "location": {
+                "length": 16.0,
+                "olr": "CCgBEAAkIzSAHA0vggAJBQQCAzcACgQDAhAAAA8AAwAJBQQCA7cAMAAA"
+            },
+            "currentFlow": {
+                "speed": 2.777778,
+                "speedUncapped": 2.777778,
+                "freeFlow": 7.2222223,
+                "jamFactor": 8.2,
+                "confidence": 0.99,
+                "traversability": "open"
+            }
+        },
+        {
+            "location": {
+                "description": "Senapati Bapat Path/Ganesh Khind Road/Pune University Road",
+                "length": 1364.0,
+                "olr": "CCkBEAAlJDR+BA0waAAJBQQCA0sACgUEAopSAAR9/hIACQUEAgO8ADAAAA=="
+            },
+            "currentFlow": {
+                "speed": 5.0,
+                "speedUncapped": 5.0,
+                "freeFlow": 8.333334,
+                "jamFactor": 5.6,
+                "confidence": 0.99,
+                "traversability": "open",
+                "subSegments": [
+                    {
+                        "length": 1109.0,
+                        "speed": 8.333334,
+                        "speedUncapped": 8.333334,
+                        "freeFlow": 8.333334,
+                        "jamFactor": 0.0,
+                        "confidence": 0.99,
+                        "traversability": "open"
+                    },
+                    {
+                        "length": 255.0,
+                        "speed": 1.6666667,
+                        "speedUncapped": 1.6666667,
+                        "freeFlow": 8.333334,
+                        "jamFactor": 9.1,
+                        "confidence": 0.99,
+                        "traversability": "open"
+                    }
+                ]
+            }
+        },
+        {
+            "location": {
+                "description": "Range Hills Marg",
+                "length": 893.0,
+                "olr": "CCkBEAAlJDSBFA0u3AAJBQQDAxsACgUEA4cPAAHgAn4ACQUEAwTAADAVAA=="
+            },
+            "currentFlow": {
+                "speed": 6.9444447,
+                "speedUncapped": 6.9444447,
+                "freeFlow": 8.888889,
+                "jamFactor": 1.6,
+                "confidence": 0.97,
+                "traversability": "open"
+            }
+        },
+        {
+            "location": {
+                "description": "Acharya Anand Rushiji Maharaj Chowk/Baner Road",
+                "length": 128.0,
+                "olr": "CCkBEAAlJDSAJQ0vdQAJBQQCA8cACgUEAoEhAP9q//UACQUEAgM6ADAAIQ=="
+            },
+            "currentFlow": {
+                "speed": 3.0555556,
+                "speedUncapped": 3.0555556,
+                "freeFlow": 9.166667,
+                "jamFactor": 8.0,
+                "confidence": 0.95,
+                "traversability": "open"
+            }
+        },
+        {
+            "location": {
+                "description": "Pune University Road",
+                "length": 21.0,
+                "olr": "CCgBEAAkIzSBFA0u3AAJBQQDAxsACgQDAzIAAB8AIwAJBQQDA50AMAAd"
+            },
+            "currentFlow": {
+                "speed": 3.0555556,
+                "speedUncapped": 3.0555556,
+                "freeFlow": 7.5,
+                "jamFa ctor": 2.7,
+                "confidence": 0.98,
+                "traversability": "open"
+            }
+        },
+        {
+            "location": {
+                "length": 828.0,
+                "olr": "CCkBEAAlJDSA+Q0u5AAJBQQBA9oACgUEAYY8AP2TAcQACQUEAQNmADAAAA=="
+            },
+            "currentFlow": {
+                "speed": 1.388889,
+                "speedUncapped": 1.388889,
+                "freeFlow": 9.444445,
+                "jamFactor": 9.4,
+                "confidence": 0.99,
+                "traversability": "open",
+                "subSegments": [
+                    {
+                        "length": 630.0,
+                        "speed": 1.1111112,
+                        "speedUncapped": 1.1111112,
+                        "freeFlow": 9.444445,
+                        "jamFactor": 9.6,
+                        "confidence": 0.99,
+                        "traversability": "open"
+                    },
+                    {
+                        "length": 198.0,
+                        "speed": 9.166667,
+                        "speedUncapped": 9.166667,
+                        "freeFlow": 10.277778,
+                        "jamFactor": 1.4,
+                        "confidence": 0.99,
+                        "traversability": "open"
+                    }
+                ]
+            }
+        },
+        {
+            "location": {
+                "description": "Late Vaikunthbhai Metha Chowk/S. B Road",
+                "length": 249.0,
+                "olr": "CCkBEAAlJDSAJg0vgQAJBQQBA1sACgUEAYJTAAEE/0oACQUEAQPaADAAXA=="
+            },
+            "currentFlow": {
+                "speed": 3.6111112,
+                "speedUncapped": 3.6111112,
+                "freeFlow": 10.0,
+                "jamFactor": 7.7,
+                "confidence": 0.99,
+                "traversability": "open"
+            }
+        },
+        {
+            "location": {
+                "description": "Jawahar Nagar Chowk/Abil House Chowk/Range Hills Road",
+                "length": 683.0,
+                "olr": "CCkBEAAlJDSAdg0vSQAJBQQBA1wACgUEAYVBAAIO/oIACQUEAQO/ADAZAA=="
+            },
+            "currentFlow": {
+                "speed": 6.111111,
+                "speedUncapped": 6.111111,
+                "freeFlow": 8.888889,
+                "jamFactor": 4.4,
+                "confidence": 0.99,
+                "traversability": "open",
+                "subSegments": [
+                    {
+                        "length": 234.0,
+                        "speed": 4.4444447,
+                        "speedUncapped": 4.4444447,
+                        "freeFlow": 8.888889,
+                        "jamFactor": 6.9,
+                        "confidence": 0.99,
+                        "traversability": "open"
+                    },
+                    {
+                        "length": 449.0,
+                        "speed": 7.2222223,
+                        "speedUncapped": 7.2222223,
+                        "freeFlow": 8.888889,
+                        "jamFactor": 2.3,
+                        "confidence": 0.99,
+                        "traversability": "open"
+                    }
+                ]
+            }
+        }
+    ]
+}%                                                   

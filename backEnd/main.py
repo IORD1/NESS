@@ -5,6 +5,14 @@ import pandas as pd
 import plotly.express as px
 from sklearn.preprocessing import normalize
 import requests
+import json
+
+with open('keys.json') as f:
+    hereTrafficKey = json.load(f)['hereTrafficKey']
+
+with open('keys.json') as f:
+    googleMapsApiKey = json.load(f)['googleMapsApiKey']
+ 
 
 
 app = Flask(__name__)
@@ -18,7 +26,7 @@ def retunAirQuality(lat,long):
                 "longitude": long
             }
         }
-    url = 'https://airquality.googleapis.com/v1/currentConditions:lookup?key=AIzaSyDRuGZrusl95uc4EBV2wUKApvV28J2NKvU'
+    url = f'https://airquality.googleapis.com/v1/currentConditions:lookup?key={googleMapsApiKey}'
     headers = {'Content-Type': 'application/json'}
     response = requests.post(url, json=payload, headers=headers)
     print(response.json()['indexes'][0]['aqi'])
@@ -26,10 +34,37 @@ def retunAirQuality(lat,long):
     return response.json()
 
 
+def returnTraffic(lat,long,radius):
+    url = f'https://data.traffic.hereapi.com/v7/flow?in=circle:{lat},{long};r={radius}&locationReferencing=olr&apiKey={hereTrafficKey}'
+    headers = {'Content-Type': 'application/json'}
+    response = requests.get(url, headers=headers)
+    response_data = response.json()
+    total_jam = 0
+    total_roads = 0
+
+        # Iterate over each road
+    for road in response_data['results']:
+        # Extract relevant information
+        if 'description' in road['location']:
+            description = road['location']['description']
+            length = road['location']['length']
+            jam_factor = road['currentFlow']['jamFactor']
+            total_jam += road['currentFlow']['jamFactor']
+            total_roads += 1
+            # Print road information
+            print(f"Road: {description}")
+            print(f"Length: {length} meters")
+            print(f"Jam Factor: {jam_factor}")
+            print("-" * 30)
+    print("total roads : ", total_roads)
+    print("average jam: ",total_jam/total_roads)
+    return response_data['results']
+
+
 
 @app.route('/')
 def hello():
-    # return retunAirQuality(19.219012, 73.167206)
+    return returnTraffic(18.515752,73.842158,1000)
 
 @app.route('/api/data')
 def get_data():

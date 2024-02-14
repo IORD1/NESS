@@ -3,7 +3,7 @@ import "./styles/MarkerList.css";
 // import poi from './assests/poiShort.json';
 // import poiShort from './assests/poiTemp.json';
 // import poiShort2 from './assests/poiShort.json';
-// import keys from '../keys.json';
+import keys from '../keys.json';
 // import Button from "../components/Button";
 
 const MarkerList = (props) => {
@@ -23,7 +23,19 @@ const MarkerList = (props) => {
           <div key={index}
             className='markers'
             >
-            <div id='markerThumbnail'></div>
+            <div id='markerThumbnail'>
+            {/* <iframe
+              hidden={true}
+              key={index}
+              width="60"
+              height="45"
+              loading="lazy"
+              allowFullScreen
+              referrerpolicy="no-referrer-when-downgrade"
+              src={`https://www.google.com/maps/embed/v1/place?key=${keys.googleMapsApiKey}&q=Space+Needle,Seattle+WA`}
+                >
+            </iframe> */}
+            </div>
             <div id='markerNameContainer'>
               <div id='markerName'>{marker.name}</div>
               <div id='markerCoordinates'>
