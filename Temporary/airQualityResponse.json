@@ -1,0 +1,18 @@
+{
+    "dateTime": "2024-02-14T10:00:00Z",
+    "indexes": [
+        {
+            "aqi": 42,
+            "aqiDisplay": "42",
+            "category": "Moderate air quality",
+            "code": "uaqi",
+            "color": {
+                "green": 0.81960785,
+                "red": 1
+            },
+            "displayName": "Universal AQI",
+            "dominantPollutant": "pm25"
+        }
+    ],
+    "regionCode": "in"
+}
