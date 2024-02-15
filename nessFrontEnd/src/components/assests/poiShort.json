@@ -108,5 +108,52 @@
             "name": "Banquet Rooms",
             "id": 7315146
         }
+    ],
+    "preferences": [
+        {
+            "name": "Safety & Health",
+            "id": 1,
+            "icon" : "./safe.svg",
+            "pois": [
+                {
+                    "name": "Hospital",
+                    "id": 7321
+                },
+                {
+                    "name": "Health Care Service",
+                    "id": 9663
+                }
+            ]
+        },
+        {
+            "name": "Education & Employment",
+            "id": 2,
+            "icon" : "./safe..svg"
+        },
+        {
+            "name": "Transportation & Accessiblity",
+            "id": 3,
+            "icon" : "./safe..svg"
+        },
+        {
+            "name": "Economy & Recreatoin",
+            "id": 4,
+            "icon" : "./safe..svg"
+        },
+        {
+            "name": "Environment & Infrastructure",
+            "id": 5,
+            "icon" : "./safe..svg"
+        },
+        {
+            "name": "Community & Services",
+            "id": 6,
+            "icon" : "./safe..svg"
+        },
+        {
+            "name": "Cost of Living & Rates",
+            "id": 7,
+            "icon" : "./safe..svg"
+        }
     ]
 }
