@@ -19,21 +19,26 @@ const center = {
 
 const Map2 = (props) => {
   const [libraries] = useState(['places']);
+  
+    const [markers, setMarkers] = useState([]);
+    const [selectedMarker, setSelectedMarker] = useState(null);
+
 
   const { isLoaded, loadError } = useLoadScript({
     googleMapsApiKey: keys.googleMapsApiKey,
     libraries,
-  });
+  });  
 
 
   function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
-  }
+  }  
 
-  
-    const [markers, setMarkers] = useState([]);
-    const [selectedMarker, setSelectedMarker] = useState(null);
- 
+  function openPreferences(){
+    window.open('http://localhost:5173/preferences', '_self'); 
+}    
+
+
 
   const isButtonDisabled = markers.length < 2;
   const handleClick = () => {
@@ -210,6 +215,7 @@ const Map2 = (props) => {
           <div id='buttonHolder'>
 
           <ButtonLight text={"Change Preferences"} 
+          onClick={() => {openPreferences()}}
           style={{
             fontSize: '15px',
             fontWeight: "600",
