@@ -11,6 +11,9 @@ const Preferences = (props) => {
     const [userPreferencesList, setUserPreferencesList] = useState([]);
     function submitPreferences(){
         console.log(userPreferencesList);
+        const preferencesData = { list: userPreferencesList };
+        postPrefrencesToBackend(preferencesData)
+        
         window.open('http://localhost:5173/homescreen', '_self'); 
     }
 
@@ -23,7 +26,19 @@ const Preferences = (props) => {
     }
 
 
-    
+    async function postPrefrencesToBackend(data) {
+        const response = await fetch('http://localhost:5000/receive_preferences', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(data),
+        });
+      
+        const result = await response.json();
+        console.log(result);
+      }
+
 
 
     
