@@ -5,7 +5,8 @@ import MarkerList from './MarkerList';
 import "./styles/map.css";
 import Button from './Button';
 import ButtonLight from './ButtonLight';
-import poiShort from './assests/poiTemp.json';
+// import poiShort from './assests/poiTemp.json';
+import poiShort from './assests/poiShort.json';
 
 
 const mapContainerStyle = {
