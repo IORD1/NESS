@@ -171,6 +171,10 @@ const Map2 = (props) => {
     console.log(locationData);
     await postDataToBackend(locationData);
     props.setIsLoading(false);
+    console.log("got back here");
+    setMapWdith("25vw");
+    setResultAvailable(true);
+    document.getElementById("MapDock").style.width = "75vw";
   }
 
 
@@ -229,9 +233,10 @@ const Map2 = (props) => {
             })}
 
 
-            <p id='rankingHeading'>Ammenities</p>
+            <p id='rankingHeading'>Ammenities Distribution across locations</p>
             <BarChart data={results} />
-            {/* <RadarChat data={results} /> */}
+            <p id='rankingHeading'>Weights for Ammenities</p>
+            <RadarChat weights={results.weights} amenityNames={results.namesOfAmmenites} />
           </div>
         </div>
       :
