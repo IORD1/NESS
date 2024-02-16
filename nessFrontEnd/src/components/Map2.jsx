@@ -7,12 +7,11 @@ import Button from './Button';
 import ButtonLight from './ButtonLight';
 // import poiShort from './assests/poiTemp.json';
 import poiShort from './assests/poiShort.json';
+import locatoinDataTest from "../../../Temporary/testLocationData.json";
+import BarChart from './AmmenityBarPlot';
+import RadarChat from "./WeightsRadialPlot.jsx"
 
 
-const mapContainerStyle = {
-  width: '75vw',
-  height: '100vh',
-};
 const center = {
   lat: 18.5204,
   lng: 73.8567,
@@ -23,12 +22,23 @@ const Map2 = (props) => {
   
     const [markers, setMarkers] = useState([]);
     const [selectedMarker, setSelectedMarker] = useState(null);
+    const [mapWidth, setMapWdith] = useState("75vw");
+    const [resultAvailable, setResultAvailable] = useState(false);
+    const [results, setResults] = useState({});
+    let [rankingIndex, setRankingIndex] = useState(1);
 
 
   const { isLoaded, loadError } = useLoadScript({
     googleMapsApiKey: keys.googleMapsApiKey,
     libraries,
   });  
+
+
+  const mapContainerStyle = {
+    width: mapWidth,
+    height: '100vh',
+    transition: "all 1s ease-in-out"
+  };
 
 
   function sleep(ms) {
@@ -45,11 +55,19 @@ const Map2 = (props) => {
   const handleClick = () => {
     if (!isButtonDisabled) {
       console.log("analyzing");
-      alert("hellow")
       getData();
 
     }
   };
+
+
+  async function getData2(){
+    await postDataToBackend(locatoinDataTest);
+    console.log("got back here");
+    setMapWdith("25vw");
+    setResultAvailable(true);
+    document.getElementById("MapDock").style.width = "75vw";
+  }
 
 
   const handleMapClick = async (event) => {
@@ -167,6 +185,7 @@ const Map2 = (props) => {
   
     const result = await response.json();
     console.log(result);
+    setResults(result);
   }
 
   return (
@@ -196,7 +215,28 @@ const Map2 = (props) => {
         )}
       </GoogleMap>
       <div id='MapDock'>
-        <div id='mapDockLocationsContainer'>
+        {resultAvailable ?  
+        <div id='resultContainer'>
+          <p id='resultsHeading'>Results</p>
+          <p id='rankingHeading'>Rankings</p>
+          <div id='rankingHolder'>
+            {results.results.map((l,index)=>{
+                return <div className='resultsChips' key={index}>
+                  <div id='rankingIndex' >{index + 1}</div>
+                  {l.index}
+                  <div id='rankingScore'>{l.value.toFixed(1)}</div>
+                  </div>
+            })}
+
+
+            <p id='rankingHeading'>Ammenities</p>
+            <BarChart data={results} />
+            {/* <RadarChat data={results} /> */}
+          </div>
+        </div>
+      :
+      <>
+      <div id='mapDockLocationsContainer'>
           <MarkerList markers={markers} isLoading={props.isLoading} setIsLoading={props.setIsLoading}/>
 
         </div>
@@ -225,7 +265,9 @@ const Map2 = (props) => {
           }}
           />
           </div>
-        </div>
+        </div></>
+      
+      }
       </div>
 
     </div>
