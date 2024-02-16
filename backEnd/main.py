@@ -21,6 +21,7 @@ CORS(app)
 global weights
 weights = [0.0699300699300699, 0.03496503496503495, 0.055944055944055916, 0.048951048951048924, 0.03496503496503495, 0.055944055944055916, 0.020979020979020966, 0.0629370629370629, 0.04195804195804193, 0.027972027972027958, 0.027972027972027958, 0.013986013986013979, 0.04195804195804193, 0.020979020979020966, 0.04195804195804193, 0.03496503496503495, 0.048951048951048924, 0.048951048951048924, 0.04195804195804193, 0.03496503496503495, 0.03496503496503495, 0.013986013986013979, 0.048951048951048924, 0.027972027972027958, 0.020979020979020966, 0.03496503496503495, 0.0069930069930069895]
 
+namesOfAmmenities = ["Hospital", "Café/Pub", "Health Care Service", "Market", "Public Amenity", "College/University", "Open Parking Area", "School", "Park & Recreation Area", "Movie Theater", "Place of Worship", "Car Wash", "Bank", "Parking Garage", "Police Station", "Library", "Shopping Center", "Pharmacy", "Swimming Pool", "Golf Course", "Fire Station", "Taxi Stand", "Grocery Store", "Fast Food", "Dry Cleaner", "Convenience Store", "Banquet Rooms"]
 
 amenity_weights = {
     "Hospital": 0.1,
@@ -180,7 +181,12 @@ def receive_data():
     # print(result)
     return jsonify({
         'message': 'Data received successfully!',
-        "results" : result_dict_list
+        "results" : result_dict_list,
+        "ammenitiesList" : matrix,
+        "givenOrder" : index,
+        "namesOfAmmenites" : namesOfAmmenities,
+        "weights" : weights,
+        
         })
 
 
