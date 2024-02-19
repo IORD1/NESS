@@ -5,31 +5,23 @@ const RadarChart = ({ weights, amenityNames }) => {
   useEffect(() => {
     const canvas = document.getElementById('myRadarChart');
     if (canvas) {
-      // Check if a chart instance exists
       if (canvas.chart) {
-        // Destroy the existing chart instance
         canvas.chart.destroy();
       }
 
-      // Find the maximum value in the weights array
       const maxWeight = Math.max(...weights);
-
-      // Scale all values in the weights array based on the maximum value
       const scaledWeights = weights.map(weight => weight / maxWeight);
-
-      // Create chart data
       const data = {
         labels: amenityNames,
         datasets: [{
           label: 'Weights',
           data: scaledWeights,
-          backgroundColor: 'rgba(75, 192, 192, 0.2)', // Background color
-          borderColor: 'rgba(75, 192, 192, 1)', // Border color
-          borderWidth: 1, // Border width
+          backgroundColor: 'rgba(75, 192, 192, 0.2)',
+          borderColor: 'rgba(75, 192, 192, 1)',
+          borderWidth: 1,
         }]
       };
 
-      // Create chart options
       const options = {
         scales: {
           r: {
@@ -39,7 +31,6 @@ const RadarChart = ({ weights, amenityNames }) => {
         }
       };
 
-      // Create chart
       const ctx = canvas.getContext('2d');
       canvas.chart = new Chart(ctx, {
         type: 'radar',
