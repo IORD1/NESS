@@ -6,6 +6,8 @@ import plotly.express as px
 from sklearn.preprocessing import normalize
 import requests
 import json
+from math import radians, sin, cos, sqrt, atan2
+
 
 with open('keys.json') as f:
     hereTrafficKey = json.load(f)['hereTrafficKey']
@@ -77,16 +79,13 @@ def returnTraffic(lat,long,radius):
     total_jam = 0
     total_roads = 0
 
-        # Iterate over each road
     for road in response_data['results']:
-        # Extract relevant information
         if 'description' in road['location']:
             description = road['location']['description']
             length = road['location']['length']
             jam_factor = road['currentFlow']['jamFactor']
             total_jam += road['currentFlow']['jamFactor']
             total_roads += 1
-            # Print road information
             print(f"Road: {description}")
             print(f"Length: {length} meters")
             print(f"Jam Factor: {jam_factor}")
@@ -97,9 +96,42 @@ def returnTraffic(lat,long,radius):
 
 
 
+def haversine(lat1, lon1, lat2, lon2):
+    # Convert decimal degrees to radians
+    lat1, lon1, lat2, lon2 = map(radians, [lat1, lon1, lat2, lon2])
+
+    # Haversine formula
+    dlon = lon2 - lon1
+    dlat = lat2 - lat1
+    a = sin(dlat / 2) ** 2 + cos(lat1) * cos(lat2) * sin(dlon / 2) ** 2
+    c = 2 * atan2(sqrt(a), sqrt(1 - a))
+    distance = 6371 * c  
+    return distance
+
+def return_nearest_rate(lat, lon):
+    df = pd.read_csv("../Datasets/suburb_coordinates.csv")
+    min_distance = float('inf')
+    nearest_place = None
+    rate = None
+
+    for index, row in df.iterrows():
+        place_lat = row['Latitude']
+        place_lon = row['Longitude']
+        distance = haversine(lat, lon, place_lat, place_lon)
+        if distance < min_distance:
+            min_distance = distance
+            nearest_place = row['name']
+            rate = row['rates']
+    
+    return nearest_place,rate
+
+
 @app.route('/')
 def hello():
-    return returnTraffic(18.515752,73.842158,1000)
+    nearest_place, nearest_rate = return_nearest_rate(18.54149754525427, 73.79255976528276)
+    rateinnum = ''.join(filter(lambda i: i.isdigit(), nearest_rate))
+    return jsonify({"nearest_place" : nearest_place, "rate" : rateinnum})
+    # return returnTraffic(18.515752,73.842158,1000)
 
 @app.route('/api/data')
 def get_data():
