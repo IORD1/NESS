@@ -12,6 +12,7 @@
 }
 
 
+
 #buttonunit:focus{
 border: none;
 outline: none;
@@ -24,7 +25,8 @@ outline: none;
     background-color: #272323;
     box-shadow: 0px 5px 0px #504646;
     transition: all ease 100ms;
-    
+    cursor: url("../../assets/glove.png"), auto;
+
     color: "#D9D9D9";
 }
 
