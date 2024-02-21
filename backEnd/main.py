@@ -21,9 +21,9 @@ app = Flask(__name__)
 CORS(app) 
 
 global weights
-weights = [0.0699300699300699, 0.03496503496503495, 0.055944055944055916, 0.048951048951048924, 0.03496503496503495, 0.055944055944055916, 0.020979020979020966, 0.0629370629370629, 0.04195804195804193, 0.027972027972027958, 0.027972027972027958, 0.013986013986013979, 0.04195804195804193, 0.020979020979020966, 0.04195804195804193, 0.03496503496503495, 0.048951048951048924, 0.048951048951048924, 0.04195804195804193, 0.03496503496503495, 0.03496503496503495, 0.013986013986013979, 0.048951048951048924, 0.027972027972027958, 0.020979020979020966, 0.03496503496503495, 0.0069930069930069895]
+weights = [0.0680272108843537, 0.03401360544217685, 0.05442176870748296, 0.047619047619047596, 0.03401360544217685, 0.05442176870748296, 0.02040816326530611, 0.06122448979591833, 0.04081632653061222, 0.02721088435374148, 0.02721088435374148, 0.01360544217687074, 0.04081632653061222, 0.02040816326530611, 0.04081632653061222, 0.03401360544217685, 0.047619047619047596, 0.047619047619047596, 0.04081632653061222, 0.03401360544217685, 0.03401360544217685, 0.01360544217687074, 0.047619047619047596, 0.02721088435374148, 0.02040816326530611, 0.03401360544217685, 0.00680272108843537, 0.02721088435374148]
 
-namesOfAmmenities = ["Hospital", "Café/Pub", "Health Care Service", "Market", "Public Amenity", "College/University", "Open Parking Area", "School", "Park & Recreation Area", "Movie Theater", "Place of Worship", "Car Wash", "Bank", "Parking Garage", "Police Station", "Library", "Shopping Center", "Pharmacy", "Swimming Pool", "Golf Course", "Fire Station", "Taxi Stand", "Grocery Store", "Fast Food", "Dry Cleaner", "Convenience Store", "Banquet Rooms"]
+namesOfAmmenities = ["Hospital", "Café/Pub", "Health Care Service", "Market", "Public Amenity", "College/University", "Open Parking Area", "School", "Park & Recreation Area", "Movie Theater", "Place of Worship", "Car Wash", "Bank", "Parking Garage", "Police Station", "Library", "Shopping Center", "Pharmacy", "Swimming Pool", "Golf Course", "Fire Station", "Taxi Stand", "Grocery Store", "Fast Food", "Dry Cleaner", "Convenience Store", "Banquet Rooms","Air Quality"]
 
 amenity_weights = {
     "Hospital": 0.1,
@@ -52,7 +52,8 @@ amenity_weights = {
     "Fast Food": 0.04,
     "Dry Cleaner": 0.03,
     "Convenience Store": 0.05,
-    "Banquet Rooms": 0.01
+    "Banquet Rooms": 0.01,
+    "Air Quality": 0.04
 }
 
 
@@ -66,9 +67,8 @@ def retunAirQuality(lat,long):
     url = f'https://airquality.googleapis.com/v1/currentConditions:lookup?key={googleMapsApiKey}'
     headers = {'Content-Type': 'application/json'}
     response = requests.post(url, json=payload, headers=headers)
-    print(response.json()['indexes'][0]['aqi'])
-
-    return response.json()
+    # print(response.json()['indexes'][0]['aqi'])
+    return (response.json()['indexes'][0]['aqi'])
 
 
 def returnTraffic(lat,long,radius):
@@ -92,7 +92,8 @@ def returnTraffic(lat,long,radius):
             print("-" * 30)
     print("total roads : ", total_roads)
     print("average jam: ",total_jam/total_roads)
-    return response_data['results']
+    # return response_data['results']
+    return total_jam/total_roads
 
 
 
@@ -122,16 +123,17 @@ def return_nearest_rate(lat, lon):
             min_distance = distance
             nearest_place = row['name']
             rate = row['rates']
-    
-    return nearest_place,rate
+    rateinnum = ''.join(filter(lambda i: i.isdigit(), rate))
+    return nearest_place,rateinnum
 
 
 @app.route('/')
 def hello():
-    nearest_place, nearest_rate = return_nearest_rate(18.54149754525427, 73.79255976528276)
-    rateinnum = ''.join(filter(lambda i: i.isdigit(), nearest_rate))
-    return jsonify({"nearest_place" : nearest_place, "rate" : rateinnum})
+    # nearest_place, nearest_rate = return_nearest_rate(18.54149754525427, 73.79255976528276)
+    # rateinnum = ''.join(filter(lambda i: i.isdigit(), nearest_rate))
+    # return jsonify({"nearest_place" : nearest_place, "rate" : rateinnum})
     # return returnTraffic(18.515752,73.842158,1000)
+    return retunAirQuality(18.55164920241211,73.8434820739746)
 
 @app.route('/api/data')
 def get_data():
@@ -142,11 +144,11 @@ def calculate_scores(index, matrix, weights):
     # Create a pandas DataFrame
     print(matrix)
     decision_matrix = pd.DataFrame(data=matrix, index=index,
-                                   columns=["Hospital", "Café/Pub", "Health Care Service", "Market", "Public Amenity", "College/University", "Open Parking Area", "School", "Park & Recreation Area", "Movie Theater", "Place of Worship", "Car Wash", "Bank", "Parking Garage", "Police Station", "Library", "Shopping Center", "Pharmacy", "Swimming Pool", "Golf Course", "Fire Station", "Taxi Stand", "Grocery Store", "Fast Food", "Dry Cleaner", "Convenience Store", "Banquet Rooms"]
+                                   columns=["Hospital", "Café/Pub", "Health Care Service", "Market", "Public Amenity", "College/University", "Open Parking Area", "School", "Park & Recreation Area", "Movie Theater", "Place of Worship", "Car Wash", "Bank", "Parking Garage", "Police Station", "Library", "Shopping Center", "Pharmacy", "Swimming Pool", "Golf Course", "Fire Station", "Taxi Stand", "Grocery Store", "Fast Food", "Dry Cleaner", "Convenience Store", "Banquet Rooms","Air Quality"]
 )
     df = pd.DataFrame(dict(
         w_vector=weights,
-        criteria=["Hospital", "Café/Pub", "Health Care Service", "Market", "Public Amenity", "College/University", "Open Parking Area", "School", "Park & Recreation Area", "Movie Theater", "Place of Worship", "Car Wash", "Bank", "Parking Garage", "Police Station", "Library", "Shopping Center", "Pharmacy", "Swimming Pool", "Golf Course", "Fire Station", "Taxi Stand", "Grocery Store", "Fast Food", "Dry Cleaner", "Convenience Store", "Banquet Rooms"]))
+        criteria=["Hospital", "Café/Pub", "Health Care Service", "Market", "Public Amenity", "College/University", "Open Parking Area", "School", "Park & Recreation Area", "Movie Theater", "Place of Worship", "Car Wash", "Bank", "Parking Garage", "Police Station", "Library", "Shopping Center", "Pharmacy", "Swimming Pool", "Golf Course", "Fire Station", "Taxi Stand", "Grocery Store", "Fast Food", "Dry Cleaner", "Convenience Store", "Banquet Rooms","Air Quality"]))
     print("df : ")
     print(df)
     #for weight figure
@@ -191,19 +193,28 @@ def receive_data():
     locations = data.get('locations', [])
     index = []
     matrix = []
-
+    air_quality=[]
     # creating dataframes 
     for location in locations:
         temp = []
         location_name = location.get('name')
+        # print(location.get("lat"))
+        # print(location.get("lng"))
+        location_air_quality = retunAirQuality(location.get("lat"),location.get("lng"))
+        print(location_air_quality)
+        air_quality.append(location_air_quality)
         amenity_counts = [location.get(key, 0) for key in ['7321', '9376', '9663', '7332', '9932', '7377', '7369', '7372', '9362', '7342', '7339', '9155', '7328', '7313', '7322', '9913', '7373', '7326', '7338', '9911', '7392', '9942003', '9361023', '7315015', '9361010', '9361009', '7315146']]
-        
+        amenity_counts.append(location_air_quality)
         print(f"Location: {location_name}, Amenities: {amenity_counts}")
         index.append(location_name)
         matrix.append(amenity_counts)
 
     print("Index:", index)
     print("Matrix:", matrix)
+    print("----------------------")
+    nearest_place, nearest_rate = return_nearest_rate(18.54149754525427, 73.79255976528276)
+    print(nearest_place)
+    print(nearest_rate)
     #passing dataframes to score function
     result = calculate_scores(index, matrix, weights)
     print(result)
@@ -218,7 +229,7 @@ def receive_data():
         "givenOrder" : index,
         "namesOfAmmenites" : namesOfAmmenities,
         "weights" : weights,
-        
+        "airQuality" : air_quality
         })
 
 
@@ -256,9 +267,12 @@ def computePreferences():
 
 
     print(weight_array)
+    print(len(weight_array))
     print("=" * 30)
     # weights = weight_array
     return jsonify({'message': 'Weights received successfully!'})
+
+
 
 if __name__ == '__main__':
     app.run(port=5000)
