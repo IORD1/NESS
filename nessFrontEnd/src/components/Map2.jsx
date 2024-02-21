@@ -155,7 +155,7 @@ const Map2 = (props) => {
 
     for (const location of markers) {
       console.log(location.name);
-      const locationCount = { name: location.name };
+      const locationCount = { name: location.name, lat : location.lat, lng : location.lng };
 
       for (const ammenity of poiShort.list) {
         console.log(ammenity);
