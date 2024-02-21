@@ -116,7 +116,10 @@ def return_nearest_rate(lat, lon):
     min_distance = float('inf')
     nearest_place = None
     rate = None
-
+    imageUrl =None
+    areaClass = None
+    seeMoreUrl = None
+    locationArea = None
     for index, row in df.iterrows():
         place_lat = row['Latitude']
         place_lon = row['Longitude']
@@ -125,8 +128,13 @@ def return_nearest_rate(lat, lon):
             min_distance = distance
             nearest_place = row['name']
             rate = row['rates']
+            imageUrl = row['imageurl']
+            areaClass = row['class']
+            seeMoreUrl = row['redirect']
+            locationArea = row['area']
     rateinnum = int(''.join(filter(lambda i: i.isdigit(), rate)))
-    return nearest_place,rateinnum
+
+    return nearest_place,rateinnum,imageUrl,areaClass,seeMoreUrl,locationArea
 
 
 @app.route('/')
@@ -201,6 +209,10 @@ def receive_data():
     real_estate_name_area = []
     avg_jame_factor = []
     area_number_roads = []
+    locationImageUrl = []
+    locationClass = []
+    locationseeMoreUrl = []
+    locationAreaInPune = []
     # creating dataframes 
     for location in locations:
         temp = []
@@ -212,9 +224,13 @@ def receive_data():
 
         air_quality.append(location_air_quality)
 
-        nearest_place_name,lcoaltion_estate_rates = return_nearest_rate(location.get("lat"),location.get("lng"))
+        nearest_place_name,lcoaltion_estate_rates,imageUrl,areaClass,seeMoreUrl,locationArea = return_nearest_rate(location.get("lat"),location.get("lng"))
         real_estate_rate.append(lcoaltion_estate_rates)
         real_estate_name_area.append(nearest_place_name)
+        locationImageUrl.append(imageUrl)
+        locationClass.append(areaClass)
+        locationseeMoreUrl.append(seeMoreUrl)
+        locationAreaInPune.append(locationArea)
 
 
         location_jam_factor,total_number_roads = returnTraffic(location.get("lat"),location.get("lng"),1000)
@@ -254,7 +270,11 @@ def receive_data():
         "realEstateRates" : real_estate_rate,
         "realEstateNames" : real_estate_name_area,
         "avgJamFactor" : avg_jame_factor,
-        "totalAreaRoads" : area_number_roads
+        "totalAreaRoads" : area_number_roads,
+        "locationImageUrl" : locationImageUrl,
+        "locationClass" : locationClass,
+        "locationSeeMoreUrl" : locationseeMoreUrl,
+        "locationAreaInPune" : locationAreaInPune
         })
 
 
