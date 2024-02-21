@@ -1,0 +1,131 @@
+:root {
+    --primary-bg:#dbdbdb;
+    --primary-color:whitesmoke;
+    --meter-bg-colors:conic-gradient(
+      from 0deg,
+      rgba(0, 222, 114, 1),
+      rgba(255, 226, 28, 1),
+      rgba(255, 141, 6, 1),
+      rgba(251, 42, 63, 1),
+      rgba(178, 1, 238, 1),
+      rgba(109, 9, 25, 1)
+    );
+  }
+  /*Custom Font Import*/
+  @font-face {
+    font-family: "clockDigital";
+    src: url("https://assets.codepen.io/1179484/digital-7.woff2") format("woff2"),
+      url("https://assets.codepen.io/1179484/digital-7.woff") format("woff");
+  }
+  /*CSS RESET*/
+    /* * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "clockDigital";
+    } */
+  /*Background properties*/
+  #bgAirQuality {
+    height: 500px;
+    background-color: var(--primary-bg);
+    display: grid;
+    place-items: center;
+  }
+  /*U.S.AQI meter using (EPA)category colors*/
+  #bgAirQuality>#meter {
+    position: relative;
+    height: 200px;
+    aspect-ratio: 1/1;
+    border-radius: 100%;
+    background:var(--meter-bg-colors);
+    display: grid;
+    place-items: center;
+  }
+  /*Inner body of meter*/
+  #bgAirQuality>#meter:before {
+    position: absolute;
+    content: " ";
+    padding: 90px;
+    padding: 90px;
+    border-radius: 100%;
+    background: var(--primary-bg);
+  }
+  /*
+  the container for the indicator/dot to position it properly
+  and add a slight transition for the calculation formula in JS  
+  */
+  #bgAirQuality>#indicator {
+    position: absolute;
+    height: 205px;
+    aspect-ratio: 1/1;
+    transition:.2s;
+    display: flex;
+    justify-content: center;
+    rotate: 5deg;
+    /*animation:spin 5s linear alternate infinite;*/
+  }
+  /*The dot on the meter to indicate meters AQI level*/
+  #bgAirQuality>#indicator:before {
+    position: absolute;
+    content: " ";
+    padding: 5px;
+    background: var(--primary-color);
+    top: 0;
+    border-radius: 100%;
+    border: 3px solid var(--primary-bg);
+  }
+  /*AQI number*/
+  #bgAirQuality>#current-aqi {
+    position: absolute;
+    letter-spacing: 1px;
+    font-size: 70px;
+    color: var(--primary-color);
+    text-align: center;
+    line-height: 20px;
+  }
+  /*SVG and AQI text*/
+  #bgAirQuality> p {
+    font-size: 20px;
+    color: #999;
+    position: absolute;
+    top: 130px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  /*Particle matter SVG */
+  #bgAirQuality>#PM {
+    fill: #999;
+  }
+  /* for testing roation on the #indicator*/
+  @keyframes spin {
+    from {
+      rotate:5deg;
+    }
+    to {
+      rotate:355deg;
+    }
+  }
+  /*If user system = lightmode*/
+  @media (prefers-color-scheme: light) {
+    /*use these settings instead*/
+    :root {
+      --primary-bg: #dbdbdb;
+      --primary-color: rgb(61, 61, 61);
+    }
+    #bgAirQuality>#meter::before {
+      border: 1px solid black;
+    }
+    #bgAirQuality>#indicator {
+      border-radius: 100%;
+      height: 200px;
+      border: 1px solid black;
+      aspect-ratio: 1/1;
+    }
+    #bgAirQuality>#indicator::before {
+      top: -3px;
+      padding: 4px;
+      border: 3px solid var(--primary-bg);
+    }
+  }
+  

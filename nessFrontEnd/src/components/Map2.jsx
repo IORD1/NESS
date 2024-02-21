@@ -8,8 +8,13 @@ import ButtonLight from './ButtonLight';
 // import poiShort from './assests/poiTemp.json';
 import poiShort from './assests/poiShort.json';
 import locatoinDataTest from "../../../Temporary/testLocationData.json";
-import BarChart from './AmmenityBarPlot';
-import RadarChat from "./WeightsRadialPlot.jsx"
+import BarChart from './graphs/AmmenityBarPlot.jsx';
+import RadarChat from "./graphs/WeightsRadialPlot.jsx";
+import ResultHistogram from './graphs/ResultHistogram.jsx';
+// import ResultMeter from './graphs/AirQualityMeter.jsx';
+import AirQualityChart from './graphs/BasicAirQuality.jsx';
+import TrafficPlot from './graphs/TrafficPlot.jsx';
+import RealEsateRatePlot from './graphs/RealEstateRatePlot.jsx';
 
 
 const center = {
@@ -192,6 +197,11 @@ const Map2 = (props) => {
     setResults(result);
   }
 
+  function openDetailedView(index){
+    window.open(results.locationSeeMoreUrl[index], '_blank'); 
+
+  }
+
   return (
     <div id='mapContainer'>
       <GoogleMap
@@ -225,18 +235,35 @@ const Map2 = (props) => {
           <p id='rankingHeading'>Rankings</p>
           <div id='rankingHolder'>
             {results.results.map((l,index)=>{
-                return <div className='resultsChips' key={index}>
+                return <div className='resultsChips' key={index} onClick={()=>{openDetailedView(index)}}>
                   <div id='rankingIndex' >{index + 1}</div>
+                  <div id='rankingImage' >
+                    <img src={results.locationImageUrl[index]}></img>
+                  </div>
                   {l.index}
                   <div id='rankingScore'>{l.value.toFixed(1)}</div>
+                  <div id='rankingClass'>{results.locationClass[index]}</div>
                   </div>
             })}
+            
+            {/* <ResultMeter /> */}
+
+            <p id='rankingHeading'>Result Comparison</p>
+            <ResultHistogram  results={results
+              .results}/>
 
 
             <p id='rankingHeading'>Ammenities Distribution across locations</p>
             <BarChart data={results} />
             <p id='rankingHeading'>Weights for Ammenities</p>
             <RadarChat weights={results.weights} amenityNames={results.namesOfAmmenites} />
+            <p id='rankingHeading'>Air Quality for Locations</p>
+            <AirQualityChart airQualityData={results.airQuality} locatoinsNames={results.givenOrder}/>
+            <p id='rankingHeading'>Average Traffic</p>
+            <TrafficPlot jamFactor={results.avgJamFactor} locatoinsNames={results.givenOrder}/>
+            <p id='rankingHeading'>Average Real Estate Rates</p>
+            <RealEsateRatePlot Rates={results.realEstateRates} locatoinsNames={results.givenOrder} />
+
           </div>
         </div>
       :
