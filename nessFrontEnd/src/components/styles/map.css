@@ -77,22 +77,23 @@
 }
 
 .resultsChips{
-    width: 350px;
+    width: 400px;
     padding: "0px 5px 0px 5px";
     border-radius: "5px";
     font-size: 1.3em;
-    height: 66px;
+    height: 80px;
     border-radius: 10px;
     display: flex;
-    justify-content: center;
+    justify-content:flex-start;
     align-items: center;
-    gap: 5px;
+    gap: 15px;
     border: 2px solid #BCB8B8;
     box-shadow: 0px 3px 0px #756767;
     /* check this for deformation after overflow */
     box-sizing:border-box;
     position: relative;
     font-weight: 800;
+    padding-left: 60px;
 }
 
 #rankingIndex{
@@ -115,4 +116,31 @@
     line-height: 0px;
     rotate: 0deg;
     color: #3f3a3a52;
+}
+
+#rankingImage{
+    height:85%;
+    width: auto;
+    aspect-ratio: 1;
+    background-color: white;
+    border-radius: 8px;
+
+}
+
+#rankingImage>img{
+    border-radius: 8px;
+    height: 100%;
+    width: 100%;
+}
+
+#rankingClass{
+    position: absolute;
+    right: 10px;
+    top: 5px;
+    font-size: 0.8em;
+    rotate: 0deg;
+    color: #3f3a3abd;
+    border: 1px solid grey;
+    padding: 0px 5px 0px 5px;
+    border-radius: 5px;
 }

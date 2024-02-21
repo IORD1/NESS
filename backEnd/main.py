@@ -317,7 +317,19 @@ def computePreferences():
     # weights = weight_array
     return jsonify({'message': 'Weights received successfully!'})
 
+@app.route('/get_json_data_dummy', methods=['POST'])
+def get_json_data():
+    try:
+        # Read the JSON data from the file
+        # with open('responses/defaultresponse.json', 'r') as file:
+        #     json_data = file.read()
+        # return jsonify(json_data), 200
+        f = open('responses/defaultresponse.json')
+        data = json.load(f)
+        return data,200
 
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
 
 if __name__ == '__main__':
     app.run(port=5000)

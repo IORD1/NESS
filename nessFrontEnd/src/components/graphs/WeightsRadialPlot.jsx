@@ -28,7 +28,8 @@ const RadarChart = ({ weights, amenityNames }) => {
             suggestedMin: 0,
             suggestedMax: 1
           }
-        }
+        },
+        responsive: true
       };
 
       const ctx = canvas.getContext('2d');
@@ -40,7 +41,7 @@ const RadarChart = ({ weights, amenityNames }) => {
     }
   }, [weights, amenityNames]);
 
-  return  <div style={{ width: "70%"}}><canvas id="myRadarChart" width="400" height="400"></canvas>
+  return  <div style={{ width: "70%"}}><canvas id="myRadarChart"></canvas>
   </div>;
 };
 
