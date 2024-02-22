@@ -57,7 +57,7 @@
 
 
 #resultsHeading{
-    font-size: 1.7em;
+    font-size: 2.7em;
     color: #272323;
     font-weight: 600;
 }
@@ -67,7 +67,7 @@
     color: #272323;
     font-weight: 600;
     line-height: 0px;
-    margin-top: 75px;
+    width: 100%;
 }
 
 #rankingHolder{
@@ -143,4 +143,36 @@
     border: 1px solid grey;
     padding: 0px 5px 0px 5px;
     border-radius: 5px;
+}
+
+
+.plotContainers{
+    height: auto;
+    width: 90%;
+    background-color: #d1cfcf;
+    border: 3px solid darkgrey;
+    display: flex;
+    border-radius: 10px;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    background-image: linear-gradient(312.25deg, #d1cfcf 0%,rgba(255, 255, 255, 0.301) 66.19%);
+    margin-top: 20px;
+    padding-left: 20px;
+    padding-top: 20px;
+    /* box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px; */
+    /* box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px; */
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
+    transition: all 1s ease;
+}   
+
+.enlarged{
+    overflow-y:scroll;
+    height: 90vh;
+    position: absolute;
+    top: 0px;
+    left: 20px;
+    transition: all 1s ease;
+    box-shadow: rgba(0, 0, 0, 0.836) 0px 52px 140px 4px;
 }

@@ -31,6 +31,7 @@ const Map2 = (props) => {
     const [resultAvailable, setResultAvailable] = useState(false);
     const [results, setResults] = useState({});
     let [rankingIndex, setRankingIndex] = useState(1);
+    const [enlarged, setEnlarged] = useState(false);
 
 
   const { isLoaded, loadError } = useLoadScript({
@@ -60,7 +61,7 @@ const Map2 = (props) => {
   const handleClick = () => {
     if (!isButtonDisabled) {
       console.log("analyzing");
-      getData();
+      getData2();
 
     }
   };
@@ -184,7 +185,7 @@ const Map2 = (props) => {
 
 
   async function postDataToBackend(data) {
-    const response = await fetch('http://localhost:5000/receive_data', {
+    const response = await fetch('http://localhost:5000/get_json_data_dummy', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -200,6 +201,17 @@ const Map2 = (props) => {
   function openDetailedView(index){
     window.open(results.locationSeeMoreUrl[index], '_blank'); 
 
+  }
+
+  function enlargeMe(id){
+    if(!enlarged){
+      console.log("enlarged")
+      document.getElementById(id).classList.add("enlarged")
+      setEnlarged(true);
+    }else{
+      document.getElementById(id).classList.remove("enlarged")
+      setEnlarged(false);
+    }
   }
 
   return (
@@ -248,21 +260,32 @@ const Map2 = (props) => {
             
             {/* <ResultMeter /> */}
 
-            <p id='rankingHeading'>Result Comparison</p>
-            <ResultHistogram  results={results
-              .results}/>
 
+            <div className='plotContainers' onClick={()=>{enlargeMe("originalResults")}} id='originalResults'>
+                <p id='rankingHeading'>Result Comparison</p>
+                <ResultHistogram  results={results.results}/>
+            </div>
 
-            <p id='rankingHeading'>Ammenities Distribution across locations</p>
-            <BarChart data={results} />
-            <p id='rankingHeading'>Weights for Ammenities</p>
-            <RadarChat weights={results.weights} amenityNames={results.namesOfAmmenites} />
-            <p id='rankingHeading'>Air Quality for Locations</p>
-            <AirQualityChart airQualityData={results.airQuality} locatoinsNames={results.givenOrder}/>
-            <p id='rankingHeading'>Average Traffic</p>
-            <TrafficPlot jamFactor={results.avgJamFactor} locatoinsNames={results.givenOrder}/>
-            <p id='rankingHeading'>Average Real Estate Rates</p>
-            <RealEsateRatePlot Rates={results.realEstateRates} locatoinsNames={results.givenOrder} />
+            <div className='plotContainers' onClick={()=>{enlargeMe("amentitesDestribuition")}} id='amentitesDestribuition'>
+                <p id='rankingHeading'>Ammenities Distribution across locations</p>
+                <BarChart data={results} />
+            </div>
+            <div className='plotContainers' onClick={()=>{enlargeMe("weightsOfammenities")}} id='weightsOfammenities'>
+                <p id='rankingHeading'>Weights for Ammenities</p>
+                <RadarChat weights={results.weights} amenityNames={results.namesOfAmmenites} />
+            </div>
+            <div className='plotContainers' onClick={()=>{enlargeMe("airqualityGraphsId")}} id='airqualityGraphsId'>
+                <p id='rankingHeading'>Air Quality for Locations</p>
+                <AirQualityChart airQualityData={results.airQuality} locatoinsNames={results.givenOrder}/>
+            </div>
+            <div className='plotContainers' onClick={()=>{enlargeMe("averageTrafficPlotId")}} id='averageTrafficPlotId'>
+                <p id='rankingHeading'>Average Traffic</p>
+                <TrafficPlot jamFactor={results.avgJamFactor} locatoinsNames={results.givenOrder}/>
+            </div>
+            <div className='plotContainers' onClick={()=>{enlargeMe("realEstatePlotId")}} id='realEstatePlotId'>
+                <p id='rankingHeading'>Average Real Estate Rates</p>
+                <RealEsateRatePlot Rates={results.realEstateRates} locatoinsNames={results.givenOrder} />
+            </div>
 
           </div>
         </div>
