@@ -61,7 +61,7 @@ const Map2 = (props) => {
   const handleClick = () => {
     if (!isButtonDisabled) {
       console.log("analyzing");
-      getData2();
+      getData();
 
     }
   };
@@ -185,7 +185,7 @@ const Map2 = (props) => {
 
 
   async function postDataToBackend(data) {
-    const response = await fetch('http://localhost:5000/get_json_data_dummy', {
+    const response = await fetch('http://localhost:5000/receive_data', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
