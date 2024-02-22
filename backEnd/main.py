@@ -112,7 +112,7 @@ def haversine(lat1, lon1, lat2, lon2):
     return distance
 
 def return_nearest_rate(lat, lon):
-    df = pd.read_csv("../Datasets/suburb_coordinates.csv")
+    df = pd.read_csv("../Datasets/updated_file.csv")
     min_distance = float('inf')
     nearest_place = None
     rate = None
@@ -129,11 +129,16 @@ def return_nearest_rate(lat, lon):
             nearest_place = row['name']
             rate = row['rates']
             imageUrl = row['imageurl']
-            areaClass = row['class']
+            # areaClass = row['class']
+            if pd.isna(row['class']):
+                areaClass = "NotAvbl"
             seeMoreUrl = row['redirect']
             locationArea = row['area']
     rateinnum = int(''.join(filter(lambda i: i.isdigit(), rate)))
+    print(areaClass)
 
+    
+    
     return nearest_place,rateinnum,imageUrl,areaClass,seeMoreUrl,locationArea
 
 
@@ -229,6 +234,7 @@ def receive_data():
         real_estate_name_area.append(nearest_place_name)
         locationImageUrl.append(imageUrl)
         locationClass.append(areaClass)
+        print(areaClass)
         locationseeMoreUrl.append(seeMoreUrl)
         locationAreaInPune.append(locationArea)
 
