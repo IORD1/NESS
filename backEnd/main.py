@@ -319,40 +319,80 @@ def receive_data():
 
 @app.route('/receive_preferences', methods=['POST'])
 def computePreferences():
+    global weights  # Declare weights as a global variable
+
     data = request.get_json()
     listWeight = data.get('list', [])
 
-    print(data)
+    print(listWeight)
     print(len(weights))
+    dynamicWeights = [0.4,0.3,0.2,0.05,0.025,0.015,0.01]
+    indexOfWeight = 0
+    print("-"*30)
+    print("Weights : ")
+    print(amenity_weights)
 
 
     for preference in listWeight:
         if(preference == 1):
-            amenity_weights["Hospital"] += 0.2
-            amenity_weights["Health Care Service"] += 0.2
-            amenity_weights["Police Station"] += 0.2
-            amenity_weights["Fire Station"] += 0.2
+            amenity_weights["Hospital"] += dynamicWeights[indexOfWeight]
+            amenity_weights["Health Care Service"] += dynamicWeights[indexOfWeight]
+            amenity_weights["Police Station"] += dynamicWeights[indexOfWeight]
+            amenity_weights["Fire Station"] += dynamicWeights[indexOfWeight]
+            amenity_weights["Pharmacy"] += dynamicWeights[indexOfWeight]
         elif(preference == 2):
-            amenity_weights["College/University"] += 0.2  
-            amenity_weights["School"] += 0.2 
-            amenity_weights["Library"] += 0.2 
+            amenity_weights["College/University"] += dynamicWeights[indexOfWeight]  
+            amenity_weights["School"] += dynamicWeights[indexOfWeight] 
+            amenity_weights["Library"] += dynamicWeights[indexOfWeight] 
         elif(preference == 3):
-            amenity_weights["Open Parking Area"] += 0.2
-            amenity_weights["Car Wash"] += 0.2
-            amenity_weights["Parking Garage"] += 0.2
-            amenity_weights["Taxi Stand"] += 0.2
+            amenity_weights["Open Parking Area"] += dynamicWeights[indexOfWeight]
+            amenity_weights["Car Wash"] += dynamicWeights[indexOfWeight]
+            amenity_weights["Parking Garage"] += dynamicWeights[indexOfWeight]
+            amenity_weights["Taxi Stand"] += dynamicWeights[indexOfWeight]
+            amenity_weights["Traffic Jam Factor"] -= dynamicWeights[indexOfWeight]
+        elif(preference == 4):
+            amenity_weights["Movie Theater"] += dynamicWeights[indexOfWeight]
+            amenity_weights["Park & Recreation Area"] += dynamicWeights[indexOfWeight]
+            amenity_weights["Banquet Rooms"] += dynamicWeights[indexOfWeight]
+            amenity_weights["Café/Pub"] += dynamicWeights[indexOfWeight]
+            amenity_weights["Golf Course"] -= 0.2
+            amenity_weights["Swimming Pool"] -= 0.2
+        elif(preference == 5):
+            amenity_weights["Air Quality"] -= dynamicWeights[indexOfWeight]
+        elif(preference == 6):
+            amenity_weights["Shopping Center"] += dynamicWeights[indexOfWeight]
+            amenity_weights["Market"] += dynamicWeights[indexOfWeight]
+            amenity_weights["Public Amenity"] += dynamicWeights[indexOfWeight]
+            amenity_weights["Grocery Store"] += dynamicWeights[indexOfWeight]
+            amenity_weights["Fast Food"] += dynamicWeights[indexOfWeight]
+            amenity_weights["Dry Cleaner"] += dynamicWeights[indexOfWeight]
+            amenity_weights["Convenience Store"] += dynamicWeights[indexOfWeight]
+            amenity_weights["Bank"] += dynamicWeights[indexOfWeight]
+            amenity_weights["Place of Worship"] += dynamicWeights[indexOfWeight]
+        elif(preference == 7):
+            amenity_weights["Real Estate Rates"] += dynamicWeights[indexOfWeight]
+        indexOfWeight += 1
 
 
     # Normalize weights so that their sum equals 1
-    total_weight = sum(amenity_weights.values())
+    # total_weight = sum(amenity_weights.values())
+    total_weight = sum(abs(weight) for weight in amenity_weights.values())
+
     normalized_weights = {amenity: weight / total_weight for amenity, weight in amenity_weights.items()}
     weight_array = list(normalized_weights.values())
 
-
+    print("-"*30)
+    print("Before perference weights : ")
+    print(weights)
+    print("-"*30)
+    print("After preferences weights are :")
     print(weight_array)
     print(len(weight_array))
-    print("=" * 30)
-    # weights = weight_array
+    print("-"*30)
+    print(amenity_weights)
+    weights = weight_array
+    print("-"*30)
+
     return jsonify({'message': 'Weights received successfully!'})
 
 @app.route('/get_json_data_dummy', methods=['POST'])
