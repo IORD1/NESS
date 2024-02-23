@@ -7,6 +7,7 @@ from sklearn.preprocessing import normalize
 import requests
 import json
 from math import radians, sin, cos, sqrt, atan2
+from datetime import datetime
 
 
 with open('keys.json') as f:
@@ -94,8 +95,24 @@ def returnTraffic(lat,long,radius):
             # print("-" * 30)
     print("total roads : ", total_roads)
     print("average jam: ",total_jam/total_roads)
-    # return response_data['results']
-    return round(total_jam/total_roads, 4), total_roads
+    current_datetime = datetime.now()
+    new_key = 'datetime'
+    new_value = current_datetime.strftime('%Y-%m-%d %H:%M:%S')
+    with open('traffic.json', 'r') as file:
+        existing_data = json.load(file)
+
+    for roads in response_data['results']:
+        roads[new_key] = new_value
+        existing_data["data"].append(roads)
+
+
+
+    with open('traffic.json', 'w') as file:
+        json.dump(existing_data, file)
+    print("saved Traffic data")
+
+    return response_data['results']
+    # return round(total_jam/total_roads, 4), total_roads
 
 
 
@@ -147,7 +164,7 @@ def hello():
     # nearest_place, nearest_rate = return_nearest_rate(18.54149754525427, 73.79255976528276)
     # rateinnum = ''.join(filter(lambda i: i.isdigit(), nearest_rate))
     # return jsonify({"nearest_place" : nearest_place, "rate" : rateinnum})
-    # return returnTraffic(18.515752,73.842158,1000)
+    return returnTraffic(18.515752,73.842158,1000)
     # return retunAirQuality(18.55164920241211,73.8434820739746)
     return "hello"
 

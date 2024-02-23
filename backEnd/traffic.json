@@ -1,0 +1,2069 @@
+{
+    "data": [
+        {
+            "location": {
+                "description": "R. B. Kumthekar Road",
+                "length": 58.0,
+                "olr": "CCgBEAAkIzSEAA0qaQAJBQQDA3sACgQDA1UAAAj/tAAJBQQDA/oAMBsA"
+            },
+            "currentFlow": {
+                "speed": 3.0555556,
+                "speedUncapped": 3.0555556,
+                "freeFlow": 3.888889,
+                "jamFactor": 0.2,
+                "confidence": 0.71,
+                "traversability": "open"
+            },
+            "datetime": "2024-02-23 17:19:51"
+        },
+        {
+            "location": {
+                "description": "Law College Road",
+                "length": 1175.0,
+                "olr": "CCkBEAAlJDSCdA0rCAAJBQQDA8AACgUEA4k1APugAJcACQUEAwNEADAeAA=="
+            },
+            "currentFlow": {
+                "speed": 4.7222223,
+                "speedUncapped": 4.7222223,
+                "freeFlow": 6.9444447,
+                "jamFactor": 4.5,
+                "confidence": 0.92,
+                "traversability": "open",
+                "subSegments": [
+                    {
+                        "length": 111.0,
+                        "speed": 5.8333335,
+                        "speedUncapped": 5.8333335,
+                        "freeFlow": 6.9444447,
+                        "jamFactor": 2.3,
+                        "confidence": 0.92,
+                        "traversability": "open"
+                    },
+                    {
+                        "length": 213.0,
+                        "speed": 4.4444447,
+                        "speedUncapped": 4.4444447,
+                        "freeFlow": 6.9444447,
+                        "jamFactor": 4.6,
+                        "confidence": 0.92,
+                        "traversability": "open"
+                    },
+                    {
+                        "length": 109.0,
+                        "speed": 5.277778,
+                        "speedUncapped": 5.277778,
+                        "freeFlow": 6.9444447,
+                        "jamFactor": 3.2,
+                        "confidence": 0.92,
+                        "traversability": "open"
+                    },
+                    {
+                        "length": 320.0,
+                        "speed": 4.4444447,
+                        "speedUncapped": 4.4444447,
+                        "freeFlow": 6.9444447,
+                        "jamFactor": 5.0,
+                        "confidence": 0.92,
+                        "traversability": "open"
+                    },
+                    {
+                        "length": 106.0,
+                        "speed": 5.277778,
+                        "speedUncapped": 5.277778,
+                        "freeFlow": 6.9444447,
+                        "jamFactor": 3.1,
+                        "confidence": 0.92,
+                        "traversability": "open"
+                    },
+                    {
+                        "length": 315.0,
+                        "speed": 4.166667,
+                        "speedUncapped": 4.166667,
+                        "freeFlow": 6.9444447,
+                        "jamFactor": 5.4,
+                        "confidence": 0.92,
+                        "traversability": "open"
+                    }
+                ]
+            },
+            "datetime": "2024-02-23 17:19:51"
+        },
+        {
+            "location": {
+                "description": "Deccan Gymkhana Path/Tandurel Maharaj Chowk",
+                "length": 396.0,
+                "olr": "CCkBEAAlJDSD0Q0paAAJBQQCA9YACgUEAoMKAP7KAMMACQUEAgNgADAAAA=="
+            },
+            "currentFlow": {
+                "speed": 4.4444447,
+                "speedUncapped": 4.4444447,
+                "freeFlow": 7.2222223,
+                "jamFactor": 5.2,
+                "confidence": 0.94,
+                "traversability": "open",
+                "subSegments": [
+                    {
+                        "length": 121.0,
+                        "speed": 4.7222223,
+                        "speedUncapped": 4.7222223,
+                        "freeFlow": 7.2222223,
+                        "jamFactor": 1.1,
+                        "confidence": 0.94,
+                        "traversability": "open"
+                    },
+                    {
+                        "length": 120.0,
+                        "speed": 5.277778,
+                        "speedUncapped": 5.277778,
+                        "freeFlow": 7.2222223,
+                        "jamFactor": 3.3,
+                        "confidence": 0.94,
+                        "traversability": "open"
+                    },
+                    {
+                        "length": 155.0,
+                        "speed": 3.6111112,
+                        "speedUncapped": 3.6111112,
+                        "freeFlow": 7.2222223,
+                        "jamFactor": 6.7,
+                        "confidence": 0.94,
+                        "traversability": "open"
+                    }
+                ]
+            },
+            "datetime": "2024-02-23 17:19:51"
+        },
+        {
+            "location": {
+                "length": 34.0,
+                "olr": "CCgBEAAkIzSC2g0qHQAJBQQBA+wACgQDASIA/+8AGgAJBQQBA2kAMAAA"
+            },
+            "currentFlow": {
+                "speed": 5.555556,
+                "speedUncapped": 5.555556,
+                "freeFlow": 8.333334,
+                "jamFactor": 4.5,
+                "confidence": 0.9,
+                "traversability": "open"
+            },
+            "datetime": "2024-02-23 17:19:51"
+        },
+        {
+            "location": {
+                "description": "Lokmany Gangadhar Tilak Chowk/R. B. Kumthekar Road",
+                "length": 24.0,
+                "olr": "CCgBEAAkIzSC3Q0qKQAJBQQBAnUACgQDAUUAAAb/wwAJBQQBAv0AMAAt"
+            },
+            "currentFlow": {
+                "speed": 3.6111112,
+                "speedUncapped": 3.6111112,
+                "freeFlow": 6.666667,
+                "jamFactor": 6.2,
+                "confidence": 0.99,
+                "traversability": "open"
+            },
+            "datetime": "2024-02-23 17:19:51"
+        },
+        {
+            "location": {
+                "description": "Sanibar Peth Road/N. C. Kelkar Road",
+                "length": 574.0,
+                "olr": "CCkBEAAlJDSC5g0rEgAJBQQDAl8ACgUEA4RMAABH/nQACQUEAwLkADAQAA=="
+            },
+            "currentFlow": {
+                "speed": 3.6111112,
+                "speedUncapped": 3.6111112,
+                "freeFlow": 6.388889,
+                "jamFactor": 2.9,
+                "confidence": 0.7,
+                "traversability": "open"
+            },
+            "datetime": "2024-02-23 17:19:51"
+        },
+        {
+            "location": {
+                "description": "Abhinav Chowk/Law College Road/Bajirao Road",
+                "length": 1492.0,
+                "olr": "CCkBEAAlJDSCdQ0qVAAJBQQBAqEACgUEAYtUAPsj/Y0ACQUEAQIsADAAAA=="
+            },
+            "currentFlow": {
+                "speed": 6.111111,
+                "speedUncapped": 6.111111,
+                "freeFlow": 8.611112,
+                "jamFactor": 3.7,
+                "confidence": 0.99,
+                "traversability": "open",
+                "subSegments": [
+                    {
+                        "length": 156.0,
+                        "speed": 6.111111,
+                        "speedUncapped": 6.111111,
+                        "freeFlow": 8.611112,
+                        "jamFactor": 4.0,
+                        "confidence": 0.99,
+                        "traversability": "open"
+                    },
+                    {
+                        "length": 288.0,
+                        "speed": 6.9444447,
+                        "speedUncapped": 6.9444447,
+                        "freeFlow": 8.611112,
+                        "jamFactor": 2.7,
+                        "confidence": 0.99,
+                        "traversability": "open"
+                    },
+                    {
+                        "length": 175.0,
+                        "speed": 5.8333335,
+                        "speedUncapped": 5.8333335,
+                        "freeFlow": 8.611112,
+                        "jamFactor": 4.5,
+                        "confidence": 0.99,
+                        "traversability": "open"
+                    },
+                    {
+                        "length": 129.0,
+                        "speed": 6.666667,
+                        "speedUncapped": 6.666667,
+                        "freeFlow": 8.611112,
+                        "jamFactor": 3.1,
+                        "confidence": 0.99,
+                        "traversability": "open"
+                    },
+                    {
+                        "length": 515.0,
+                        "speed": 5.555556,
+                        "speedUncapped": 5.555556,
+                        "freeFlow": 8.611112,
+                        "jamFactor": 4.7,
+                        "confidence": 0.99,
+                        "traversability": "open"
+                    },
+                    {
+                        "length": 229.0,
+                        "speed": 7.777778,
+                        "speedUncapped": 7.777778,
+                        "freeFlow": 8.611112,
+                        "jamFactor": 1.3,
+                        "confidence": 0.99,
+                        "traversability": "open"
+                    }
+                ]
+            },
+            "datetime": "2024-02-23 17:19:51"
+        },
+        {
+            "location": {
+                "description": "Khanduji Baba Chowk/Karve Road",
+                "length": 10.0,
+                "olr": "CCgBEAAkIzSClw0qdQAJBQQBAvMACgQDAQoA//0ACQAJBQQBAnMAMAAA"
+            },
+            "currentFlow": {
+                "speed": 8.055555,
+                "speedUncapped": 8.055555,
+                "freeFlow": 6.666667,
+                "jamFactor": 0.0,
+                "confidence": 0.94,
+                "traversability": "open"
+            },
+            "datetime": "2024-02-23 17:19:51"
+        },
+        {
+            "location": {
+                "description": "Lokmany Gangadhar Tilak Chowk/N. C. Kelkar Road",
+                "length": 46.0,
+                "olr": "CCgBEAAkIzSC3Q0qKQAJBQQDA0MACgQDAy4AACsAAQAJBQQDA7sAMAAA"
+            },
+            "currentFlow": {
+                "speed": 3.6111112,
+                "speedUncapped": 3.6111112,
+                "freeFlow": 5.8333335,
+                "jamFactor": 3.3,
+                "confidence": 0.71,
+                "traversability": "open"
+            },
+            "datetime": "2024-02-23 17:19:51"
+        },
+        {
+            "location": {
+                "description": "Rani Laxmi Bai Chowk/Jhansi Rani Lakshmi Bai Chowk/Ghole Road",
+                "length": 106.0,
+                "olr": "CCgBEAAkIzSDzw0r5gAJBQQDAtAACgQDA2kA/6kALAAJBQQDAl8AMAAA"
+            },
+            "currentFlow": {
+                "speed": 5.0,
+                "speedUncapped": 5.0,
+                "freeFlow": 5.0,
+                "jamFactor": 0.0,
+                "confidence": 0.88,
+                "traversability": "open"
+            },
+            "datetime": "2024-02-23 17:19:51"
+        },
+        {
+            "location": {
+                "description": "Narubhau Limaye Path",
+                "length": 543.0,
+                "olr": "CCkBEAAlJDSC8A0r2gAJBQQDA4sACgUEA4QqAP9N/igACQUEAwMMADANAA=="
+            },
+            "currentFlow": {
+                "speed": 4.4444447,
+                "speedUncapped": 4.4444447,
+                "freeFlow": 6.388889,
+                "jamFactor": 2.2,
+                "confidence": 0.75,
+                "traversability": "open"
+            },
+            "datetime": "2024-02-23 17:19:51"
+        },
+        {
+            "location": {
+                "description": "Congress House Road/Dattatray Avadaji Shinde Shethji Marg",
+                "length": 280.0,
+                "olr": "CCkBEAAlJDSD6A0rbwAJBQQDAvwACgUEA4IXAP/iAPoACQUEAwKEADAAAA=="
+            },
+            "currentFlow": {
+                "speed": 7.777778,
+                "speedUncapped": 7.777778,
+                "freeFlow": 6.9444447,
+                "jamFactor": 0.0,
+                "confidence": 0.79,
+                "traversability": "open"
+            },
+            "datetime": "2024-02-23 17:19:51"
+        },
+        {
+            "location": {
+                "description": "Madhavrao Peshve Path",
+                "length": 464.0,
+                "olr": "CCkBEAAlJDSDWg0pVQAJBQQDA2gACgUEA4NlAABP/lYACQUEAwPxADAYAA=="
+            },
+            "currentFlow": {
+                "speed": 4.4444447,
+                "speedUncapped": 4.4444447,
+                "freeFlow": 5.0,
+                "jamFactor": 0.0,
+                "confidence": 0.76,
+                "traversability": "open"
+            },
+            "datetime": "2024-02-23 17:19:51"
+        },
+        {
+            "location": {
+                "description": "Umbarya Ganpati Chowk/Shagun Chowk/Laxmi Road",
+                "length": 231.0,
+                "olr": "CCkBEAAlJDSD+w0qzwAJBQQDA30ACgUEA4FyAAAL/yUACQUEAwP/ADAMAA=="
+            },
+            "currentFlow": {
+                "speed": 2.5,
+                "speedUncapped": 2.5,
+                "freeFlow": 3.888889,
+                "jamFactor": 1.6,
+                "confidence": 0.75,
+                "traversability": "open"
+            },
+            "datetime": "2024-02-23 17:19:51"
+        },
+        {
+            "location": {
+                "description": "Khanduji Baba Chowk/Fergusson College Road/F. C. Road/Sambhaji Bridge",
+                "length": 127.0,
+                "olr": "CCgBEAAkIzSCaw0qVwAJBQQBAiMACgQDAX8AAFwASgAJBQQBAqYAMAAA"
+            },
+            "currentFlow": {
+                "speed": 1.9444445,
+                "speedUncapped": 1.9444445,
+                "freeFlow": 7.2222223,
+                "jamFactor": 8.8,
+                "confidence": 0.99,
+                "traversability": "open"
+            },
+            "datetime": "2024-02-23 17:19:51"
+        },
+        {
+            "location": {
+                "description": "Gopal Krushna Gokhale Chowk/F. C. Road",
+                "length": 30.0,
+                "olr": "CCgBEAAkIzSCdA0rCAAJBQQDA8AACgQDA14A/6gABwAJBQQDA0cAMABA"
+            },
+            "currentFlow": {
+                "speed": 2.2222223,
+                "speedUncapped": 2.2222223,
+                "freeFlow": 7.5,
+                "jamFactor": 2.7,
+                "confidence": 0.72,
+                "traversability": "open"
+            },
+            "datetime": "2024-02-23 17:19:51"
+        },
+        {
+            "location": {
+                "description": "Raman Baug Chowk/N. C. Kelkar Road",
+                "length": 12.0,
+                "olr": "CCgBEAAkIzSD+w0qzwAJBQQDA30ACgQDAzgAAAX/zQAJBQQDA/4AMAAs"
+            },
+            "currentFlow": {
+                "speed": 3.0555556,
+                "speedUncapped": 3.0555556,
+                "freeFlow": 3.6111112,
+                "jamFactor": 0.0,
+                "confidence": 0.78,
+                "traversability": "open"
+            },
+            "datetime": "2024-02-23 17:19:51"
+        },
+        {
+            "location": {
+                "description": "Raman Baug Chowk/Narsinha Chintaman Kelkar Road",
+                "length": 21.0,
+                "olr": "CCgBEAAkIzSD+w0qzwAJBQQDA/0ACgQDAysAAAAAJwAJBQQDA4QAMAAW"
+            },
+            "currentFlow": {
+                "speed": 3.3333335,
+                "speedUncapped": 3.3333335,
+                "freeFlow": 4.166667,
+                "jamFactor": 0.4,
+                "confidence": 0.74,
+                "traversability": "open"
+            },
+            "datetime": "2024-02-23 17:19:51"
+        },
+        {
+            "location": {
+                "description": "Gopal Krushna Gokhale Chowk/F. C. Road",
+                "length": 1146.0,
+                "olr": "CCkBEAAlJDSAhA0rTAAJBQQDA0UACgUEA4h6AAQp/24ACQUEAwPAADAAAA=="
+            },
+            "currentFlow": {
+                "speed": 4.7222223,
+                "speedUncapped": 4.7222223,
+                "freeFlow": 6.388889,
+                "jamFactor": 3.7,
+                "confidence": 0.96,
+                "traversability": "open",
+                "subSegments": [
+                    {
+                        "length": 144.0,
+                        "speed": 5.8333335,
+                        "speedUncapped": 5.8333335,
+                        "freeFlow": 6.388889,
+                        "jamFactor": 1.4,
+                        "confidence": 0.96,
+                        "traversability": "open"
+                    },
+                    {
+                        "length": 359.0,
+                        "speed": 3.6111112,
+                        "speedUncapped": 3.6111112,
+                        "freeFlow": 6.388889,
+                        "jamFactor": 5.6,
+                        "confidence": 0.96,
+                        "traversability": "open"
+                    },
+                    {
+                        "length": 482.0,
+                        "speed": 5.555556,
+                        "speedUncapped": 5.555556,
+                        "freeFlow": 6.388889,
+                        "jamFactor": 1.8,
+                        "confidence": 0.96,
+                        "traversability": "open"
+                    },
+                    {
+                        "length": 161.0,
+                        "speed": 4.166667,
+                        "speedUncapped": 4.166667,
+                        "freeFlow": 6.388889,
+                        "jamFactor": 4.9,
+                        "confidence": 0.96,
+                        "traversability": "open"
+                    }
+                ]
+            },
+            "datetime": "2024-02-23 17:19:51"
+        },
+        {
+            "location": {
+                "description": "Chandrashekhar Govind Agashe Road",
+                "length": 444.0,
+                "olr": "CCkBEAAlJDSDBw0qWQAJBQQDAxoACgUEA4M7AAFHAOEACQUEAwO3ADAAAA=="
+            },
+            "currentFlow": {
+                "speed": 4.166667,
+                "speedUncapped": 4.166667,
+                "freeFlow": 6.388889,
+                "jamFactor": 4.7,
+                "confidence": 0.97,
+                "traversability": "open",
+                "subSegments": [
+                    {
+                        "length": 207.0,
+                        "speed": 5.0,
+                        "speedUncapped": 5.0,
+                        "freeFlow": 6.388889,
+                        "jamFactor": 2.7,
+                        "confidence": 0.97,
+                        "traversability": "open"
+                    },
+                    {
+                        "length": 237.0,
+                        "speed": 3.6111112,
+                        "speedUncapped": 3.6111112,
+                        "freeFlow": 6.388889,
+                        "jamFactor": 5.9,
+                        "confidence": 0.97,
+                        "traversability": "open"
+                    }
+                ]
+            },
+            "datetime": "2024-02-23 17:19:51"
+        },
+        {
+            "location": {
+                "description": "Law College Road",
+                "length": 1332.0,
+                "olr": "CCkBEAAlJDSCaw0qVwAJBQQDA84ACgUEA4o9APsbAJwACQUEAwNHADAKAA=="
+            },
+            "currentFlow": {
+                "speed": 5.0,
+                "speedUncapped": 5.0,
+                "freeFlow": 6.388889,
+                "jamFactor": 2.7,
+                "confidence": 0.9,
+                "traversability": "open",
+                "subSegments": [
+                    {
+                        "length": 115.0,
+                        "speed": 3.6111112,
+                        "speedUncapped": 3.6111112,
+                        "freeFlow": 6.388889,
+                        "jamFactor": 5.7,
+                        "confidence": 0.9,
+                        "traversability": "open"
+                    },
+                    {
+                        "length": 265.0,
+                        "speed": 5.555556,
+                        "speedUncapped": 5.555556,
+                        "freeFlow": 6.388889,
+                        "jamFactor": 1.5,
+                        "confidence": 0.9,
+                        "traversability": "open"
+                    },
+                    {
+                        "length": 142.0,
+                        "speed": 2.777778,
+                        "speedUncapped": 2.777778,
+                        "freeFlow": 6.388889,
+                        "jamFactor": 7.5,
+                        "confidence": 0.9,
+                        "traversability": "open"
+                    },
+                    {
+                        "length": 811.0,
+                        "speed": 6.111111,
+                        "speedUncapped": 6.111111,
+                        "freeFlow": 6.388889,
+                        "jamFactor": 0.7,
+                        "confidence": 0.9,
+                        "traversability": "open"
+                    }
+                ]
+            },
+            "datetime": "2024-02-23 17:19:51"
+        },
+        {
+            "location": {
+                "description": "Gopal Gyan Path",
+                "length": 24.0,
+                "olr": "CCgBEAAkIzSDWg0pVQAJBQQDA+YACgQDAyoA/+sAHwAJBQQDA20AMAAS"
+            },
+            "currentFlow": {
+                "speed": 5.0,
+                "speedUncapped": 5.0,
+                "freeFlow": 4.7222223,
+                "jamFactor": 0.0,
+                "confidence": 0.81,
+                "traversability": "open"
+            },
+            "datetime": "2024-02-23 17:19:51"
+        },
+        {
+            "location": {
+                "description": "A. D. S. K. Vidya Chowk",
+                "length": 548.0,
+                "olr": "CCkBEAAlJDSCng0rAQAJBQQDAxIACgUEA4QiAACwAdEACQUEAwOLADAAAA=="
+            },
+            "currentFlow": {
+                "speed": 4.7222223,
+                "speedUncapped": 4.7222223,
+                "freeFlow": 7.2222223,
+                "jamFactor": 3.2,
+                "confidence": 0.99,
+                "traversability": "open"
+            },
+            "datetime": "2024-02-23 17:19:51"
+        },
+        {
+            "location": {
+                "description": "Shoorvir Mardmawda Shelarmama Chowk/Akhil Karve Road",
+                "length": 1340.0,
+                "olr": "CCkBEAAlJDSALg0qngAJBQQDA0gACgUEA4o7AATj/2IACQUEAwPLADAAAA=="
+            },
+            "currentFlow": {
+                "speed": 5.277778,
+                "speedUncapped": 5.277778,
+                "freeFlow": 6.666667,
+                "jamFactor": 1.0,
+                "confidence": 0.81,
+                "traversability": "open"
+            },
+            "datetime": "2024-02-23 17:19:51"
+        },
+        {
+            "location": {
+                "description": "Jangali Maharaj Road/Sadguru Shree Jangali Maharaj Path/J. M. Road",
+                "length": 150.0,
+                "olr": "CCkBEAAlJDSCiQ0rAwAJBQQBA0sACgUEAYEWAACJ/9oACQUEAQPMADAAAA=="
+            },
+            "currentFlow": {
+                "speed": 5.0,
+                "speedUncapped": 5.0,
+                "freeFlow": 5.555556,
+                "jamFactor": 0.0,
+                "confidence": 0.99,
+                "traversability": "open"
+            },
+            "datetime": "2024-02-23 17:19:51"
+        },
+        {
+            "location": {
+                "description": "Lokmany Gangadhar Tilak Chowk",
+                "length": 23.0,
+                "olr": "CCgBEAAkIzSC2w0qJgAJBQQBAtAACgQDARcA/+wACAAJBQQBAlAAMAAA"
+            },
+            "currentFlow": {
+                "speed": 4.7222223,
+                "speedUncapped": 4.7222223,
+                "freeFlow": 9.166667,
+                "jamFactor": 5.3,
+                "confidence": 0.73,
+                "traversability": "open"
+            },
+            "datetime": "2024-02-23 17:19:51"
+        },
+        {
+            "location": {
+                "description": "J M Road/Jangali Maharaj Road",
+                "length": 16.0,
+                "olr": "CCgBEAAkIzSC5g0rEgAJBQQDAl8ACgQDAy8AACP/5gAJBQQDAtkAMAAf"
+            },
+            "currentFlow": {
+                "speed": 2.777778,
+                "speedUncapped": 2.777778,
+                "freeFlow": 2.777778,
+                "jamFactor": 0.0,
+                "confidence": 0.7,
+                "traversability": "open"
+            },
+            "datetime": "2024-02-23 17:19:51"
+        },
+        {
+            "location": {
+                "description": "Lokmany Gangadhar Tilak Chowk/Sambhaji Bridge",
+                "length": 686.0,
+                "olr": "CCkBEAAlJDSEAA0qaQAJBQQDA7sACgUEA4UtAP2Q/3cACQUEAwM5ADAAAA=="
+            },
+            "currentFlow": {
+                "speed": 4.7222223,
+                "speedUncapped": 4.7222223,
+                "freeFlow": 6.388889,
+                "jamFactor": 3.6,
+                "confidence": 0.92,
+                "traversability": "open",
+                "subSegments": [
+                    {
+                        "length": 574.0,
+                        "speed": 5.555556,
+                        "speedUncapped": 5.555556,
+                        "freeFlow": 6.388889,
+                        "jamFactor": 1.9,
+                        "confidence": 0.92,
+                        "traversability": "open"
+                    },
+                    {
+                        "length": 112.0,
+                        "speed": 2.5,
+                        "speedUncapped": 2.5,
+                        "freeFlow": 6.388889,
+                        "jamFactor": 8.0,
+                        "confidence": 0.92,
+                        "traversability": "open"
+                    }
+                ]
+            },
+            "datetime": "2024-02-23 17:19:51"
+        },
+        {
+            "location": {
+                "description": "Jangali Maharaj Road",
+                "length": 294.0,
+                "olr": "CCkBEAAlJDSC8A0r2gAJBQQDA0kACgUEA4IlAAD+/5kACQUEAwPXADAAAA=="
+            },
+            "currentFlow": {
+                "speed": 3.6111112,
+                "speedUncapped": 3.6111112,
+                "freeFlow": 4.7222223,
+                "jamFactor": 0.6,
+                "confidence": 0.92,
+                "traversability": "open"
+            },
+            "datetime": "2024-02-23 17:19:51"
+        },
+        {
+            "location": {
+                "description": "Rani Laxmi Bai Chowk/Jhansi Rani Lakshmi Bai Chowk/J. M. Road",
+                "length": 718.0,
+                "olr": "CCkBEAAlJDSCeA0sTwAJBQQDA0QACgUEA4VOAAKI/0oACQUEAwPRADAAAA=="
+            },
+            "currentFlow": {
+                "speed": 4.4444447,
+                "speedUncapped": 4.4444447,
+                "freeFlow": 5.8333335,
+                "jamFactor": 3.5,
+                "confidence": 0.92,
+                "traversability": "open",
+                "subSegments": [
+                    {
+                        "length": 130.0,
+                        "speed": 3.888889,
+                        "speedUncapped": 3.888889,
+                        "freeFlow": 5.8333335,
+                        "jamFactor": 4.6,
+                        "confidence": 0.92,
+                        "traversability": "open"
+                    },
+                    {
+                        "length": 366.0,
+                        "speed": 5.8333335,
+                        "speedUncapped": 5.8333335,
+                        "freeFlow": 5.8333335,
+                        "jamFactor": 0.1,
+                        "confidence": 0.92,
+                        "traversability": "open"
+                    },
+                    {
+                        "length": 223.0,
+                        "speed": 3.0555556,
+                        "speedUncapped": 3.0555556,
+                        "freeFlow": 5.8333335,
+                        "jamFactor": 6.2,
+                        "confidence": 0.92,
+                        "traversability": "open"
+                    }
+                ]
+            },
+            "datetime": "2024-02-23 17:19:51"
+        },
+        {
+            "location": {
+                "description": "Sada Shiv Path",
+                "length": 627.0,
+                "olr": "CCkBEAAlJDSC8Q0qKQAJBQQDAz0ACgUEA4RyAAJNADwACQUEAwO1ADAAAA=="
+            },
+            "currentFlow": {
+                "speed": 4.166667,
+                "speedUncapped": 4.166667,
+                "freeFlow": 6.111111,
+                "jamFactor": 2.5,
+                "confidence": 0.79,
+                "traversability": "open"
+            },
+            "datetime": "2024-02-23 17:19:51"
+        },
+        {
+            "location": {
+                "description": "Sanibar Peth Road/N. C. Kelkar Road",
+                "length": 25.0,
+                "olr": "CCgBEAAkIzSDBw0qWQAJBQQDAtYACgQDA0gA/8wAKAAJBQQDAl4AMAAv"
+            },
+            "currentFlow": {
+                "speed": 4.166667,
+                "speedUncapped": 4.166667,
+                "freeFlow": 6.388889,
+                "jamFactor": 2.9,
+                "confidence": 0.7,
+                "traversability": "open"
+            },
+            "datetime": "2024-02-23 17:19:51"
+        },
+        {
+            "location": {
+                "description": "Sada Shiv Road",
+                "length": 319.0,
+                "olr": "CCkBEAAlJDSEBA0qRQAJBQQDAzcACgUEA4I/AAEsABYACQUEAwO+ADAAAA=="
+            },
+            "currentFlow": {
+                "speed": 3.0555556,
+                "speedUncapped": 3.0555556,
+                "freeFlow": 4.4444447,
+                "jamFactor": 1.4,
+                "confidence": 0.77,
+                "traversability": "open"
+            },
+            "datetime": "2024-02-23 17:19:51"
+        },
+        {
+            "location": {
+                "description": "Deccan Gymkhana Path/Tandurel Maharaj Chowk",
+                "length": 268.0,
+                "olr": "CCkBEAAlJDSC4A0qDAAJBQQCA3EACgUEAoIeAADQ/2IACQUEAgPcADAUAA=="
+            },
+            "currentFlow": {
+                "speed": 3.3333335,
+                "speedUncapped": 3.3333335,
+                "freeFlow": 7.777778,
+                "jamFactor": 7.9,
+                "confidence": 0.99,
+                "traversability": "open",
+                "subSegments": [
+                    {
+                        "length": 103.0,
+                        "speed": 4.4444447,
+                        "speedUncapped": 4.4444447,
+                        "freeFlow": 7.777778,
+                        "jamFactor": 5.7,
+                        "confidence": 0.99,
+                        "traversability": "open"
+                    },
+                    {
+                        "length": 165.0,
+                        "speed": 2.777778,
+                        "speedUncapped": 2.777778,
+                        "freeFlow": 7.777778,
+                        "jamFactor": 8.3,
+                        "confidence": 0.99,
+                        "traversability": "open"
+                    }
+                ]
+            },
+            "datetime": "2024-02-23 17:19:51"
+        },
+        {
+            "location": {
+                "description": "Rani Laxmi Bai Chowk/Jhansi Rani Lakshmi Bai Chowk/Ghole Road",
+                "length": 38.0,
+                "olr": "CCgBEAAkIzSDpg0r+gAJBQQDAlAACgQDAyYAACL/8wAJBQQDAtAAMAAA"
+            },
+            "currentFlow": {
+                "speed": 4.4444447,
+                "speedUncapped": 4.4444447,
+                "freeFlow": 6.9444447,
+                "jamFactor": 5.4,
+                "confidence": 0.92,
+                "traversability": "open"
+            },
+            "datetime": "2024-02-23 17:19:51"
+        },
+        {
+            "location": {
+                "description": "N. C. Kelkar Road",
+                "length": 471.0,
+                "olr": "CCkBEAAlJDSD6Q0raQAJBQQDA64ACgUEA4NWAP9i/psACQUEAwP1ADAAAA=="
+            },
+            "currentFlow": {
+                "speed": 3.3333335,
+                "speedUncapped": 3.3333335,
+                "freeFlow": 4.166667,
+                "jamFactor": 0.3,
+                "confidence": 0.8,
+                "traversability": "open"
+            },
+            "datetime": "2024-02-23 17:19:51"
+        },
+        {
+            "location": {
+                "description": "Swami Vivekanand Chowk",
+                "length": 369.0,
+                "olr": "CCkBEAAlJDSC8A0r2gAJBQQDA8oACgUEA4JxAP6rADkACQUEAwNCADAAAA=="
+            },
+            "currentFlow": {
+                "speed": 2.5,
+                "speedUncapped": 2.5,
+                "freeFlow": 4.166667,
+                "jamFactor": 2.4,
+                "confidence": 0.8,
+                "traversability": "open"
+            },
+            "datetime": "2024-02-23 17:19:51"
+        },
+        {
+            "location": {
+                "description": "Fergusson College Road/F. C. Road",
+                "length": 302.0,
+                "olr": "CCkBEAAlJDSCwA0q6AAJBQQBA5wACgUEAYIsAP+0/xEACQUEAQLwADAAAA=="
+            },
+            "currentFlow": {
+                "speed": 3.0555556,
+                "speedUncapped": 3.0555556,
+                "freeFlow": 7.777778,
+                "jamFactor": 8.2,
+                "confidence": 0.99,
+                "traversability": "open"
+            },
+            "datetime": "2024-02-23 17:19:51"
+        },
+        {
+            "location": {
+                "description": "Raman Baug Chowk",
+                "length": 391.0,
+                "olr": "CCkBEAAlJDSErg0q1AAJBQQDA7AACgUEA4MbAP6A//UACQUEAwMyADAVAA=="
+            },
+            "currentFlow": {
+                "speed": 3.3333335,
+                "speedUncapped": 3.3333335,
+                "freeFlow": 4.166667,
+                "jamFactor": 0.0,
+                "confidence": 0.81,
+                "traversability": "open"
+            },
+            "datetime": "2024-02-23 17:19:51"
+        },
+        {
+            "location": {
+                "description": "NH-4/Appa Balwant Chowk/Bajirao Road",
+                "length": 412.0,
+                "olr": "CCkBEAAlJDSD+w0qzwAJBQQDAzIACgUEA4MbAAGAAAsACQUEAwOwADAAAA=="
+            },
+            "currentFlow": {
+                "speed": 3.888889,
+                "speedUncapped": 3.888889,
+                "freeFlow": 4.7222223,
+                "jamFactor": 0.1,
+                "confidence": 0.71,
+                "traversability": "open"
+            },
+            "datetime": "2024-02-23 17:19:51"
+        },
+        {
+            "location": {
+                "description": "Shahir Annabhau Sathe Chowk/Tilak Road",
+                "length": 835.0,
+                "olr": "CCkBEAAlJDSDCw0owgAJBQQBAvIACgUEAYZDAP+VAsYACQUEAQKUADAAAA=="
+            },
+            "currentFlow": {
+                "speed": 4.4444447,
+                "speedUncapped": 4.4444447,
+                "freeFlow": 7.777778,
+                "jamFactor": 5.7,
+                "confidence": 0.99,
+                "traversability": "open",
+                "subSegments": [
+                    {
+                        "length": 511.0,
+                        "speed": 4.4444447,
+                        "speedUncapped": 4.4444447,
+                        "freeFlow": 7.777778,
+                        "jamFactor": 5.6,
+                        "confidence": 0.99,
+                        "traversability": "open"
+                    },
+                    {
+                        "length": 138.0,
+                        "speed": 5.8333335,
+                        "speedUncapped": 5.8333335,
+                        "freeFlow": 7.777778,
+                        "jamFactor": 3.2,
+                        "confidence": 0.99,
+                        "traversability": "open"
+                    },
+                    {
+                        "length": 185.0,
+                        "speed": 3.6111112,
+                        "speedUncapped": 3.6111112,
+                        "freeFlow": 7.777778,
+                        "jamFactor": 7.2,
+                        "confidence": 0.99,
+                        "traversability": "open"
+                    }
+                ]
+            },
+            "datetime": "2024-02-23 17:19:51"
+        },
+        {
+            "location": {
+                "description": "Chimaji Appa Peshve Chowk/Omkareshwar Mandir Road",
+                "length": 27.0,
+                "olr": "CCgBEAAkIzSD7w0rcAAJBQQDBHMACgQDAxsA//j/7wAJBQQDBCYAMAAA"
+            },
+            "currentFlow": {
+                "speed": 4.7222223,
+                "speedUncapped": 4.7222223,
+                "freeFlow": 5.277778,
+                "jamFactor": 0.0,
+                "confidence": 0.88,
+                "traversability": "open"
+            },
+            "datetime": "2024-02-23 17:19:51"
+        },
+        {
+            "location": {
+                "description": "Late Narubhau Limiya Road",
+                "length": 123.0,
+                "olr": "CCgBEAAkIzSC4w0rDwAJBQQBA50ACgQDAXoA/7X/rAAJBQQBAx0AMAAA"
+            },
+            "currentFlow": {
+                "speed": 2.777778,
+                "speedUncapped": 2.777778,
+                "freeFlow": 10.833334,
+                "jamFactor": 8.8,
+                "confidence": 0.99,
+                "traversability": "open"
+            },
+            "datetime": "2024-02-23 17:19:51"
+        },
+        {
+            "location": {
+                "description": "A. D. S. K. Vidya Chowk",
+                "length": 13.0,
+                "olr": "CCgBEAAkIzSC8A0r2gAJBQQDA4sACgQDAxoA//n/6gAJBQQDAw0AMAAN"
+            },
+            "currentFlow": {
+                "speed": 2.777778,
+                "speedUncapped": 2.777778,
+                "freeFlow": 5.555556,
+                "jamFactor": 2.7,
+                "confidence": 0.72,
+                "traversability": "open"
+            },
+            "datetime": "2024-02-23 17:19:51"
+        },
+        {
+            "location": {
+                "description": "Shoorvir Mardmawda Shelarmama Chowk/Prabhat Road",
+                "length": 1499.0,
+                "olr": "CCkBEAAlJDSAIw0pMAAJBQQBAi0ACgUEAYtbAATmAnkACQUEAQKgADAAAA=="
+            },
+            "currentFlow": {
+                "speed": 6.666667,
+                "speedUncapped": 6.666667,
+                "freeFlow": 8.611112,
+                "jamFactor": 3.0,
+                "confidence": 0.99,
+                "traversability": "open",
+                "subSegments": [
+                    {
+                        "length": 579.0,
+                        "speed": 7.777778,
+                        "speedUncapped": 7.777778,
+                        "freeFlow": 8.611112,
+                        "jamFactor": 1.1,
+                        "confidence": 0.99,
+                        "traversability": "open"
+                    },
+                    {
+                        "length": 195.0,
+                        "speed": 5.0,
+                        "speedUncapped": 5.0,
+                        "freeFlow": 8.611112,
+                        "jamFactor": 5.6,
+                        "confidence": 0.99,
+                        "traversability": "open"
+                    },
+                    {
+                        "length": 156.0,
+                        "speed": 8.333334,
+                        "speedUncapped": 8.333334,
+                        "freeFlow": 8.611112,
+                        "jamFactor": 0.3,
+                        "confidence": 0.99,
+                        "traversability": "open"
+                    },
+                    {
+                        "length": 123.0,
+                        "speed": 5.8333335,
+                        "speedUncapped": 5.8333335,
+                        "freeFlow": 8.611112,
+                        "jamFactor": 4.3,
+                        "confidence": 0.99,
+                        "traversability": "open"
+                    },
+                    {
+                        "length": 180.0,
+                        "speed": 6.9444447,
+                        "speedUncapped": 6.9444447,
+                        "freeFlow": 8.611112,
+                        "jamFactor": 2.5,
+                        "confidence": 0.99,
+                        "traversability": "open"
+                    },
+                    {
+                        "length": 265.0,
+                        "speed": 5.555556,
+                        "speedUncapped": 5.555556,
+                        "freeFlow": 8.611112,
+                        "jamFactor": 4.6,
+                        "confidence": 0.99,
+                        "traversability": "open"
+                    }
+                ]
+            },
+            "datetime": "2024-02-23 17:19:51"
+        },
+        {
+            "location": {
+                "description": "Gopal Krushna Gokhale Chowk/Bhandarkar Road",
+                "length": 350.0,
+                "olr": "CCkBEAAlJDSClg0qegAJBQQBAvIACgUEAYJbAP+3ATEACQUEAQN8ADAAAA=="
+            },
+            "currentFlow": {
+                "speed": 5.8333335,
+                "speedUncapped": 5.8333335,
+                "freeFlow": 8.611112,
+                "jamFactor": 3.2,
+                "confidence": 0.99,
+                "traversability": "open"
+            },
+            "datetime": "2024-02-23 17:19:51"
+        },
+        {
+            "location": {
+                "description": "Raman Baug Chowk/Narsinha Chintaman Kelkar Road",
+                "length": 374.0,
+                "olr": "CCkBEAAlJDSD6w0raAAJBQQDA4EACgUEA4JzAAAi/rgACQUEAwP9ADAAAA=="
+            },
+            "currentFlow": {
+                "speed": 3.6111112,
+                "speedUncapped": 3.6111112,
+                "freeFlow": 5.8333335,
+                "jamFactor": 2.9,
+                "confidence": 0.78,
+                "traversability": "open"
+            },
+            "datetime": "2024-02-23 17:19:51"
+        },
+        {
+            "location": {
+                "description": "Laxmi Road/Umbarya Ganpati Chowk",
+                "length": 85.0,
+                "olr": "CCgBEAAkIzSEBA0qRQAJBQQDA/oACgQDA1UA//gATAAJBQQDA3sAMAAA"
+            },
+            "currentFlow": {
+                "speed": 2.777778,
+                "speedUncapped": 2.777778,
+                "freeFlow": 4.4444447,
+                "jamFactor": 2.2,
+                "confidence": 0.71,
+                "traversability": "open"
+            },
+            "datetime": "2024-02-23 17:19:51"
+        },
+        {
+            "location": {
+                "description": "Khanduji Baba Chowk/Fergusson College Road/F. C. Road/Sambhaji Bridge",
+                "length": 38.0,
+                "olr": "CCgBEAAkIzSClw0qdQAJBQQBAp8ACgQDASYA/+f/5wAJBQQBAh8AMAAA"
+            },
+            "currentFlow": {
+                "speed": 4.166667,
+                "speedUncapped": 4.166667,
+                "freeFlow": 6.9444447,
+                "jamFactor": 5.4,
+                "confidence": 0.99,
+                "traversability": "open"
+            },
+            "datetime": "2024-02-23 17:19:51"
+        },
+        {
+            "location": {
+                "description": "Deccan Gymkhana Path",
+                "length": 458.0,
+                "olr": "CCkBEAAlJDSDfw0ojgAJBQQDA/AACgUEA4NlAP+xAaoACQUEAwNoADAdAA=="
+            },
+            "currentFlow": {
+                "speed": 5.555556,
+                "speedUncapped": 5.555556,
+                "freeFlow": 5.8333335,
+                "jamFactor": 0.0,
+                "confidence": 0.9,
+                "traversability": "open"
+            },
+            "datetime": "2024-02-23 17:19:51"
+        },
+        {
+            "location": {
+                "description": "Rani Laxmi Bai Chowk/Jhansi Rani Lakshmi Bai Chowk/J. M. Road",
+                "length": 25.0,
+                "olr": "CCgBEAAkIzSDpg0r+gAJBQQDA9EACgQDA1EA/7sAHwAJBQQDA1IAMAA4"
+            },
+            "currentFlow": {
+                "speed": 4.7222223,
+                "speedUncapped": 4.7222223,
+                "freeFlow": 4.166667,
+                "jamFactor": 0.0,
+                "confidence": 0.85,
+                "traversability": "open"
+            },
+            "datetime": "2024-02-23 17:19:51"
+        },
+        {
+            "location": {
+                "description": "Samajsevak Yadunath Thatte Chowk/Anant Kanhere Road",
+                "length": 834.0,
+                "olr": "CCkBEAAlJDSC4A0qDAAJBQQBApwACgUEAYZBAABj/T0ACQUEAQL0ADAAAA=="
+            },
+            "currentFlow": {
+                "speed": 4.4444447,
+                "speedUncapped": 4.4444447,
+                "freeFlow": 8.888889,
+                "jamFactor": 6.8,
+                "confidence": 0.99,
+                "traversability": "open",
+                "subSegments": [
+                    {
+                        "length": 210.0,
+                        "speed": 4.7222223,
+                        "speedUncapped": 4.7222223,
+                        "freeFlow": 8.888889,
+                        "jamFactor": 6.6,
+                        "confidence": 0.99,
+                        "traversability": "open"
+                    },
+                    {
+                        "length": 114.0,
+                        "speed": 2.777778,
+                        "speedUncapped": 2.777778,
+                        "freeFlow": 8.888889,
+                        "jamFactor": 8.5,
+                        "confidence": 0.99,
+                        "traversability": "open"
+                    },
+                    {
+                        "length": 510.0,
+                        "speed": 5.0,
+                        "speedUncapped": 5.0,
+                        "freeFlow": 8.888889,
+                        "jamFactor": 5.9,
+                        "confidence": 0.99,
+                        "traversability": "open"
+                    }
+                ]
+            },
+            "datetime": "2024-02-23 17:19:51"
+        },
+        {
+            "location": {
+                "description": "Chimaji Appa Peshve Chowk/Captain Shankarrao Chafekar Road",
+                "length": 22.0,
+                "olr": "CCgBEAAkIzSD8A0rawAJBQQDBKYACgQDAxYA//D/+gAJBQQDBFEAMAAA"
+            },
+            "currentFlow": {
+                "speed": 4.166667,
+                "speedUncapped": 4.166667,
+                "freeFlow": 5.0,
+                "jamFactor": 0.2,
+                "confidence": 0.89,
+                "traversability": "open"
+            },
+            "datetime": "2024-02-23 17:19:51"
+        },
+        {
+            "location": {
+                "description": "Khanduji Baba Chowk/Karve Road",
+                "length": 227.0,
+                "olr": "CCkBEAAlJDSC0g0qKQAJBQQBAt8ACgUEAYFhAP+CAKMACQUEAQJuADAAAA=="
+            },
+            "currentFlow": {
+                "speed": 4.166667,
+                "speedUncapped": 4.166667,
+                "freeFlow": 7.5,
+                "jamFactor": 4.4,
+                "confidence": 0.96,
+                "traversability": "open"
+            },
+            "datetime": "2024-02-23 17:19:51"
+        },
+        {
+            "location": {
+                "description": "Sada Shiv Road/Dharmveer L. B. Bhopatkar Path",
+                "length": 11.0,
+                "olr": "CCgBEAAkIzSEEg0qEwAJBQQEA0AACgQDBDwAADgABQAJBQQEA7gAMAAx"
+            },
+            "currentFlow": {
+                "speed": 3.888889,
+                "speedUncapped": 3.888889,
+                "freeFlow": 3.888889,
+                "jamFactor": 0.0,
+                "confidence": 0.7,
+                "traversability": "open"
+            },
+            "datetime": "2024-02-23 17:19:51"
+        },
+        {
+            "location": {
+                "description": "Laxmi Road/Umbarya Ganpati Chowk",
+                "length": 27.0,
+                "olr": "CCgBEAAkIzSEAA0qaQAJBQQDA3sACgQDA1UAAAj/tAAJBQQDA/oAMAA6"
+            },
+            "currentFlow": {
+                "speed": 2.777778,
+                "speedUncapped": 2.777778,
+                "freeFlow": 3.6111112,
+                "jamFactor": 0.0,
+                "confidence": 0.71,
+                "traversability": "open"
+            },
+            "datetime": "2024-02-23 17:19:51"
+        },
+        {
+            "location": {
+                "description": "Shoorvir Mardmawda Shelarmama Chowk/Akhil Karve Road",
+                "length": 34.0,
+                "olr": "CCgBEAAkIzSCdQ0qVAAJBQQDA8sACgQDA04A/7gAEwAJBQQDA0kAMAAs"
+            },
+            "currentFlow": {
+                "speed": 2.2222223,
+                "speedUncapped": 2.2222223,
+                "freeFlow": 3.888889,
+                "jamFactor": 3.2,
+                "confidence": 0.87,
+                "traversability": "open"
+            },
+            "datetime": "2024-02-23 17:19:51"
+        },
+        {
+            "location": {
+                "description": "Lokmany Gangadhar Tilak Chowk",
+                "length": 212.0,
+                "olr": "CCkBEAAlJDSCnQ0qeQAJBQQBAm0ACgUEAYFyAACJ/1UACQUEAQLZADAeAA=="
+            },
+            "currentFlow": {
+                "speed": 3.6111112,
+                "speedUncapped": 3.6111112,
+                "freeFlow": 8.055555,
+                "jamFactor": 7.7,
+                "confidence": 0.99,
+                "traversability": "open"
+            },
+            "datetime": "2024-02-23 17:19:51"
+        },
+        {
+            "location": {
+                "description": "Chandrashekhar Govind Agashe Road",
+                "length": 213.0,
+                "olr": "CCkBEAAlJDSD+w0qzwAJBQQDA6oACgUEA4FVAP88/+UACQUEAwM8ADAAAA=="
+            },
+            "currentFlow": {
+                "speed": 4.166667,
+                "speedUncapped": 4.166667,
+                "freeFlow": 5.0,
+                "jamFactor": 0.0,
+                "confidence": 0.78,
+                "traversability": "open"
+            },
+            "datetime": "2024-02-23 17:19:51"
+        },
+        {
+            "location": {
+                "description": "Sanibar Peth Road",
+                "length": 186.0,
+                "olr": "CCkBEAAlJDSDmg0r5gAJBQQBA50ACgUEAYE5AP+S/38ACQUEAQMdADAAAA=="
+            },
+            "currentFlow": {
+                "speed": 5.555556,
+                "speedUncapped": 5.555556,
+                "freeFlow": 9.444445,
+                "jamFactor": 4.4,
+                "confidence": 0.99,
+                "traversability": "open"
+            },
+            "datetime": "2024-02-23 17:19:51"
+        },
+        {
+            "location": {
+                "description": "Lokmany Gangadhar Tilak Chowk/R. B. Kumthekar Road",
+                "length": 60.0,
+                "olr": "CCgBEAAkIzSC2Q0qDQAJBQQBAgYACgQDATwAAAUANQAJBQQBAosAMAAA"
+            },
+            "currentFlow": {
+                "speed": 3.888889,
+                "speedUncapped": 3.888889,
+                "freeFlow": 5.555556,
+                "jamFactor": 2.1,
+                "confidence": 0.99,
+                "traversability": "open"
+            },
+            "datetime": "2024-02-23 17:19:51"
+        },
+        {
+            "location": {
+                "description": "J M Road/Jangali Maharaj Road",
+                "length": 573.0,
+                "olr": "CCkBEAAlJDSDBw0qWQAJBQQDAtYACgUEA4RWAP+0AYYACQUEAwJZADAZAA=="
+            },
+            "currentFlow": {
+                "speed": 3.6111112,
+                "speedUncapped": 3.6111112,
+                "freeFlow": 4.4444447,
+                "jamFactor": 2.5,
+                "confidence": 0.7,
+                "traversability": "open"
+            },
+            "datetime": "2024-02-23 17:19:51"
+        },
+        {
+            "location": {
+                "description": "Shahir Annabhau Sathe Chowk",
+                "length": 288.0,
+                "olr": "CCkBEAAlJDSDQQ0pwwAJBQQCA9wACgUEAoIeAP8wAJ4ACQUEAgNxADAAAA=="
+            },
+            "currentFlow": {
+                "speed": 3.888889,
+                "speedUncapped": 3.888889,
+                "freeFlow": 7.5,
+                "jamFactor": 5.2,
+                "confidence": 0.91,
+                "traversability": "open"
+            },
+            "datetime": "2024-02-23 17:19:51"
+        },
+        {
+            "location": {
+                "description": "Sanibar Peth Path/Sheth Vitthaldas Jagannath Kasat Chowk",
+                "length": 474.0,
+                "olr": "CCkBEAAlJDSDZw0rqgAJBQQBA58ACgUEAYNXAP7m/rQACQUEAQMdADAAAA=="
+            },
+            "currentFlow": {
+                "speed": 5.555556,
+                "speedUncapped": 5.555556,
+                "freeFlow": 11.666667,
+                "jamFactor": 6.1,
+                "confidence": 0.99,
+                "traversability": "open"
+            },
+            "datetime": "2024-02-23 17:19:51"
+        },
+        {
+            "location": {
+                "description": "Dnyaneshwar Paduka Chowk/Chaturshrungi Road/Modern College Road",
+                "length": 274.0,
+                "olr": "CCkBEAAlJDSCZg0sTgAJBQQBAwwACgUEAYIRAABcAOUACQUEAQObADAAAA=="
+            },
+            "currentFlow": {
+                "speed": 3.3333335,
+                "speedUncapped": 3.3333335,
+                "freeFlow": 8.611112,
+                "jamFactor": 6.9,
+                "confidence": 0.99,
+                "traversability": "open"
+            },
+            "datetime": "2024-02-23 17:19:51"
+        },
+        {
+            "location": {
+                "description": "Raman Baug Chowk",
+                "length": 213.0,
+                "olr": "CCkBEAAlJDSDnw0qwgAJBQQDAzwACgUEA4FVAADEABsACQUEAwOqADAAAA=="
+            },
+            "currentFlow": {
+                "speed": 4.7222223,
+                "speedUncapped": 4.7222223,
+                "freeFlow": 6.111111,
+                "jamFactor": 1.4,
+                "confidence": 0.71,
+                "traversability": "open"
+            },
+            "datetime": "2024-02-23 17:19:51"
+        },
+        {
+            "location": {
+                "description": "Gopal Gyan Path",
+                "length": 259.0,
+                "olr": "CCkBEAAlJDSDRA0prAAJBQQDA3sACgUEA4FaAAAv/0QACQUEAwPmADAAAA=="
+            },
+            "currentFlow": {
+                "speed": 5.277778,
+                "speedUncapped": 5.277778,
+                "freeFlow": 6.666667,
+                "jamFactor": 2.8,
+                "confidence": 0.7,
+                "traversability": "open"
+            },
+            "datetime": "2024-02-23 17:19:51"
+        },
+        {
+            "location": {
+                "description": "Kakasaheb Bridge",
+                "length": 113.0,
+                "olr": "CCkBEAAlJDSC3Q0qKQAJBQQDAx8ACgUEA4EUAABZAGgACQUEAwOaADAjAA=="
+            },
+            "currentFlow": {
+                "speed": 3.3333335,
+                "speedUncapped": 3.3333335,
+                "freeFlow": 5.555556,
+                "jamFactor": 3.3,
+                "confidence": 0.99,
+                "traversability": "open"
+            },
+            "datetime": "2024-02-23 17:19:51"
+        },
+        {
+            "location": {
+                "description": "R. B. Kumthekar Road",
+                "length": 128.0,
+                "olr": "CCkBEAAlJDSEEg0qEwAJBQQEA94ACgUEBIEAAP/hAGsACQUEBAN3ADAAAA=="
+            },
+            "currentFlow": {
+                "speed": 2.2222223,
+                "speedUncapped": 2.2222223,
+                "freeFlow": 3.6111112,
+                "jamFactor": 1.8,
+                "confidence": 0.73,
+                "traversability": "open"
+            },
+            "datetime": "2024-02-23 17:19:51"
+        },
+        {
+            "location": {
+                "description": "Narubhau Limaye Path",
+                "length": 8.0,
+                "olr": "CCgBEAAkIzSCnQ0q/gAJBQQDAwwACgQDAwgAAAIABwAJBQQDA4wAMAAA"
+            },
+            "currentFlow": {
+                "speed": 3.888889,
+                "speedUncapped": 3.888889,
+                "freeFlow": 6.111111,
+                "jamFactor": 3.0,
+                "confidence": 0.99,
+                "traversability": "open"
+            },
+            "datetime": "2024-02-23 17:19:51"
+        },
+        {
+            "location": {
+                "description": "Chimaji Appa Peshve Chowk/Omkareshwar Mandir Road",
+                "length": 391.0,
+                "olr": "CCkBEAAlJDSD+w0qzwAJBQQDA/0ACgUEA4MZAP/nAVkACQUEAwS6ADAVAA=="
+            },
+            "currentFlow": {
+                "speed": 4.7222223,
+                "speedUncapped": 4.7222223,
+                "freeFlow": 5.555556,
+                "jamFactor": 2.2,
+                "confidence": 0.77,
+                "traversability": "open",
+                "subSegments": [
+                    {
+                        "length": 169.0,
+                        "speed": 3.6111112,
+                        "speedUncapped": 3.6111112,
+                        "freeFlow": 5.555556,
+                        "jamFactor": 4.5,
+                        "confidence": 0.77,
+                        "traversability": "open"
+                    },
+                    {
+                        "length": 222.0,
+                        "speed": 5.8333335,
+                        "speedUncapped": 5.8333335,
+                        "freeFlow": 5.555556,
+                        "jamFactor": 0.0,
+                        "confidence": 0.77,
+                        "traversability": "open"
+                    }
+                ]
+            },
+            "datetime": "2024-02-23 17:19:51"
+        },
+        {
+            "location": {
+                "description": "Rani Laxmi Bai Chowk/Jhansi Rani Lakshmi Bai Chowk",
+                "length": 323.0,
+                "olr": "CCkBEAAlJDSD4w0sWgAJBQQBA5YACgUEAYJCAP9j/wgACQUEAQMVADAAAA=="
+            },
+            "currentFlow": {
+                "speed": 4.7222223,
+                "speedUncapped": 4.7222223,
+                "freeFlow": 9.166667,
+                "jamFactor": 5.4,
+                "confidence": 0.99,
+                "traversability": "open"
+            },
+            "datetime": "2024-02-23 17:19:51"
+        },
+        {
+            "location": {
+                "description": "Swami Vivekanand Chowk",
+                "length": 38.0,
+                "olr": "CCgBEAAkIzSCUQ0r9AAJBQQDA0IACgQDAyYAACT//gAJBQQDA8IAMAAA"
+            },
+            "currentFlow": {
+                "speed": 4.4444447,
+                "speedUncapped": 4.4444447,
+                "freeFlow": 3.888889,
+                "jamFactor": 0.0,
+                "confidence": 0.81,
+                "traversability": "open"
+            },
+            "datetime": "2024-02-23 17:19:51"
+        },
+        {
+            "location": {
+                "description": "Shahir Annabhau Sathe Chowk",
+                "length": 20.0,
+                "olr": "CCgBEAAkIzSC4A0qDAAJBQQCA3EACgQDAi0AABj/3wAJBQQCA98AMAAZ"
+            },
+            "currentFlow": {
+                "speed": 3.6111112,
+                "speedUncapped": 3.6111112,
+                "freeFlow": 6.666667,
+                "jamFactor": 2.7,
+                "confidence": 0.99,
+                "traversability": "open"
+            },
+            "datetime": "2024-02-23 17:19:51"
+        },
+        {
+            "location": {
+                "description": "N. C. Kelkar Road",
+                "length": 22.0,
+                "olr": "CCgBEAAkIzSDnw0qwgAJBQQDA/UACgQDAy0A//oAKAAJBQQDA38AMAAX"
+            },
+            "currentFlow": {
+                "speed": 4.7222223,
+                "speedUncapped": 4.7222223,
+                "freeFlow": 6.388889,
+                "jamFactor": 1.7,
+                "confidence": 0.71,
+                "traversability": "open"
+            },
+            "datetime": "2024-02-23 17:19:51"
+        },
+        {
+            "location": {
+                "description": "J G Tukaram Maharaj Paduka Chowk",
+                "length": 40.0,
+                "olr": "CCgBEAAkIzSCZg0sTgAJBQQDAz4ACgQDAygAACYAAgAJBQQDA74AMAAA"
+            },
+            "currentFlow": {
+                "speed": 2.777778,
+                "speedUncapped": 2.777778,
+                "freeFlow": 2.777778,
+                "jamFactor": 0.0,
+                "confidence": 0.7,
+                "traversability": "open"
+            },
+            "datetime": "2024-02-23 17:19:51"
+        },
+        {
+            "location": {
+                "description": "Deccan Gymkhana Path",
+                "length": 24.0,
+                "olr": "CCgBEAAkIzSDWg0pVQAJBQQDA2gACgQDA0UAABL/xgAJBQQDA/wAMAAt"
+            },
+            "currentFlow": {
+                "speed": 5.555556,
+                "speedUncapped": 5.555556,
+                "freeFlow": 7.777778,
+                "jamFactor": 3.8,
+                "confidence": 0.7,
+                "traversability": "open"
+            },
+            "datetime": "2024-02-23 17:19:51"
+        },
+        {
+            "location": {
+                "description": "Lokmany Gangadhar Tilak Chowk/Shastri Road",
+                "length": 35.0,
+                "olr": "CCkBEAAlJDSC3Q0qKQAJBQQDAx8ACgUEA4EUAABZAGgACQUEAwOaADAAcQ=="
+            },
+            "currentFlow": {
+                "speed": 3.3333335,
+                "speedUncapped": 3.3333335,
+                "freeFlow": 5.0,
+                "jamFactor": 2.3,
+                "confidence": 0.99,
+                "traversability": "open"
+            },
+            "datetime": "2024-02-23 17:19:51"
+        },
+        {
+            "location": {
+                "description": "Raman Baug Chowk/N. C. Kelkar Road",
+                "length": 219.0,
+                "olr": "CCkBEAAlJDSEAA0qaQAJBQQDA/8ACgUEA4FyAP/1ANsACQUEAwN9ADAYAA=="
+            },
+            "currentFlow": {
+                "speed": 3.0555556,
+                "speedUncapped": 3.0555556,
+                "freeFlow": 4.166667,
+                "jamFactor": 0.8,
+                "confidence": 0.77,
+                "traversability": "open"
+            },
+            "datetime": "2024-02-23 17:19:51"
+        },
+        {
+            "location": {
+                "description": "Sada Shiv Path/Tilak Road/Deccan Gymkhana Path",
+                "length": 247.0,
+                "olr": "CCkBEAAlJDSDWg0pVQAJBQQDA+YACgUEA4IPAP/LAOwACQUEAwN4ADAYAA=="
+            },
+            "currentFlow": {
+                "speed": 2.777778,
+                "speedUncapped": 2.777778,
+                "freeFlow": 3.888889,
+                "jamFactor": 0.8,
+                "confidence": 0.77,
+                "traversability": "open"
+            },
+            "datetime": "2024-02-23 17:19:51"
+        },
+        {
+            "location": {
+                "description": "Sada Shiv Road/Dharmveer L. B. Bhopatkar Path",
+                "length": 325.0,
+                "olr": "CCkBEAAlJDSEnA0qMQAJBQQEA6kACgUEBIJFAP7Y/8AACQUEBANAADAAAA=="
+            },
+            "currentFlow": {
+                "speed": 2.5,
+                "speedUncapped": 2.5,
+                "freeFlow": 3.6111112,
+                "jamFactor": 0.7,
+                "confidence": 0.74,
+                "traversability": "open"
+            },
+            "datetime": "2024-02-23 17:19:51"
+        },
+        {
+            "location": {
+                "description": "Kakasaheb Bridge",
+                "length": 444.0,
+                "olr": "CCkBEAAlJDSDnw0qwgAJBQQDA7cACgUEA4M7AP65/x8ACQUEAwMaADAAAA=="
+            },
+            "currentFlow": {
+                "speed": 3.6111112,
+                "speedUncapped": 3.6111112,
+                "freeFlow": 4.7222223,
+                "jamFactor": 1.0,
+                "confidence": 0.8,
+                "traversability": "open"
+            },
+            "datetime": "2024-02-23 17:19:51"
+        },
+        {
+            "location": {
+                "description": "Gopal Krushna Gokhale Chowk",
+                "length": 50.0,
+                "olr": "CCgBEAAkIzSCdA0rCAAJBQQBA0UACgQDATEAAC3/9gAJBQQBA80AMAAA"
+            },
+            "currentFlow": {
+                "speed": 4.166667,
+                "speedUncapped": 4.166667,
+                "freeFlow": 5.8333335,
+                "jamFactor": 1.6,
+                "confidence": 0.95,
+                "traversability": "open"
+            },
+            "datetime": "2024-02-23 17:19:51"
+        },
+        {
+            "location": {
+                "description": "Jagannath Maharaj Pandit Chowk/Gopal Gyan Path",
+                "length": 396.0,
+                "olr": "CCkBEAAlJDSDQQ0pwwAJBQQCA2AACgUEAoMKAAE2/z0ACQUEAgPWADAAAA=="
+            },
+            "currentFlow": {
+                "speed": 3.6111112,
+                "speedUncapped": 3.6111112,
+                "freeFlow": 8.333334,
+                "jamFactor": 7.9,
+                "confidence": 0.98,
+                "traversability": "open",
+                "subSegments": [
+                    {
+                        "length": 116.0,
+                        "speed": 3.0555556,
+                        "speedUncapped": 3.0555556,
+                        "freeFlow": 8.333334,
+                        "jamFactor": 8.3,
+                        "confidence": 0.98,
+                        "traversability": "open"
+                    },
+                    {
+                        "length": 158.0,
+                        "speed": 4.4444447,
+                        "speedUncapped": 4.4444447,
+                        "freeFlow": 8.333334,
+                        "jamFactor": 6.6,
+                        "confidence": 0.98,
+                        "traversability": "open"
+                    },
+                    {
+                        "length": 121.0,
+                        "speed": 3.3333335,
+                        "speedUncapped": 3.3333335,
+                        "freeFlow": 8.333334,
+                        "jamFactor": 8.1,
+                        "confidence": 0.98,
+                        "traversability": "open"
+                    }
+                ]
+            },
+            "datetime": "2024-02-23 17:19:51"
+        },
+        {
+            "location": {
+                "description": "Shoorvir Mardmawda Shelarmama Chowk/Prabhat Road",
+                "length": 71.0,
+                "olr": "CCgBEAAkIzSCjA0qagAJBQQBAqEACgQDAUcA/9D/0gAJBQQBAiAAMAAA"
+            },
+            "currentFlow": {
+                "speed": 4.166667,
+                "speedUncapped": 4.166667,
+                "freeFlow": 7.777778,
+                "jamFactor": 4.7,
+                "confidence": 0.99,
+                "traversability": "open"
+            },
+            "datetime": "2024-02-23 17:19:51"
+        },
+        {
+            "location": {
+                "description": "A. D. S. K. Vidya Chowk",
+                "length": 258.0,
+                "olr": "CCkBEAAlJDSDZw0rqgAJBQQDA9cACgUEA4IlAP8CAGcACQUEAwNJADAkAA=="
+            },
+            "currentFlow": {
+                "speed": 3.0555556,
+                "speedUncapped": 3.0555556,
+                "freeFlow": 5.0,
+                "jamFactor": 2.8,
+                "confidence": 0.83,
+                "traversability": "open"
+            },
+            "datetime": "2024-02-23 17:19:51"
+        },
+        {
+            "location": {
+                "description": "Umbarya Ganpati Chowk/Shagun Chowk/Laxmi Road",
+                "length": 24.0,
+                "olr": "CCgBEAAkIzSEAA0qaQAJBQQDA/8ACgQDA0wA//0ARQAJBQQDA34AMAA0"
+            },
+            "currentFlow": {
+                "speed": 1.9444445,
+                "speedUncapped": 1.9444445,
+                "freeFlow": 4.4444447,
+                "jamFactor": 2.7,
+                "confidence": 0.71,
+                "traversability": "open"
+            },
+            "datetime": "2024-02-23 17:19:51"
+        },
+        {
+            "location": {
+                "description": "Shagun Chowk/Umbarya Ganpati Chowk/Dharmveer L. B. Bhopatkar Path",
+                "length": 392.0,
+                "olr": "CCkBEAAlJDSErA0qeAAJBQQDA7wACgUEA4MIAP6Q/+AACQUEAwM2ADAAAA=="
+            },
+            "currentFlow": {
+                "speed": 3.0555556,
+                "speedUncapped": 3.0555556,
+                "freeFlow": 4.7222223,
+                "jamFactor": 2.0,
+                "confidence": 0.73,
+                "traversability": "open"
+            },
+            "datetime": "2024-02-23 17:19:51"
+        },
+        {
+            "location": {
+                "description": "J G Tukaram Maharaj Paduka Chowk/Tukaram Paduka Chowk",
+                "length": 791.0,
+                "olr": "CCkBEAAlJDSCdA0rCAAJBQQBA/YACgUEAYYUAP/iArwACQUEAQOOADAAAA=="
+            },
+            "currentFlow": {
+                "speed": 5.0,
+                "speedUncapped": 5.0,
+                "freeFlow": 8.611112,
+                "jamFactor": 5.8,
+                "confidence": 0.99,
+                "traversability": "open",
+                "subSegments": [
+                    {
+                        "length": 391.0,
+                        "speed": 5.0,
+                        "speedUncapped": 5.0,
+                        "freeFlow": 8.611112,
+                        "jamFactor": 1.1,
+                        "confidence": 0.99,
+                        "traversability": "open"
+                    },
+                    {
+                        "length": 105.0,
+                        "speed": 6.111111,
+                        "speedUncapped": 6.111111,
+                        "freeFlow": 8.611112,
+                        "jamFactor": 3.9,
+                        "confidence": 0.99,
+                        "traversability": "open"
+                    },
+                    {
+                        "length": 295.0,
+                        "speed": 4.7222223,
+                        "speedUncapped": 4.7222223,
+                        "freeFlow": 8.611112,
+                        "jamFactor": 6.1,
+                        "confidence": 0.99,
+                        "traversability": "open"
+                    }
+                ]
+            },
+            "datetime": "2024-02-23 17:19:51"
+        },
+        {
+            "location": {
+                "description": "Shahir Annabhau Sathe Chowk/Tilak Road",
+                "length": 45.0,
+                "olr": "CCgBEAAkIzSC3Q0qKQAJBQQBAnUACgQDAUUAAAb/wwAJBQQBAv0AMBgA"
+            },
+            "currentFlow": {
+                "speed": 3.6111112,
+                "speedUncapped": 3.6111112,
+                "freeFlow": 7.777778,
+                "jamFactor": 5.9,
+                "confidence": 0.99,
+                "traversability": "open"
+            },
+            "datetime": "2024-02-23 17:19:51"
+        },
+        {
+            "location": {
+                "description": "Chimaji Appa Peshve Chowk",
+                "length": 22.0,
+                "olr": "CCgBEAAkIzSD6w0raAAJBQQDBNEACgQDAxYA//oADwAJBQQDBJIAMAAA"
+            },
+            "currentFlow": {
+                "speed": 6.666667,
+                "speedUncapped": 6.666667,
+                "freeFlow": 4.7222223,
+                "jamFactor": 0.0,
+                "confidence": 0.84,
+                "traversability": "open"
+            },
+            "datetime": "2024-02-23 17:19:51"
+        },
+        {
+            "location": {
+                "description": "Khanduji Baba Chowk/Karve Road",
+                "length": 30.0,
+                "olr": "CCoBEAAmJTSCnQ0qeQAJBQQBAm0ACgUEAYFyAACJ/1UACQUEAQLZADAAgVQ="
+            },
+            "currentFlow": {
+                "speed": 3.6111112,
+                "speedUncapped": 3.6111112,
+                "freeFlow": 8.888889,
+                "jamFactor": 6.7,
+                "confidence": 0.99,
+                "traversability": "open"
+            },
+            "datetime": "2024-02-23 17:19:51"
+        },
+        {
+            "location": {
+                "description": "Vedacharya Pathak Guruji Road",
+                "length": 155.0,
+                "olr": "CCkBEAAlJDSEIA0p1AAJBQQEA/oACgUEBIEbAP/jAIgACQUEBANpADAAAA=="
+            },
+            "currentFlow": {
+                "speed": 3.0555556,
+                "speedUncapped": 3.0555556,
+                "freeFlow": 4.166667,
+                "jamFactor": 1.2,
+                "confidence": 0.71,
+                "traversability": "open"
+            },
+            "datetime": "2024-02-23 17:19:51"
+        },
+        {
+            "location": {
+                "description": "Jangali Maharaj Road",
+                "length": 36.0,
+                "olr": "CCgBEAAkIzSDZw0rqgAJBQQDA9cACgQDAzcA/9QAGgAJBQQDA1cAMAAT"
+            },
+            "currentFlow": {
+                "speed": 2.777778,
+                "speedUncapped": 2.777778,
+                "freeFlow": 3.3333335,
+                "jamFactor": 0.0,
+                "confidence": 0.81,
+                "traversability": "open"
+            },
+            "datetime": "2024-02-23 17:19:51"
+        },
+        {
+            "location": {
+                "description": "Chimaji Appa Peshve Chowk/Captain Shankarrao Chafekar Road",
+                "length": 482.0,
+                "olr": "CCkBEAAlJDSDnw0qwgAJBQQDA/UACgUEA4N3AACuAWsACQUEAwTzADAWAA=="
+            },
+            "currentFlow": {
+                "speed": 4.4444447,
+                "speedUncapped": 4.4444447,
+                "freeFlow": 4.4444447,
+                "jamFactor": 0.0,
+                "confidence": 0.74,
+                "traversability": "open"
+            },
+            "datetime": "2024-02-23 17:19:51"
+        },
+        {
+            "location": {
+                "description": "Sadashiv Peth Road",
+                "length": 314.0,
+                "olr": "CCkBEAAlJDSEEg0qEwAJBQQEA0AACgUEBIJFAAEoAEAACQUEBAOpADALAA=="
+            },
+            "currentFlow": {
+                "speed": 3.6111112,
+                "speedUncapped": 3.6111112,
+                "freeFlow": 3.888889,
+                "jamFactor": 1.0,
+                "confidence": 0.7,
+                "traversability": "open"
+            },
+            "datetime": "2024-02-23 17:19:51"
+        },
+        {
+            "location": {
+                "description": "Chimaji Appa Peshve Chowk",
+                "length": 270.0,
+                "olr": "CCkBEAAlJDSD3Q0r1AAJBQQDAncACgUEA4IOAAAf/xgACQUEAwQmADAAAA=="
+            },
+            "currentFlow": {
+                "speed": 8.333334,
+                "speedUncapped": 8.333334,
+                "freeFlow": 8.055555,
+                "jamFactor": 0.0,
+                "confidence": 0.83,
+                "traversability": "open"
+            },
+            "datetime": "2024-02-23 17:19:51"
+        },
+        {
+            "location": {
+                "description": "A. D. S. K. Vidya Chowk",
+                "length": 331.0,
+                "olr": "CCkBEAAlJDSCYg0r8wAJBQQDA0IACgUEA4JLAAEx/8kACQUEAwPKADAAAA=="
+            },
+            "currentFlow": {
+                "speed": 5.277778,
+                "speedUncapped": 5.277778,
+                "freeFlow": 4.7222223,
+                "jamFactor": 0.0,
+                "confidence": 0.81,
+                "traversability": "open"
+            },
+            "datetime": "2024-02-23 17:19:51"
+        }
+    ]
+}
