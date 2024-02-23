@@ -16,7 +16,10 @@ import AirQualityChart from './graphs/BasicAirQuality.jsx';
 import TrafficPlot from './graphs/TrafficPlot.jsx';
 import RealEsateRatePlot from './graphs/RealEstateRatePlot.jsx';
 // import { CSVLink } from 'react-json-csv'; // Or use Papa or xlsx components
-
+// const { GoogleGenerativeAI } = require("@google/generative-ai");
+import { GoogleGenerativeAI } from '@google/generative-ai';
+const genAI = new GoogleGenerativeAI(keys.genAiKey);
+import MarkDownView from './MarkDownView.jsx';
 
 
 const center = {
@@ -34,6 +37,7 @@ const Map2 = (props) => {
     const [results, setResults] = useState({});
     let [rankingIndex, setRankingIndex] = useState(1);
     const [enlarged, setEnlarged] = useState(false);
+    const [promptResutl,setPromtResult] = useState("");
 
 
   const { isLoaded, loadError } = useLoadScript({
@@ -69,7 +73,19 @@ const Map2 = (props) => {
   };
 
 
+  async function run(prompt) {
+    const model = genAI.getGenerativeModel({ model: "gemini-pro"});    
+    const result = await model.generateContent(prompt);
+    const response = await result.response;
+    const text = response.text();
+    console.log(text);
+    setPromtResult(text);
+  }
+
+
+
   async function getData2(){
+    // run();
     await postDataToBackend(locatoinDataTest);
     console.log("got back here");
     setMapWdith("25vw");
@@ -228,6 +244,62 @@ const Map2 = (props) => {
     setResults(result);
   }
 
+  function generatePrompt(result){
+    console.log(result);
+    var flag =0;
+    let locationNameString = ""
+    result.results.map(name => {
+      locationNameString += `${name.index} and, ` 
+    })
+    let compareLocations = `${result.results[0].index} is better than rest of them which are `;
+    result.results.map(name => {
+      if(flag == 0){
+        flag = 1;
+      }else{
+        compareLocations += name.index;
+        compareLocations += " and, ";
+      }
+    })
+    let promptNumberSentence = "";
+    var cityCount = 0;
+    result.givenOrder.map(name => {
+      promptNumberSentence += `${name} has the following number of ammenities which are : `;
+      for(let i =0; i<27; i++){
+        promptNumberSentence += `${result.namesOfAmmenites[i]} -> ${result.ammenitiesList[cityCount][i]}, `;
+      }
+      cityCount++;
+      promptNumberSentence += "and, "
+    })
+
+    let costPerFeetPrompt = "";
+    var numberOfAreas = result.givenOrder.length;
+    for(let i=0; i<numberOfAreas;i++){
+      costPerFeetPrompt += `${result.givenOrder[i]} has rate of ${result.realEstateRates[i]} and ,`;
+    }
+
+    let averageTrafficPrompt = "";
+    for(let i=0; i<numberOfAreas; i++){
+      averageTrafficPrompt += `${result.givenOrder[i]} has the traffic jam factor of ${result.avgJamFactor[i]} and ,`
+    }
+
+    let prompt = "I want to compare two or more locations which are "
+          + locationNameString
+          + " and "
+          + compareLocations
+          + "and I want you to tell me why it is better than other considering the following data ."
+          + promptNumberSentence
+          + "the cost of real estate based on the ruppess per square feet is as following : "
+          + costPerFeetPrompt 
+          + ". The Average Traffic jam factor(0 is low, 10 is absolutely high traffic) gives the average number of traffic for the given location which is as follows : "
+          + averageTrafficPrompt
+          +" . Now give me explanation compairing them."
+          ;
+    console.log(prompt);
+    console.log("-------------------------------");
+    run(prompt);
+  }
+
+// --------------Change this------------------receive_data---get_json_data_dummy
 
   async function postDataToBackend(data) {
     const response = await fetch('http://localhost:5000/receive_data', {
@@ -241,6 +313,7 @@ const Map2 = (props) => {
     const result = await response.json();
     console.log(result);
     setResults(result);
+    generatePrompt(result);
   }
 
   function openDetailedView(index){
@@ -330,6 +403,10 @@ const Map2 = (props) => {
             <div className='plotContainers' onClick={()=>{enlargeMe("realEstatePlotId")}} id='realEstatePlotId'>
                 <p id='rankingHeading'>Average Real Estate Rates</p>
                 <RealEsateRatePlot Rates={results.realEstateRates} locatoinsNames={results.givenOrder} />
+            </div>
+
+            <div className='plotContainers' onClick={()=>{enlargeMe("promptResults")}} id='promptResults'>
+              <MarkDownView markdownText={promptResutl}/>
             </div>
 
           </div>

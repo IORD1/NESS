@@ -54,9 +54,9 @@ amenity_weights = {
     "Dry Cleaner": 0.03,
     "Convenience Store": 0.05,
     "Banquet Rooms": 0.01,
-    "Air Quality": 0.04,
+    "Air Quality": -0.04,
     "Real Estate Rates" : 0.08,
-    "Traffic Jam Factor" : 0.07
+    "Traffic Jam Factor" : -0.07
 }
 
 
@@ -160,8 +160,10 @@ def return_nearest_rate(lat, lon):
             rate = row['rates']
             imageUrl = row['imageurl']
             # areaClass = row['class']
-            if pd.isna(row['class']):
+            if pd.isna(row['class']) :
                 areaClass = "NotAvbl"
+            else:
+                areaClass = row["class"]
             seeMoreUrl = row['redirect']
             locationArea = row['area']
     rateinnum = int(''.join(filter(lambda i: i.isdigit(), rate)))
