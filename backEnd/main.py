@@ -337,5 +337,27 @@ def get_json_data():
     except Exception as e:
         return jsonify({'error': str(e)}), 500
 
+
+@app.route('/append_data', methods=['POST'])
+def append_data():
+    try:
+        data = request.get_json()
+        listAmmenities = data.get('results', [])
+        with open('data.json', 'r') as file:
+            existing_data = json.load(file)
+
+        for items in listAmmenities:
+            existing_data["data"].append(items)
+
+
+
+        with open('data.json', 'w') as file:
+            json.dump(existing_data, file)
+        print("saved data")
+        return jsonify({'message': 'Data appended successfully'}), 200
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
+
 if __name__ == '__main__':
     app.run(port=5000)

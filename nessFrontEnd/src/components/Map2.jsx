@@ -15,6 +15,8 @@ import ResultHistogram from './graphs/ResultHistogram.jsx';
 import AirQualityChart from './graphs/BasicAirQuality.jsx';
 import TrafficPlot from './graphs/TrafficPlot.jsx';
 import RealEsateRatePlot from './graphs/RealEstateRatePlot.jsx';
+// import { CSVLink } from 'react-json-csv'; // Or use Papa or xlsx components
+
 
 
 const center = {
@@ -61,7 +63,7 @@ const Map2 = (props) => {
   const handleClick = () => {
     if (!isButtonDisabled) {
       console.log("analyzing");
-      getData2();
+      getData();
 
     }
   };
@@ -147,10 +149,38 @@ const Map2 = (props) => {
 
       const data = await response.json();
       const count = data.summary.numResults;
+      await saveDataToBackend(data);
+      // Convert JSON data to CSV format
+      // const headers = [
+      //   // Array of strings representing CSV column headers
+      //   { label: 'Name', key: 'name' },
+      //   { label: 'PhNo', key: 'phno' },
+      //   { label: 'Category', key: 'cat' },
+      //   { label: 'lat', key: 'lat' },
+      //   { label: 'lng', key: 'lng' },
+      // ];
+
+      // const jsonData = [
+      //   // Array of objects representing your data
+      // ];
+      // data.results.forEach(location => {
+      //   const name = location.poi.name;
+      //   const latitude = location.position.lat;
+      //   const longitude = location.position.lon;
+      //   const phno = location.poi.phone || 'N/A';
+      //   const cat = location.poi.categories[0] || 'N/A';
+      //   console.log(`Name: ${name}, Latitude: ${latitude}, Longitude: ${longitude}`);
+      //   jsonData.push({ name: name,PhNo:phno,Category: cat,  lat: latitude, lng: longitude });
+      // });
+
+      // console.log(jsonData);
+
+      // Append CSV data to the file or create a new file if it doesn't exist
       console.log(count);
+      console.log(data);
       return count;
     } catch (error) {
-      console.error(`Error fetching amenity count for ${category.name}:`, error);
+      console.error(`Error fetching amenity count for `, error);
     }
   };
   async function getData() {
@@ -181,6 +211,21 @@ const Map2 = (props) => {
     setMapWdith("25vw");
     setResultAvailable(true);
     document.getElementById("MapDock").style.width = "75vw";
+  }
+
+
+  async function saveDataToBackend(data) {
+    const response = await fetch('http://localhost:5000/append_data', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    });
+  
+    const result = await response.json();
+    console.log(result);
+    setResults(result);
   }
 
 
