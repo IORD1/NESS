@@ -61,7 +61,7 @@ const Map2 = (props) => {
   const handleClick = () => {
     if (!isButtonDisabled) {
       console.log("analyzing");
-      getData();
+      getData2();
 
     }
   };
