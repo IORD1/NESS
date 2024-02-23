@@ -71,6 +71,19 @@ def retunAirQuality(lat,long):
     headers = {'Content-Type': 'application/json'}
     response = requests.post(url, json=payload, headers=headers)
     # print(response.json()['indexes'][0]['aqi'])
+    with open('Databank/aqi.json', 'r') as file:
+        existing_data = json.load(file)
+
+    airQualityData = response.json()
+    airQualityData["lat"] = lat
+    airQualityData["lng"] = long
+    existing_data["data"].append(airQualityData)
+
+
+
+    with open('Databank/aqi.json', 'w') as file:
+        json.dump(existing_data, file)
+    print("saved AIr Quality data")
     return (response.json()['indexes'][0]['aqi'])
 
 
@@ -98,7 +111,7 @@ def returnTraffic(lat,long,radius):
     current_datetime = datetime.now()
     new_key = 'datetime'
     new_value = current_datetime.strftime('%Y-%m-%d %H:%M:%S')
-    with open('traffic.json', 'r') as file:
+    with open('Databank/traffic.json', 'r') as file:
         existing_data = json.load(file)
 
     for roads in response_data['results']:
@@ -107,12 +120,12 @@ def returnTraffic(lat,long,radius):
 
 
 
-    with open('traffic.json', 'w') as file:
+    with open('Databank/traffic.json', 'w') as file:
         json.dump(existing_data, file)
     print("saved Traffic data")
 
-    return response_data['results']
-    # return round(total_jam/total_roads, 4), total_roads
+    # return response_data['results']
+    return round(total_jam/total_roads, 4), total_roads
 
 
 
@@ -164,9 +177,9 @@ def hello():
     # nearest_place, nearest_rate = return_nearest_rate(18.54149754525427, 73.79255976528276)
     # rateinnum = ''.join(filter(lambda i: i.isdigit(), nearest_rate))
     # return jsonify({"nearest_place" : nearest_place, "rate" : rateinnum})
-    return returnTraffic(18.515752,73.842158,1000)
+    # return returnTraffic(18.515752,73.842158,1000)
     # return retunAirQuality(18.55164920241211,73.8434820739746)
-    return "hello"
+    return "Welcome to ness backend ;)"
 
 @app.route('/api/data')
 def get_data():
@@ -360,7 +373,7 @@ def append_data():
     try:
         data = request.get_json()
         listAmmenities = data.get('results', [])
-        with open('data.json', 'r') as file:
+        with open('Databank/data.json', 'r') as file:
             existing_data = json.load(file)
 
         for items in listAmmenities:
@@ -368,7 +381,7 @@ def append_data():
 
 
 
-        with open('data.json', 'w') as file:
+        with open('Databank/data.json', 'w') as file:
             json.dump(existing_data, file)
         print("saved data")
         return jsonify({'message': 'Data appended successfully'}), 200
