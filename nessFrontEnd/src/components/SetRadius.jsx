@@ -52,7 +52,7 @@ export function SetRadius() {
   return (
     <Drawer>
       <DrawerTrigger asChild>
-        <Button variant="default" id="setRadiusButton" style={{FontFace: "Nunito"}}>Set Redius</Button>
+        <Button variant="default" id="setRadiusButton" style={{FontFace: "Nunito"}}>Set Radius</Button>
       </DrawerTrigger>
       <DrawerContent>
         <div className="mx-auto w-full max-w-sm">
