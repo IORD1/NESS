@@ -1,6 +1,6 @@
 import React from 'react';
 import './styles/Login.css';
-import Button from "./Button";
+import Button from "./ButtonMain";
 import NessLoader from "./NessLoader";
 import ButtonLight from './ButtonLight';
 

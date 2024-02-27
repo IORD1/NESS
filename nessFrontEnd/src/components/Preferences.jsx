@@ -1,6 +1,6 @@
 import React from 'react';
 import "./styles/preferences.css";
-import Button from "./Button";
+import Button from "./ButtonMain";
 import NessLoader from "./NessLoader";
 import ButtonLight from './ButtonLight';
 import preferencesList from './assests/poiShort.json';
