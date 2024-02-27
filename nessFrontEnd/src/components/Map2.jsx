@@ -3,7 +3,7 @@ import { GoogleMap, useLoadScript, Marker, InfoWindow } from '@react-google-maps
 import keys from "../keys.json";
 import MarkerList from './MarkerList';
 import "./styles/map.css";
-import Button from './Button';
+import ButtonMain from './ButtonMain';
 import ButtonLight from './ButtonLight';
 // import poiShort from './assests/poiTemp.json';
 import poiShort from './assests/poiShort.json';
@@ -20,8 +20,9 @@ import RealEsateRatePlot from './graphs/RealEstateRatePlot.jsx';
 import { GoogleGenerativeAI } from '@google/generative-ai';
 const genAI = new GoogleGenerativeAI(keys.genAiKey);
 import MarkDownView from './MarkDownView.jsx';
-
-
+import { Button } from './ui/button';
+import { Drawer } from './ui/drawer';
+import { DrawerDemo } from './DrawerDemo';
 const center = {
   lat: 18.5204,
   lng: 73.8567,
@@ -334,6 +335,7 @@ const Map2 = (props) => {
 
   return (
     <div id='mapContainer'>
+      <DrawerDemo></DrawerDemo>
       <GoogleMap
         mapContainerStyle={mapContainerStyle}
         zoom={10}
@@ -419,7 +421,7 @@ const Map2 = (props) => {
         </div>
         <div id='mapDockButtonContainer'>
           <div id='buttonHolder'>
-            <Button text={"Compare"}
+            <ButtonMain text={"Compare"}
             disable={isButtonDisabled}
             onClick={()=>{handleClick()}}
             style={{
