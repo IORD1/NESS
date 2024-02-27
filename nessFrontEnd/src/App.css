@@ -1,12 +1,4 @@
-@font-face {
-  font-family: "SF-Pro";
-  src: url('./assets/fonts/SF-Pro.ttf');
-}
 
-@font-face{
-  font-family: "Modak";
-  src: url("./assets/fonts/Modak/Modak-Regular.ttf");
-}
 
 #root {
   background-color: #E0DFDF;

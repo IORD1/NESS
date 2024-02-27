@@ -1,3 +1,13 @@
+@font-face {
+  font-family: "SF-Pro";
+  src: url('./assets/fonts/SF-Pro.ttf');
+}
+
+@font-face{
+  font-family: "Modak";
+  src: url("./assets/fonts/Modak/Modak-Regular.ttf");
+}
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
