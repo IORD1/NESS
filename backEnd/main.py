@@ -23,7 +23,8 @@ CORS(app)
 
 global weights
 weights = [0.061728395061728364, 0.030864197530864182, 0.049382716049382686, 0.04320987654320985, 0.030864197530864182, 0.049382716049382686, 0.018518518518518507, 0.05555555555555552, 0.037037037037037014, 0.024691358024691343, 0.024691358024691343, 0.012345679012345671, 0.037037037037037014, 0.018518518518518507, 0.037037037037037014, 0.030864197530864182, 0.04320987654320985, 0.04320987654320985, 0.037037037037037014, 0.030864197530864182, 0.030864197530864182, 0.012345679012345671, 0.04320987654320985, 0.024691358024691343, 0.018518518518518507, 0.030864197530864182, 0.006172839506172836, -0.024691358024691343, 0.049382716049382686, -0.04320987654320985]
-
+global radiusGlobal
+radiusGlobal = 1000
 namesOfAmmenities = ["Hospital", "Café/Pub", "Health Care Service", "Market", "Public Amenity", "College/University", "Open Parking Area", "School", "Park & Recreation Area", "Movie Theater", "Place of Worship", "Car Wash", "Bank", "Parking Garage", "Police Station", "Library", "Shopping Center", "Pharmacy", "Swimming Pool", "Golf Course", "Fire Station", "Taxi Stand", "Grocery Store", "Fast Food", "Dry Cleaner", "Convenience Store", "Banquet Rooms","Air Quality","Real Estate Rates","Traffic Jam Factor"]
 
 amenity_weights = {
@@ -179,7 +180,7 @@ def hello():
     # nearest_place, nearest_rate = return_nearest_rate(18.54149754525427, 73.79255976528276)
     # rateinnum = ''.join(filter(lambda i: i.isdigit(), nearest_rate))
     # return jsonify({"nearest_place" : nearest_place, "rate" : rateinnum})
-    # return returnTraffic(18.515752,73.842158,1000)
+    # return returnTraffic(18.515752,73.842158,radiusGlobal)
     # return retunAirQuality(18.55164920241211,73.8434820739746)
     return "Welcome to ness backend ;)"
 
@@ -236,6 +237,7 @@ def calculate_scores(index, matrix, weights):
 @app.route('/receive_data', methods=['POST'])
 def receive_data():
     data = request.get_json()
+    global radiusGlobal
 
     # Access the 'locations' key
     locations = data.get('locations', [])
@@ -271,7 +273,7 @@ def receive_data():
         locationAreaInPune.append(locationArea)
 
 
-        location_jam_factor,total_number_roads = returnTraffic(location.get("lat"),location.get("lng"),1000)
+        location_jam_factor,total_number_roads = returnTraffic(location.get("lat"),location.get("lng"),radiusGlobal)
         # print(location_jam_factor)
         avg_jame_factor.append(location_jam_factor)
         area_number_roads.append(total_number_roads)
@@ -280,7 +282,7 @@ def receive_data():
 
         amenity_counts = [location.get(key, 0) for key in ['7321', '9376', '9663', '7332', '9932', '7377', '7369', '7372', '9362', '7342', '7339', '9155', '7328', '7313', '7322', '9913', '7373', '7326', '7338', '9911', '7392', '9942003', '9361023', '7315015', '9361010', '9361009', '7315146']]
         amenity_counts.append(location_air_quality)
-        amenity_counts.append(lcoaltion_estate_rates/1000)
+        amenity_counts.append(lcoaltion_estate_rates/radiusGlobal)
         amenity_counts.append(location_jam_factor)
         
         print(f"Location: {location_name}, Amenities: {amenity_counts}")
@@ -429,6 +431,24 @@ def append_data():
         return jsonify({'message': 'Data appended successfully'}), 200
     except Exception as e:
         return jsonify({'error': str(e)}), 500
+
+
+
+
+
+@app.route('/receive_radius', methods=['POST'])
+def computeWeights():
+    global radiusGlobal
+    data = request.get_json()
+    radius = data.get('radius')
+    radiusGlobal = radius
+    print("-"*30)
+    print("Radius saved as (in meters): ")
+    print(radiusGlobal)
+    print("-"*30)
+
+
+    return jsonify({'message': "Saved Radius"}), 200
 
 
 if __name__ == '__main__':

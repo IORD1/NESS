@@ -1,5 +1,4 @@
 import { MinusIcon, PlusIcon } from "@radix-ui/react-icons"
-import { Bar, BarChart, ResponsiveContainer } from "recharts"
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import {
@@ -13,17 +12,47 @@ import {
   DrawerTrigger,
 } from "@/components/ui/drawer"
 
-export function DrawerDemo() {
-  const [goal, setGoal] = useState(1000)
+"use client"
+
+import { ToastAction } from "@/components/ui/toast"
+import { useToast } from "@/components/ui/use-toast"
+
+export function SetRadius() {
+  const [radius, setradius] = useState(1000)
+  const { toast } = useToast()
 
   function onClick(adjust) {
-    setGoal(goal + adjust)
+    setradius(radius + adjust)
+  }
+
+  async function postRadiusToBackend(radius) {
+    const response = await fetch('http://localhost:5000/receive_radius', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        "radius" : radius
+    }),
+    });
+  
+    const result = await response.json();
+    console.log(result);
+  }
+
+  function saveRadius(){
+    postRadiusToBackend(radius);
+    var cancelRadius = document.getElementById('cancelRadius');
+    alert("Radius Saved as "+radius)
+    cancelRadius.click();
+
+
   }
 
   return (
     <Drawer>
       <DrawerTrigger asChild>
-        <Button variant="outline">Set Redius</Button>
+        <Button variant="default" id="setRadiusButton" style={{FontFace: "Nunito"}}>Set Redius</Button>
       </DrawerTrigger>
       <DrawerContent>
         <div className="mx-auto w-full max-w-sm">
@@ -38,14 +67,14 @@ export function DrawerDemo() {
                 size="icon"
                 className="h-8 w-8 shrink-0 rounded-full"
                 onClick={() => onClick(-200)}
-                disabled={goal <= 200}
+                disabled={radius <= 400}
               >
                 <MinusIcon className="h-4 w-4" />
                 <span className="sr-only">Decrease</span>
               </Button>
               <div className="flex-1 text-center">
                 <div className="text-7xl font-bold tracking-tighter">
-                  {goal}
+                  {radius}
                 </div>
                 <div className="text-[0.70rem] uppercase text-muted-foreground">
                   Meters
@@ -56,7 +85,7 @@ export function DrawerDemo() {
                 size="icon"
                 className="h-8 w-8 shrink-0 rounded-full"
                 onClick={() => onClick(200)}
-                disabled={goal >= 10000}
+                disabled={radius >= 8000}
               >
                 <PlusIcon className="h-4 w-4" />
                 <span className="sr-only">Increase</span>
@@ -65,9 +94,20 @@ export function DrawerDemo() {
            
           </div>
           <DrawerFooter>
-            <Button>Save</Button>
+            <Button onClick={()=>{saveRadius()}}>Save</Button>
             <DrawerClose asChild>
-              <Button variant="outline">Cancel</Button>
+              <Button variant="outline" id="cancelRadius" 
+                onClick={() => {
+                  console.log("calling alert");
+                  toast({
+                    title: "Saved Radius",
+                    description: "Friday, February 10, 2023 at 5:57 PM",
+                    action: (
+                      <ToastAction altText="Goto schedule to undo">Undo</ToastAction>
+                    ),
+                  })
+                }}
+              >Cancel</Button>
             </DrawerClose>
           </DrawerFooter>
         </div>

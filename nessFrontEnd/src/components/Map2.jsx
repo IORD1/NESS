@@ -22,7 +22,9 @@ const genAI = new GoogleGenerativeAI(keys.genAiKey);
 import MarkDownView from './MarkDownView.jsx';
 import { Button } from './ui/button';
 import { Drawer } from './ui/drawer';
-import { DrawerDemo } from './DrawerDemo';
+import { SetRadius } from './SetRadius';
+import { AlertSaved } from './AlertSaved';
+
 const center = {
   lat: 18.5204,
   lng: 73.8567,
@@ -335,7 +337,8 @@ const Map2 = (props) => {
 
   return (
     <div id='mapContainer'>
-      <DrawerDemo></DrawerDemo>
+      <SetRadius />
+
       <GoogleMap
         mapContainerStyle={mapContainerStyle}
         zoom={10}
@@ -345,6 +348,7 @@ const Map2 = (props) => {
           mapTypeControl: false,
         }}
       >
+
         {markers.map((marker, index) => (
           <Marker key={index} position={marker} onClick={() => handleMarkerClick(marker)} />
         ))}
