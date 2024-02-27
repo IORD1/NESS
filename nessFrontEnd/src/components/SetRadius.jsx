@@ -11,6 +11,7 @@ import {
   DrawerTitle,
   DrawerTrigger,
 } from "@/components/ui/drawer"
+import { Radius } from "lucide-react"
 
 "use client"
 
@@ -52,7 +53,8 @@ export function SetRadius() {
   return (
     <Drawer>
       <DrawerTrigger asChild>
-        <Button variant="default" id="setRadiusButton" style={{FontFace: "Nunito"}}>Set Radius</Button>
+        <Button variant="default" id="setRadiusButton" style={{FontFace: "Nunito"}}>
+        <Radius className="mr-2 h-4 w-4" />Set Radius</Button>
       </DrawerTrigger>
       <DrawerContent>
         <div className="mx-auto w-full max-w-sm">
