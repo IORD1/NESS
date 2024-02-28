@@ -24,6 +24,7 @@ import { Button } from './ui/button';
 import { Drawer } from './ui/drawer';
 import { SetRadius } from './SetRadius';
 import { AlertSaved } from './AlertSaved';
+import PoiList from "./PoiList";
 
 const center = {
   lat: 18.5204,
@@ -204,6 +205,9 @@ const Map2 = (props) => {
   };
   async function getData() {
     props.setIsLoading(true);
+    props.setTotalToBeLoaded(27*markers.length);
+    console.log(27*markers.length);
+    
     const locationCounts = [];
     const locationData = { locations: [] };
 
@@ -216,7 +220,9 @@ const Map2 = (props) => {
         console.log(ammenity);
         const count = await fetchData(location.lat,location.lng,1000,100,ammenity.id);
         locationCount[ammenity.id] = count;
-        await sleep(1000);
+        // await sleep(700);
+        
+        props.setNumberLoaded(prevNumberLoaded => prevNumberLoaded + 1);
       }
       locationData.locations.push(locationCount);
       console.log("------^^^^^^^-------");
@@ -414,6 +420,8 @@ const Map2 = (props) => {
             <div className='plotContainers' onClick={()=>{enlargeMe("promptResults")}} id='promptResults'>
               <MarkDownView markdownText={promptResutl}/>
             </div>
+
+            <PoiList />
 
           </div>
         </div>
