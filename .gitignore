@@ -7,3 +7,4 @@ nessFrontEnd/.env
 .vscode
 Datasets/99acres
 backEnd/Databank/data copy.json
+backEnd/Databank/dataAll.json

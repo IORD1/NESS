@@ -25,7 +25,7 @@ const Splash = () => {
             style={{
             fontSize: '15px',
             fontWeight: "600",
-            width: "50%",
+            width: "80%",
           }}/>
 
         </div>
