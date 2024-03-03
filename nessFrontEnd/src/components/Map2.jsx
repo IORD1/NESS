@@ -51,6 +51,8 @@ const Map2 = (props) => {
     libraries,
   });  
 
+  const ammenitiData = { results: [] };
+
 
   const mapContainerStyle = {
     width: mapWidth,
@@ -66,20 +68,28 @@ const Map2 = (props) => {
   function openPreferences(){
     window.open(`${window.location.origin}/preferences`, '_self'); 
     // window.open('http://localhost:5173/preferences', '_self'); 
-}    
+  }    
 
   useEffect(() => {
     const handleResize = () => {
       // Update map width based on viewport width
       if(resultAvailable){
         setMapWdith(window.innerWidth <= 768 ? "100vw" : "25vw");
-
       }else{
-
         setMapWdith(window.innerWidth <= 768 ? "100vw" : "75vw");
       }
 
+      const refreshBackend = async () => {
+        const response = await fetch("https://ness-cpww.onrender.com/refreshBackend");
+        console.log(response);
+      }
+
+      refreshBackend();
+
+
     };
+
+
 
     // Add event listener for window resize
     window.addEventListener('resize', handleResize);
@@ -196,7 +206,13 @@ const Map2 = (props) => {
 
       const data = await response.json();
       const count = data.summary.numResults;
-      await saveDataToBackend(data);
+      // console.log(data.results[0])
+      for(const singleAmmenitiy of data.results){
+        ammenitiData.results.push(singleAmmenitiy);
+      }
+      // console.log(ammenitiData);
+
+      // // await saveDataToBackend(ammenitiData);
       // Convert JSON data to CSV format
       // const headers = [
       //   // Array of strings representing CSV column headers
@@ -257,6 +273,9 @@ const Map2 = (props) => {
 
     console.log(locationCounts);
     console.log(locationData);
+    console.log(ammenitiData);
+
+    await saveDataToBackend(ammenitiData);
     await postDataToBackend(locationData);
     props.setIsLoading(false);
     console.log("got back here");
@@ -268,7 +287,7 @@ const Map2 = (props) => {
 
 
   async function saveDataToBackend(data) {
-    const response = await fetch('http://localhost:5000/append_data', {
+    const response = await fetch('https://ness-cpww.onrender.com/append_data', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -339,14 +358,14 @@ const Map2 = (props) => {
 // --------------Change this------------------receive_data---get_json_data_dummy
 
   async function postDataToBackend(data) {
-    const response = await fetch('http://localhost:5000/receive_data', {
+    const response = await fetch('https://ness-cpww.onrender.com/receive_data', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify(data),
     });
-  
+    
     const result = await response.json();
     console.log(result);
     setResults(result);
