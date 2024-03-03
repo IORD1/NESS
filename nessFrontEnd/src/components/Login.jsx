@@ -8,7 +8,9 @@ import ButtonLight from './ButtonLight';
 const Login = () => {
 
     function loginWithGoogle(){
-        window.open('http://localhost:5173/preferences', '_self'); 
+        window.open(`${window.location.origin}/preferences`, '_self'); 
+
+        // window.open('http://localhost:5173/preferences', '_self'); 
     }
 
 

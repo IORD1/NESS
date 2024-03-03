@@ -7,7 +7,8 @@ import NessLoader from "./NessLoader";
 const Splash = () => {
 
   function openLogin(){
-    window.open('http://localhost:5173/login', '_self'); 
+    window.open(`${window.location.origin}/login`, '_self'); 
+    // window.open('http://localhost:5173/login', '_self'); 
   }
 
 
