@@ -188,7 +188,7 @@ def hello():
     # return jsonify({"nearest_place" : nearest_place, "rate" : rateinnum})
     # return returnTraffic(18.515752,73.842158,radiusGlobal)
     # return retunAirQuality(18.55164920241211,73.8434820739746)
-    return "Welcome to ness backend ;)"
+    return "Welcome to ness backend ;) (V1.3)"
 
 
 @app.route('/get_data')
