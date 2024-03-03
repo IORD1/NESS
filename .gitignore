@@ -6,3 +6,4 @@ nessFrontEnd/.env
 .gitignore
 .vscode
 Datasets/99acres
+backEnd/Databank/data copy.json

@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify,send_file
 from flask_cors import CORS
 import numpy as np
 import pandas as pd
@@ -8,6 +8,7 @@ import requests
 import json
 from math import radians, sin, cos, sqrt, atan2
 from datetime import datetime
+import shutil
 
 
 with open('keys.json') as f:
@@ -175,6 +176,11 @@ def return_nearest_rate(lat, lon):
     return nearest_place,rateinnum,imageUrl,areaClass,seeMoreUrl,locationArea
 
 
+
+
+
+    
+
 @app.route('/')
 def hello():
     # nearest_place, nearest_rate = return_nearest_rate(18.54149754525427, 73.79255976528276)
@@ -183,6 +189,19 @@ def hello():
     # return returnTraffic(18.515752,73.842158,radiusGlobal)
     # return retunAirQuality(18.55164920241211,73.8434820739746)
     return "Welcome to ness backend ;)"
+
+
+@app.route('/get_data')
+def downloaddata():
+    return send_file("Databank/data.json", as_attachment=True)
+
+
+
+@app.route('/wipe_data')
+def wipeAllData():
+    open("Databank/data.json", 'w').close()
+    shutil.copyfile("Databank/copy.json", "Databank/data.json")
+    return "ALL DATA WIPED"
 
 @app.route('/api/data')
 def get_data():
