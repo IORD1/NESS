@@ -96,3 +96,21 @@
     color: #3A3FC0;
 
 }
+
+@media only screen and (max-width: 600px) {
+    #Preferences-frirstSection{
+        width: 0px;
+    }
+
+    #Preferences-secondSection{
+        width: 100%;
+        padding-top: 20px;
+    }
+
+
+    #Preferences-container{
+        height: 95vh;
+        width: 92vw;
+    }
+
+  }

@@ -13,8 +13,8 @@ const Preferences = (props) => {
         console.log(userPreferencesList);
         const preferencesData = { list: userPreferencesList };
         postPrefrencesToBackend(preferencesData)
-        
-        window.open('http://localhost:5173/homescreen', '_self'); 
+        window.open(`${window.location.origin}/homescreen`, '_self'); 
+        // window.open('http://localhost:5173/homescreen', '_self'); 
     }
 
     function savePreferences(id){

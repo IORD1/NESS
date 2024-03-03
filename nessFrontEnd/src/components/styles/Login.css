@@ -57,4 +57,22 @@
 }
 
 
+@media only screen and (max-width: 600px) {
+    #Login-frirstSection{
+        width: 0px;
+    }
+
+    #Login-secondSection{
+        width: 100%;
+    }
+
+
+    #Login-container{
+        height: 95vh;
+        width: 92vw;
+    }
+
+  }
+
+
 

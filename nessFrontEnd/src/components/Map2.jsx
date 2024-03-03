@@ -3,6 +3,7 @@ import { GoogleMap, useLoadScript, Marker, InfoWindow } from '@react-google-maps
 import keys from "../keys.json";
 import MarkerList from './MarkerList';
 import "./styles/map.css";
+import "./styles/mapMobile.css";
 import ButtonMain from './ButtonMain';
 import ButtonLight from './ButtonLight';
 // import poiShort from './assests/poiTemp.json';
@@ -37,6 +38,7 @@ const Map2 = (props) => {
     const [markers, setMarkers] = useState([]);
     const [selectedMarker, setSelectedMarker] = useState(null);
     const [mapWidth, setMapWdith] = useState("75vw");
+    const [mapHeight, setMapHeight] = useState("100vh");
     const [resultAvailable, setResultAvailable] = useState(false);
     const [results, setResults] = useState({});
     let [rankingIndex, setRankingIndex] = useState(1);
@@ -52,7 +54,7 @@ const Map2 = (props) => {
 
   const mapContainerStyle = {
     width: mapWidth,
-    height: '100vh',
+    height: mapHeight,
     transition: "all 1s ease-in-out"
   };
 
@@ -62,8 +64,33 @@ const Map2 = (props) => {
   }  
 
   function openPreferences(){
-    window.open('http://localhost:5173/preferences', '_self'); 
+    window.open(`${window.location.origin}/preferences`, '_self'); 
+    // window.open('http://localhost:5173/preferences', '_self'); 
 }    
+
+  useEffect(() => {
+    const handleResize = () => {
+      // Update map width based on viewport width
+      if(resultAvailable){
+        setMapWdith(window.innerWidth <= 768 ? "100vw" : "25vw");
+
+      }else{
+
+        setMapWdith(window.innerWidth <= 768 ? "100vw" : "75vw");
+      }
+
+    };
+
+    // Add event listener for window resize
+    window.addEventListener('resize', handleResize);
+
+    // Call handleResize once initially to set the correct map width
+    handleResize();
+
+    // Remove event listener on component unmount
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
 
 
 
@@ -92,8 +119,8 @@ const Map2 = (props) => {
     // run();
     await postDataToBackend(locatoinDataTest);
     console.log("got back here");
-    setMapWdith("25vw");
     setResultAvailable(true);
+    window.innerWidth <= 768 ? setMapWdith("100vw") : setMapWdith("25vw");
     document.getElementById("MapDock").style.width = "75vw";
   }
 
@@ -233,7 +260,8 @@ const Map2 = (props) => {
     await postDataToBackend(locationData);
     props.setIsLoading(false);
     console.log("got back here");
-    setMapWdith("25vw");
+    window.innerWidth <= 768 ? setMapWdith("100vw") : setMapWdith("25vw");
+    // setMapWdith("25vw");
     setResultAvailable(true);
     document.getElementById("MapDock").style.width = "75vw";
   }
@@ -322,6 +350,7 @@ const Map2 = (props) => {
     const result = await response.json();
     console.log(result);
     setResults(result);
+    window.innerWidth <= 768 ? setMapHeight("25vh") : setMapHeight("100vh");
     generatePrompt(result);
   }
 
@@ -347,6 +376,7 @@ const Map2 = (props) => {
 
       <GoogleMap
         mapContainerStyle={mapContainerStyle}
+        id='mapMobile'
         zoom={10}
         center={center}
         onClick={handleMapClick}
