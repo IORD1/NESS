@@ -27,7 +27,7 @@ export function SetRadius() {
   }
 
   async function postRadiusToBackend(radius) {
-    const response = await fetch('http://localhost:5000/receive_radius', {
+    const response = await fetch('https://ness-cpww.onrender.com/receive_radius', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

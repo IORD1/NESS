@@ -27,7 +27,7 @@ const Preferences = (props) => {
 
 
     async function postPrefrencesToBackend(data) {
-        const response = await fetch('https://1dbf-103-17-156-250.ngrok-free.app/receive_preferences', {
+        const response = await fetch('https://ness-cpww.onrender.com/receive_preferences', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',

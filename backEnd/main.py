@@ -203,6 +203,13 @@ def wipeAllData():
     shutil.copyfile("Databank/copy.json", "Databank/data.json")
     return "ALL DATA WIPED"
 
+
+@app.route('/refreshBackend')
+def refreshApp():
+    global radiusGlobal
+    radiusGlobal = 1000
+    return jsonify({'message': 'App backend refreshed'})
+
 @app.route('/api/data')
 def get_data():
     data = {'message': 'This is JSON data from your backend server!'}
