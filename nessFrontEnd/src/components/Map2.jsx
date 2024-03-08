@@ -26,6 +26,8 @@ import { Drawer } from './ui/drawer';
 import { SetRadius } from './SetRadius';
 import { AlertSaved } from './AlertSaved';
 import PoiList from "./PoiList";
+import { Cross2Icon } from "@radix-ui/react-icons"
+
 
 const center = {
   lat: 18.5204,
@@ -79,12 +81,12 @@ const Map2 = (props) => {
         setMapWdith(window.innerWidth <= 768 ? "100vw" : "75vw");
       }
 
-      const refreshBackend = async () => {
-        const response = await fetch("https://ness-cpww.onrender.com/refreshBackend");
-        console.log(response);
-      }
+      // const refreshBackend = async () => {
+      //   const response = await fetch("https://ness-cpww.onrender.com/refreshBackend");
+      //   console.log(response);
+      // }
 
-      refreshBackend();
+      // refreshBackend();
 
 
     };
@@ -389,6 +391,13 @@ const Map2 = (props) => {
     }
   }
 
+  function handleRemoveLocation(selectedMarker){
+    console.log(selectedMarker);
+    const updatedMarkers = markers.filter(marker => marker !== selectedMarker);
+    setMarkers(updatedMarkers);
+    setSelectedMarker(null);
+  }
+
   return (
     <div id='mapContainer'>
       <SetRadius />
@@ -413,8 +422,21 @@ const Map2 = (props) => {
             onCloseClick={handleInfoWindowClose}
           >
             {/*  zIndex does not work ig */}
-            <div style={{ color: 'black', zIndex: 12, paddingRight: "13px", fontWeight: "500" }}>
-              {selectedMarker.serial}.  {selectedMarker.name}
+            <div style={{ color: 'black', zIndex: 12, paddingRight: "13px", fontWeight: "500" , paddingBottom : "30px", display: "flex", gap: "40px" , fontSize : "1.3em" }}>
+              {selectedMarker.serial}. <br />  {selectedMarker.name}
+              <div  id='selectedMarkersBox'>
+                <div>
+                <Button variant="destructive" style={{FontFace: "Nunito", gap: "5px", mariginTop : "10px"}} onClick={()=>{handleRemoveLocation(selectedMarker)}}>
+                   Remove
+                </Button>
+              </div>
+              <div>
+                <Button variant="secondary" style={{FontFace: "Nunito", gap: "5px", mariginTop : "10px"}} onClick={()=>{handleInfoWindowClose()}}>
+                  Cancel
+                </Button>
+
+              </div>
+              </div>
             </div>
           </InfoWindow>
         )}
