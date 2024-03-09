@@ -1,6 +1,6 @@
 import React from 'react';
 import './styles/Login.css';
-import Button from "./Button";
+import Button from "./ButtonMain";
 import NessLoader from "./NessLoader";
 import ButtonLight from './ButtonLight';
 
@@ -8,7 +8,9 @@ import ButtonLight from './ButtonLight';
 const Login = () => {
 
     function loginWithGoogle(){
-        window.open('http://localhost:5173/preferences', '_self'); 
+        window.open(`${window.location.origin}/preferences`, '_self'); 
+
+        // window.open('http://localhost:5173/preferences', '_self'); 
     }
 
 

@@ -1,4 +1,4 @@
-import Button from "./components/Button"
+import Button from "./components/ButtonMain"
 import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 

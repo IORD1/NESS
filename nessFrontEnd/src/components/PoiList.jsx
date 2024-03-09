@@ -31,6 +31,9 @@ const getRandomIndex = () => Math.floor(Math.random() * backgroundColors.length)
                     style={{
                         color: "white",
                         backgroundColor: backgroundColors[getRandomIndex()],
+                        padding : "3px 8px 3px 8px",
+                        borderRadius : "4px"
+
                     }}
                     >
                     {category.name}

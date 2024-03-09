@@ -1,9 +1,10 @@
 Map/node_modules/
 nessFrontEnd/key.env
 nessFrontEnd/src/keys.json
-backEnd/keys.json
 nessFrontEnd/.env
 .idea
 .gitignore
 .vscode
 Datasets/99acres
+backEnd/Databank/data copy.json
+backEnd/Databank/dataAll.json

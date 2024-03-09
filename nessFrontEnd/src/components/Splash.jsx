@@ -1,13 +1,14 @@
 import React from 'react';
 import './styles/splash.css';
-import Button from "./Button";
+import Button from "./ButtonMain";
 import NessLoader from "./NessLoader";
 
 
 const Splash = () => {
 
   function openLogin(){
-    window.open('http://localhost:5173/login', '_self'); 
+    window.open(`${window.location.origin}/login`, '_self'); 
+    // window.open('http://localhost:5173/login', '_self'); 
   }
 
 
@@ -24,7 +25,7 @@ const Splash = () => {
             style={{
             fontSize: '15px',
             fontWeight: "600",
-            width: "50%",
+            width: "80%",
           }}/>
 
         </div>

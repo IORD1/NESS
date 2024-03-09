@@ -1,8 +1,8 @@
 import React from 'react';
-import './styles/button.css';
+import './styles/ButtonMain.css';
 
 
-const Button = ({ text,disable, onClick, style, ...otherProps }) => {
+const ButtonMain = ({ text,disable, onClick, style, ...otherProps }) => {
   const defaultStyle = {
     display : "flex",
     flexDirection: "row",
@@ -13,7 +13,6 @@ const Button = ({ text,disable, onClick, style, ...otherProps }) => {
     gap : '8px',
     width: "auto",
     height: "66px",
-
     borderRadius: "16px",
     fontFamily: "Nunito",
     fontStyle: "normal",
@@ -33,6 +32,6 @@ const Button = ({ text,disable, onClick, style, ...otherProps }) => {
   );
 };
 
-export default Button;
+export default ButtonMain;
 
 

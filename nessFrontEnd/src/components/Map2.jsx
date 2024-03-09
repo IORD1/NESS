@@ -3,7 +3,8 @@ import { GoogleMap, useLoadScript, Marker, InfoWindow } from '@react-google-maps
 import keys from "../keys.json";
 import MarkerList from './MarkerList';
 import "./styles/map.css";
-import Button from './Button';
+import "./styles/mapMobile.css";
+import ButtonMain from './ButtonMain';
 import ButtonLight from './ButtonLight';
 // import poiShort from './assests/poiTemp.json';
 import poiShort from './assests/poiShort.json';
@@ -20,6 +21,12 @@ import RealEsateRatePlot from './graphs/RealEstateRatePlot.jsx';
 import { GoogleGenerativeAI } from '@google/generative-ai';
 const genAI = new GoogleGenerativeAI(keys.genAiKey);
 import MarkDownView from './MarkDownView.jsx';
+import { Button } from './ui/button';
+import { Drawer } from './ui/drawer';
+import { SetRadius } from './SetRadius';
+import { AlertSaved } from './AlertSaved';
+import PoiList from "./PoiList";
+import { Cross2Icon } from "@radix-ui/react-icons"
 
 
 const center = {
@@ -33,6 +40,7 @@ const Map2 = (props) => {
     const [markers, setMarkers] = useState([]);
     const [selectedMarker, setSelectedMarker] = useState(null);
     const [mapWidth, setMapWdith] = useState("75vw");
+    const [mapHeight, setMapHeight] = useState("100vh");
     const [resultAvailable, setResultAvailable] = useState(false);
     const [results, setResults] = useState({});
     let [rankingIndex, setRankingIndex] = useState(1);
@@ -45,10 +53,12 @@ const Map2 = (props) => {
     libraries,
   });  
 
+  const ammenitiData = { results: [] };
+
 
   const mapContainerStyle = {
     width: mapWidth,
-    height: '100vh',
+    height: mapHeight,
     transition: "all 1s ease-in-out"
   };
 
@@ -58,8 +68,41 @@ const Map2 = (props) => {
   }  
 
   function openPreferences(){
-    window.open('http://localhost:5173/preferences', '_self'); 
-}    
+    window.open(`${window.location.origin}/preferences`, '_self'); 
+    // window.open('http://localhost:5173/preferences', '_self'); 
+  }    
+
+  useEffect(() => {
+    const handleResize = () => {
+      // Update map width based on viewport width
+      if(resultAvailable){
+        setMapWdith(window.innerWidth <= 768 ? "100vw" : "25vw");
+      }else{
+        setMapWdith(window.innerWidth <= 768 ? "100vw" : "75vw");
+      }
+
+      // const refreshBackend = async () => {
+      //   const response = await fetch("https://ness-cpww.onrender.com/refreshBackend");
+      //   console.log(response);
+      // }
+
+      // refreshBackend();
+
+
+    };
+
+
+
+    // Add event listener for window resize
+    window.addEventListener('resize', handleResize);
+
+    // Call handleResize once initially to set the correct map width
+    handleResize();
+
+    // Remove event listener on component unmount
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
 
 
 
@@ -88,8 +131,8 @@ const Map2 = (props) => {
     // run();
     await postDataToBackend(locatoinDataTest);
     console.log("got back here");
-    setMapWdith("25vw");
     setResultAvailable(true);
+    window.innerWidth <= 768 ? setMapWdith("100vw") : setMapWdith("25vw");
     document.getElementById("MapDock").style.width = "75vw";
   }
 
@@ -165,7 +208,13 @@ const Map2 = (props) => {
 
       const data = await response.json();
       const count = data.summary.numResults;
-      await saveDataToBackend(data);
+      // console.log(data.results[0])
+      for(const singleAmmenitiy of data.results){
+        ammenitiData.results.push(singleAmmenitiy);
+      }
+      // console.log(ammenitiData);
+
+      // // await saveDataToBackend(ammenitiData);
       // Convert JSON data to CSV format
       // const headers = [
       //   // Array of strings representing CSV column headers
@@ -201,6 +250,9 @@ const Map2 = (props) => {
   };
   async function getData() {
     props.setIsLoading(true);
+    props.setTotalToBeLoaded(27*markers.length);
+    console.log(27*markers.length);
+    
     const locationCounts = [];
     const locationData = { locations: [] };
 
@@ -213,7 +265,9 @@ const Map2 = (props) => {
         console.log(ammenity);
         const count = await fetchData(location.lat,location.lng,1000,100,ammenity.id);
         locationCount[ammenity.id] = count;
-        await sleep(1000);
+        // await sleep(700);
+        
+        props.setNumberLoaded(prevNumberLoaded => prevNumberLoaded + 1);
       }
       locationData.locations.push(locationCount);
       console.log("------^^^^^^^-------");
@@ -221,17 +275,21 @@ const Map2 = (props) => {
 
     console.log(locationCounts);
     console.log(locationData);
+    console.log(ammenitiData);
+
+    await saveDataToBackend(ammenitiData);
     await postDataToBackend(locationData);
     props.setIsLoading(false);
     console.log("got back here");
-    setMapWdith("25vw");
+    window.innerWidth <= 768 ? setMapWdith("100vw") : setMapWdith("25vw");
+    // setMapWdith("25vw");
     setResultAvailable(true);
     document.getElementById("MapDock").style.width = "75vw";
   }
 
 
   async function saveDataToBackend(data) {
-    const response = await fetch('http://localhost:5000/append_data', {
+    const response = await fetch('https://ness-cpww.onrender.com/append_data', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -302,17 +360,18 @@ const Map2 = (props) => {
 // --------------Change this------------------receive_data---get_json_data_dummy
 
   async function postDataToBackend(data) {
-    const response = await fetch('http://localhost:5000/receive_data', {
+    const response = await fetch('https://ness-cpww.onrender.com/receive_data', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify(data),
     });
-  
+    
     const result = await response.json();
     console.log(result);
     setResults(result);
+    window.innerWidth <= 768 ? setMapHeight("25vh") : setMapHeight("100vh");
     generatePrompt(result);
   }
 
@@ -332,10 +391,20 @@ const Map2 = (props) => {
     }
   }
 
+  function handleRemoveLocation(selectedMarker){
+    console.log(selectedMarker);
+    const updatedMarkers = markers.filter(marker => marker !== selectedMarker);
+    setMarkers(updatedMarkers);
+    setSelectedMarker(null);
+  }
+
   return (
     <div id='mapContainer'>
+      <SetRadius />
+
       <GoogleMap
         mapContainerStyle={mapContainerStyle}
+        id='mapMobile'
         zoom={10}
         center={center}
         onClick={handleMapClick}
@@ -343,6 +412,7 @@ const Map2 = (props) => {
           mapTypeControl: false,
         }}
       >
+
         {markers.map((marker, index) => (
           <Marker key={index} position={marker} onClick={() => handleMarkerClick(marker)} />
         ))}
@@ -352,8 +422,21 @@ const Map2 = (props) => {
             onCloseClick={handleInfoWindowClose}
           >
             {/*  zIndex does not work ig */}
-            <div style={{ color: 'black', zIndex: 12, paddingRight: "13px", fontWeight: "500" }}>
-              {selectedMarker.serial}.  {selectedMarker.name}
+            <div style={{ color: 'black', zIndex: 12, paddingRight: "13px", fontWeight: "500" , paddingBottom : "30px", display: "flex", gap: "40px" , fontSize : "1.3em" }}>
+              {selectedMarker.serial}. <br />  {selectedMarker.name}
+              <div  id='selectedMarkersBox'>
+                <div>
+                <Button variant="destructive" style={{FontFace: "Nunito", gap: "5px", mariginTop : "10px"}} onClick={()=>{handleRemoveLocation(selectedMarker)}}>
+                   Remove
+                </Button>
+              </div>
+              <div>
+                <Button variant="secondary" style={{FontFace: "Nunito", gap: "5px", mariginTop : "10px"}} onClick={()=>{handleInfoWindowClose()}}>
+                  Cancel
+                </Button>
+
+              </div>
+              </div>
             </div>
           </InfoWindow>
         )}
@@ -409,6 +492,8 @@ const Map2 = (props) => {
               <MarkDownView markdownText={promptResutl}/>
             </div>
 
+            <PoiList />
+
           </div>
         </div>
       :
@@ -419,7 +504,7 @@ const Map2 = (props) => {
         </div>
         <div id='mapDockButtonContainer'>
           <div id='buttonHolder'>
-            <Button text={"Compare"}
+            <ButtonMain text={"Compare"}
             disable={isButtonDisabled}
             onClick={()=>{handleClick()}}
             style={{
