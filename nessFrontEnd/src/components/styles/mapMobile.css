@@ -1,0 +1,28 @@
+@media only screen and (max-width: 600px) {
+   #mapContainer{
+    flex-direction: column;
+    height: 100vh;
+   }
+
+   #MapDock{
+    height: 75vh;
+    /* background-color: red; */
+    width: 100vw;
+   }
+
+
+
+   
+   #resultContainer{
+    width: 100vw;
+    margin-left: 110px;
+   }
+ 
+   .resultsChips{
+      width: 90%;
+      height: 100px;
+   }
+
+  
+
+}

@@ -25,6 +25,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
+
 }
 
 #PreferencesButtonsCenter{
@@ -51,6 +52,8 @@
 #PreferencesText{
     width: 100%;
     line-height: 10px;
+    margin-bottom: 20px;
+    margin-top: 10px;
 }
 
 
@@ -93,3 +96,25 @@
     color: #3A3FC0;
 
 }
+
+@media only screen and (max-width: 600px) {
+    #Preferences-frirstSection{
+        width: 0px;
+    }
+
+    #Preferences-secondSection{
+        width: 100%;
+        padding-top: 20px;
+    }
+
+
+    #Preferences-container{
+        height: 95vh;
+        width: 92vw;
+    }
+
+    .PreferencesChip{
+        width: 100%;
+    }
+
+  }

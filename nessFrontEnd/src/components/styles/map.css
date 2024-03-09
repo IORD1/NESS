@@ -60,6 +60,7 @@
     font-size: 2.7em;
     color: #272323;
     font-weight: 600;
+    margin-bottom: 40px;
 }
 
 #rankingHeading{
@@ -68,6 +69,7 @@
     font-weight: 600;
     line-height: 0px;
     width: 100%;
+    margin-bottom: 20px;
 }
 
 #rankingHolder{
@@ -175,4 +177,25 @@
     left: 20px;
     transition: all 1s ease;
     box-shadow: rgba(0, 0, 0, 0.836) 0px 52px 140px 4px;
+}
+
+
+#setRadiusButton{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 1;
+}
+
+#alertRadiusSaved{
+    position: absolute;
+    top: 100px;
+    left: 100px;
+    z-index: 3;
+}
+
+#selectedMarkersBox{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }

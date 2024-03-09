@@ -1,6 +1,6 @@
 import React from 'react';
 import "./styles/preferences.css";
-import Button from "./Button";
+import Button from "./ButtonMain";
 import NessLoader from "./NessLoader";
 import ButtonLight from './ButtonLight';
 import preferencesList from './assests/poiShort.json';
@@ -13,8 +13,8 @@ const Preferences = (props) => {
         console.log(userPreferencesList);
         const preferencesData = { list: userPreferencesList };
         postPrefrencesToBackend(preferencesData)
-        
-        window.open('http://localhost:5173/homescreen', '_self'); 
+        window.open(`${window.location.origin}/homescreen`, '_self'); 
+        // window.open('http://localhost:5173/homescreen', '_self'); 
     }
 
     function savePreferences(id){
@@ -27,7 +27,7 @@ const Preferences = (props) => {
 
 
     async function postPrefrencesToBackend(data) {
-        const response = await fetch('http://localhost:5000/receive_preferences', {
+        const response = await fetch('https://ness-cpww.onrender.com/receive_preferences', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
