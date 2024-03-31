@@ -222,7 +222,7 @@ def hello():
     # return jsonify({"nearest_place" : nearest_place, "rate" : rateinnum})
     # return returnTraffic(18.515752,73.842158,radiusGlobal)
     # return retunAirQuality(18.55164920241211,73.8434820739746)
-    return "Welcome to ness backend ;) (V1.3)"
+    return "Welcome to ness backend ;) (V1.3)", 200
 
 
 @app.route('/get_data')
@@ -247,7 +247,7 @@ def refreshApp():
     global ammneitiescopy
     amenity_weights = ammneitiescopy
 
-    return jsonify({'message': 'App backend refreshed'})
+    return jsonify({'message': 'App backend refreshed'}) , 200
 
 @app.route('/api/data')
 def get_data():
@@ -465,7 +465,7 @@ def computePreferences():
     weights = weight_array
     print("-"*30)
 
-    return jsonify({'message': 'Weights received successfully!'})
+    return jsonify({'message': 'Weights received successfully!'}) , 200
 
 @app.route('/get_json_data_dummy', methods=['POST'])
 def get_json_data():
@@ -518,7 +518,7 @@ def computeWeights():
     print("-"*30)
 
 
-    return jsonify({'message': "Saved Radius"}), 200
+    return jsonify({'message': "Saved Radius" , "newRadius" : radiusGlobal}), 200
 
 
 if __name__ == '__main__':
