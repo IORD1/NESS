@@ -27,8 +27,42 @@ weights = [0.061728395061728364, 0.030864197530864182, 0.049382716049382686, 0.0
 global radiusGlobal
 radiusGlobal = 1000
 namesOfAmmenities = ["Hospital", "Café/Pub", "Health Care Service", "Market", "Public Amenity", "College/University", "Open Parking Area", "School", "Park & Recreation Area", "Movie Theater", "Place of Worship", "Car Wash", "Bank", "Parking Garage", "Police Station", "Library", "Shopping Center", "Pharmacy", "Swimming Pool", "Golf Course", "Fire Station", "Taxi Stand", "Grocery Store", "Fast Food", "Dry Cleaner", "Convenience Store", "Banquet Rooms","Air Quality","Real Estate Rates","Traffic Jam Factor"]
-
+global amenity_weights
 amenity_weights = {
+    "Hospital": 0.1,
+    "Café/Pub": 0.05,
+    "Health Care Service": 0.08,
+    "Market": 0.07,
+    "Public Amenity": 0.05,
+    "College/University": 0.08,
+    "Open Parking Area": 0.03,
+    "School": 0.09,
+    "Park & Recreation Area": 0.06,
+    "Movie Theater": 0.04,
+    "Place of Worship": 0.04,
+    "Car Wash": 0.02,
+    "Bank": 0.06,
+    "Parking Garage": 0.03,
+    "Police Station": 0.06,
+    "Library": 0.05,
+    "Shopping Center": 0.07,
+    "Pharmacy": 0.07,
+    "Swimming Pool": 0.06,
+    "Golf Course": 0.05,
+    "Fire Station": 0.05,
+    "Taxi Stand": 0.02,
+    "Grocery Store": 0.07,
+    "Fast Food": 0.04,
+    "Dry Cleaner": 0.03,
+    "Convenience Store": 0.05,
+    "Banquet Rooms": 0.01,
+    "Air Quality": -0.04,
+    "Real Estate Rates" : 0.08,
+    "Traffic Jam Factor" : -0.07
+}
+
+global ammneitiescopy 
+ammneitiescopy = {
     "Hospital": 0.1,
     "Café/Pub": 0.05,
     "Health Care Service": 0.08,
@@ -175,7 +209,7 @@ def return_nearest_rate(lat, lon):
     
     return nearest_place,rateinnum,imageUrl,areaClass,seeMoreUrl,locationArea
 
-
+            
 
 
 
@@ -201,13 +235,18 @@ def downloaddata():
 def wipeAllData():
     open("Databank/data.json", 'w').close()
     shutil.copyfile("Databank/copy.json", "Databank/data.json")
-    return "ALL DATA WIPED"
+    return "ALL DATA WIPED <> from main data file <>"
 
 
 @app.route('/refreshBackend')
 def refreshApp():
     global radiusGlobal
     radiusGlobal = 1000
+    
+    global amenity_weights
+    global ammneitiescopy
+    amenity_weights = ammneitiescopy
+
     return jsonify({'message': 'App backend refreshed'})
 
 @app.route('/api/data')
@@ -267,6 +306,11 @@ def receive_data():
 
     # Access the 'locations' key
     locations = data.get('locations', [])
+    if len(locations) == 0:
+        return jsonify({
+        'message': 'No locations chosen!'
+        }) , 400
+    
     index = []
     matrix = []
     air_quality=[]
