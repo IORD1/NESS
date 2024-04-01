@@ -80,7 +80,8 @@ const Map2 = (props) => {
       }
 
       const refreshBackend = async () => {
-        const response = await fetch("https://ness-cpww.onrender.com/refreshBackend");
+        // const response = await fetch("https://ness-cpww.onrender.com/refreshBackend");
+        const response = await fetch("http://localhost:5000/refreshBackend");
         console.log(response);
       }
 
@@ -287,7 +288,8 @@ const Map2 = (props) => {
 
 
   async function saveDataToBackend(data) {
-    const response = await fetch('https://ness-cpww.onrender.com/append_data', {
+    // const response = await fetch('https://ness-cpww.onrender.com/append_data', {
+    const response = await fetch('http://localhost:5000/append_data', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -358,8 +360,9 @@ const Map2 = (props) => {
 // --------------Change this------------------receive_data---get_json_data_dummy
 
   async function postDataToBackend(data) {
-    const response = await fetch('https://ness-cpww.onrender.com/receive_data', {
-      method: 'POST',
+  // const response = await fetch('https://ness-cpww.onrender.com/receive_data', {
+  const response = await fetch('http://localhost:5000/receive_data', {
+    method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
