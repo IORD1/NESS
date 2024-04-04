@@ -1,31 +1,37 @@
-import React, { useState, useEffect } from 'react';
-import { GoogleMap, useLoadScript, Marker, InfoWindow } from '@react-google-maps/api';
+import React, { useState, useEffect } from "react";
+import {
+  GoogleMap,
+  useLoadScript,
+  Marker,
+  InfoWindow,
+} from "@react-google-maps/api";
 import keys from "../keys.json";
-import MarkerList from './MarkerList';
+import MarkerList from "./MarkerList";
 import "./styles/map.css";
 import "./styles/mapMobile.css";
-import ButtonMain from './ButtonMain';
-import ButtonLight from './ButtonLight';
+import ButtonMain from "./ButtonMain";
+import ButtonLight from "./ButtonLight";
 // import poiShort from './assests/poiTemp.json';
-import poiShort from './assests/poiShort.json';
+import poiShort from "./assests/poiShort.json";
 import locatoinDataTest from "../../../Temporary/testLocationData.json";
-import BarChart from './graphs/AmmenityBarPlot.jsx';
+import BarChart from "./graphs/AmmenityBarPlot.jsx";
 import RadarChat from "./graphs/WeightsRadialPlot.jsx";
-import ResultHistogram from './graphs/ResultHistogram.jsx';
+import ResultHistogram from "./graphs/ResultHistogram.jsx";
 // import ResultMeter from './graphs/AirQualityMeter.jsx';
-import AirQualityChart from './graphs/BasicAirQuality.jsx';
-import TrafficPlot from './graphs/TrafficPlot.jsx';
-import RealEsateRatePlot from './graphs/RealEstateRatePlot.jsx';
+import AirQualityChart from "./graphs/BasicAirQuality.jsx";
+import TrafficPlot from "./graphs/TrafficPlot.jsx";
+import RealEsateRatePlot from "./graphs/RealEstateRatePlot.jsx";
 // import { CSVLink } from 'react-json-csv'; // Or use Papa or xlsx components
 // const { GoogleGenerativeAI } = require("@google/generative-ai");
-import { GoogleGenerativeAI } from '@google/generative-ai';
+import { GoogleGenerativeAI } from "@google/generative-ai";
 const genAI = new GoogleGenerativeAI(keys.genAiKey);
-import MarkDownView from './MarkDownView.jsx';
-import { Button } from './ui/button';
-import { Drawer } from './ui/drawer';
-import { SetRadius } from './SetRadius';
-import { AlertSaved } from './AlertSaved';
+import MarkDownView from "./MarkDownView.jsx";
+import { Button } from "./ui/button";
+import { Drawer } from "./ui/drawer";
+import { SetRadius } from "./SetRadius";
+import { AlertSaved } from "./AlertSaved";
 import PoiList from "./PoiList";
+import { Cross2Icon } from "@radix-ui/react-icons";
 
 const center = {
   lat: 18.5204,
@@ -33,52 +39,50 @@ const center = {
 };
 
 const Map2 = (props) => {
-  const [libraries] = useState(['places']);
-  
-    const [markers, setMarkers] = useState([]);
-    const [selectedMarker, setSelectedMarker] = useState(null);
-    const [mapWidth, setMapWdith] = useState("75vw");
-    const [mapHeight, setMapHeight] = useState("100vh");
-    const [resultAvailable, setResultAvailable] = useState(false);
-    const [results, setResults] = useState({});
-    let [rankingIndex, setRankingIndex] = useState(1);
-    const [enlarged, setEnlarged] = useState(false);
-    const [promptResutl,setPromtResult] = useState("");
+  const [libraries] = useState(["places"]);
 
+  const [markers, setMarkers] = useState([]);
+  const [selectedMarker, setSelectedMarker] = useState(null);
+  const [mapWidth, setMapWdith] = useState("75vw");
+  const [mapHeight, setMapHeight] = useState("100vh");
+  const [resultAvailable, setResultAvailable] = useState(false);
+  const [results, setResults] = useState({});
+  let [rankingIndex, setRankingIndex] = useState(1);
+  const [enlarged, setEnlarged] = useState(false);
+  const [promptResutl, setPromtResult] = useState("");
 
   const { isLoaded, loadError } = useLoadScript({
     googleMapsApiKey: keys.googleMapsApiKey,
     libraries,
-  });  
+  });
 
   const ammenitiData = { results: [] };
-
 
   const mapContainerStyle = {
     width: mapWidth,
     height: mapHeight,
-    transition: "all 1s ease-in-out"
+    transition: "all 1s ease-in-out",
   };
 
-
   function sleep(ms) {
-    return new Promise(resolve => setTimeout(resolve, ms));
-  }  
+    return new Promise((resolve) => setTimeout(resolve, ms));
+  }
 
-  function openPreferences(){
-    window.open(`${window.location.origin}/preferences`, '_self'); 
-    // window.open('http://localhost:5173/preferences', '_self'); 
-  }    
+  function openPreferences() {
+    window.open(`${window.location.origin}/preferences`, "_self");
+    // window.open('http://localhost:5173/preferences', '_self');
+  }
 
   useEffect(() => {
     const handleResize = () => {
       // Update map width based on viewport width
-      if(resultAvailable){
+      if (resultAvailable) {
         setMapWdith(window.innerWidth <= 768 ? "100vw" : "25vw");
-      }else{
+      } else {
         setMapWdith(window.innerWidth <= 768 ? "100vw" : "75vw");
       }
 
+<<<<<<< HEAD
       const refreshBackend = async () => {
         // const response = await fetch("https://ness-cpww.onrender.com/refreshBackend");
         const response = await fetch("http://localhost:5000/refreshBackend");
@@ -87,36 +91,44 @@ const Map2 = (props) => {
 
       refreshBackend();
 
+||||||| 79f2415
+      const refreshBackend = async () => {
+        const response = await fetch("https://ness-cpww.onrender.com/refreshBackend");
+        console.log(response);
+      }
 
+      refreshBackend();
+
+=======
+      // const refreshBackend = async () => {
+      //   const response = await fetch("https://ness-cpww.onrender.com/refreshBackend");
+      //   console.log(response);
+      // }
+>>>>>>> 4ff72edb8210793965de8cc6b16348a937b3890b
+
+      // refreshBackend();
     };
 
-
-
     // Add event listener for window resize
-    window.addEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
 
     // Call handleResize once initially to set the correct map width
     handleResize();
 
     // Remove event listener on component unmount
-    return () => window.removeEventListener('resize', handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
-
-
-
 
   const isButtonDisabled = markers.length < 2;
   const handleClick = () => {
     if (!isButtonDisabled) {
       console.log("analyzing");
       getData();
-
     }
   };
 
-
   async function run(prompt) {
-    const model = genAI.getGenerativeModel({ model: "gemini-pro"});    
+    const model = genAI.getGenerativeModel({ model: "gemini-pro" });
     const result = await model.generateContent(prompt);
     const response = await result.response;
     const text = response.text();
@@ -124,9 +136,7 @@ const Map2 = (props) => {
     setPromtResult(text);
   }
 
-
-
-  async function getData2(){
+  async function getData2() {
     // run();
     await postDataToBackend(locatoinDataTest);
     console.log("got back here");
@@ -134,7 +144,6 @@ const Map2 = (props) => {
     window.innerWidth <= 768 ? setMapWdith("100vw") : setMapWdith("25vw");
     document.getElementById("MapDock").style.width = "75vw";
   }
-
 
   const handleMapClick = async (event) => {
     const addMarker = async () => {
@@ -154,12 +163,10 @@ const Map2 = (props) => {
     };
 
     addMarker();
-
   };
 
   const handleMarkerClick = (marker) => {
     setSelectedMarker(marker);
-
   };
 
   const handleInfoWindowClose = () => {
@@ -186,10 +193,9 @@ const Map2 = (props) => {
         return road;
       }
     } catch (error) {
-      console.error('Error fetching location information:', error);
+      console.error("Error fetching location information:", error);
     }
   };
-
 
   if (loadError) {
     return <div>Error loading maps</div>;
@@ -199,7 +205,7 @@ const Map2 = (props) => {
     return <div>Loading maps</div>;
   }
 
-  const fetchData = async (lat,lon,radius,limit,categoryId) =>{
+  const fetchData = async (lat, lon, radius, limit, categoryId) => {
     try {
       const response = await fetch(
         `https://api.tomtom.com/search/2/nearbySearch/.json?key=${keys.tomTomKey}&lat=${lat}&lon=${lon}&radius=${radius}&limit=${limit}&categorySet=${categoryId}`
@@ -208,7 +214,7 @@ const Map2 = (props) => {
       const data = await response.json();
       const count = data.summary.numResults;
       // console.log(data.results[0])
-      for(const singleAmmenitiy of data.results){
+      for (const singleAmmenitiy of data.results) {
         ammenitiData.results.push(singleAmmenitiy);
       }
       // console.log(ammenitiData);
@@ -249,24 +255,33 @@ const Map2 = (props) => {
   };
   async function getData() {
     props.setIsLoading(true);
-    props.setTotalToBeLoaded(27*markers.length);
-    console.log(27*markers.length);
-    
+    props.setTotalToBeLoaded(27 * markers.length);
+    console.log(27 * markers.length);
+
     const locationCounts = [];
     const locationData = { locations: [] };
 
-
     for (const location of markers) {
       console.log(location.name);
-      const locationCount = { name: location.name, lat : location.lat, lng : location.lng };
+      const locationCount = {
+        name: location.name,
+        lat: location.lat,
+        lng: location.lng,
+      };
 
       for (const ammenity of poiShort.list) {
         console.log(ammenity);
-        const count = await fetchData(location.lat,location.lng,1000,100,ammenity.id);
+        const count = await fetchData(
+          location.lat,
+          location.lng,
+          1000,
+          100,
+          ammenity.id
+        );
         locationCount[ammenity.id] = count;
         // await sleep(700);
-        
-        props.setNumberLoaded(prevNumberLoaded => prevNumberLoaded + 1);
+
+        props.setNumberLoaded((prevNumberLoaded) => prevNumberLoaded + 1);
       }
       locationData.locations.push(locationCount);
       console.log("------^^^^^^^-------");
@@ -286,80 +301,88 @@ const Map2 = (props) => {
     document.getElementById("MapDock").style.width = "75vw";
   }
 
-
   async function saveDataToBackend(data) {
+<<<<<<< HEAD
     // const response = await fetch('https://ness-cpww.onrender.com/append_data', {
     const response = await fetch('http://localhost:5000/append_data', {
       method: 'POST',
+||||||| 79f2415
+    const response = await fetch('https://ness-cpww.onrender.com/append_data', {
+      method: 'POST',
+=======
+    const response = await fetch("https://ness-cpww.onrender.com/append_data", {
+      method: "POST",
+>>>>>>> 4ff72edb8210793965de8cc6b16348a937b3890b
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
       body: JSON.stringify(data),
     });
-  
+
     const result = await response.json();
     console.log(result);
     setResults(result);
   }
 
-  function generatePrompt(result){
+  function generatePrompt(result) {
     console.log(result);
-    var flag =0;
-    let locationNameString = ""
-    result.results.map(name => {
-      locationNameString += `${name.index} and, ` 
-    })
+    var flag = 0;
+    let locationNameString = "";
+    result.results.map((name) => {
+      locationNameString += `${name.index} and, `;
+    });
     let compareLocations = `${result.results[0].index} is better than rest of them which are `;
-    result.results.map(name => {
-      if(flag == 0){
+    result.results.map((name) => {
+      if (flag == 0) {
         flag = 1;
-      }else{
+      } else {
         compareLocations += name.index;
         compareLocations += " and, ";
       }
-    })
+    });
     let promptNumberSentence = "";
     var cityCount = 0;
-    result.givenOrder.map(name => {
+    result.givenOrder.map((name) => {
       promptNumberSentence += `${name} has the following number of ammenities which are : `;
-      for(let i =0; i<27; i++){
+      for (let i = 0; i < 27; i++) {
         promptNumberSentence += `${result.namesOfAmmenites[i]} -> ${result.ammenitiesList[cityCount][i]}, `;
       }
       cityCount++;
-      promptNumberSentence += "and, "
-    })
+      promptNumberSentence += "and, ";
+    });
 
     let costPerFeetPrompt = "";
     var numberOfAreas = result.givenOrder.length;
-    for(let i=0; i<numberOfAreas;i++){
+    for (let i = 0; i < numberOfAreas; i++) {
       costPerFeetPrompt += `${result.givenOrder[i]} has rate of ${result.realEstateRates[i]} and ,`;
     }
 
     let averageTrafficPrompt = "";
-    for(let i=0; i<numberOfAreas; i++){
-      averageTrafficPrompt += `${result.givenOrder[i]} has the traffic jam factor of ${result.avgJamFactor[i]} and ,`
+    for (let i = 0; i < numberOfAreas; i++) {
+      averageTrafficPrompt += `${result.givenOrder[i]} has the traffic jam factor of ${result.avgJamFactor[i]} and ,`;
     }
 
-    let prompt = "I want to compare two or more locations which are "
-          + locationNameString
-          + " and "
-          + compareLocations
-          + "and I want you to tell me why it is better than other considering the following data ."
-          + promptNumberSentence
-          + "the cost of real estate based on the ruppess per square feet is as following : "
-          + costPerFeetPrompt 
-          + ". The Average Traffic jam factor(0 is low, 10 is absolutely high traffic) gives the average number of traffic for the given location which is as follows : "
-          + averageTrafficPrompt
-          +" . Now give me explanation compairing them."
-          ;
+    let prompt =
+      "I want to compare two or more locations which are " +
+      locationNameString +
+      " and " +
+      compareLocations +
+      "and I want you to tell me why it is better than other considering the following data ." +
+      promptNumberSentence +
+      "the cost of real estate based on the ruppess per square feet is as following : " +
+      costPerFeetPrompt +
+      ". The Average Traffic jam factor(0 is low, 10 is absolutely high traffic) gives the average number of traffic for the given location which is as follows : " +
+      averageTrafficPrompt +
+      " . Now give me explanation compairing them.";
     console.log(prompt);
     console.log("-------------------------------");
     run(prompt);
   }
 
-// --------------Change this------------------receive_data---get_json_data_dummy
+  // --------------Change this------------------receive_data---get_json_data_dummy
 
   async function postDataToBackend(data) {
+<<<<<<< HEAD
   // const response = await fetch('https://ness-cpww.onrender.com/receive_data', {
   const response = await fetch('http://localhost:5000/receive_data', {
     method: 'POST',
@@ -369,6 +392,28 @@ const Map2 = (props) => {
       body: JSON.stringify(data),
     });
     
+||||||| 79f2415
+    const response = await fetch('https://ness-cpww.onrender.com/receive_data', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    });
+    
+=======
+    const response = await fetch(
+      "https://ness-cpww.onrender.com/receive_data",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      }
+    );
+
+>>>>>>> 4ff72edb8210793965de8cc6b16348a937b3890b
     const result = await response.json();
     console.log(result);
     setResults(result);
@@ -376,29 +421,37 @@ const Map2 = (props) => {
     generatePrompt(result);
   }
 
-  function openDetailedView(index){
-    window.open(results.locationSeeMoreUrl[index], '_blank'); 
-
+  function openDetailedView(index) {
+    window.open(results.locationSeeMoreUrl[index], "_blank");
   }
 
-  function enlargeMe(id){
-    if(!enlarged){
-      console.log("enlarged")
-      document.getElementById(id).classList.add("enlarged")
+  function enlargeMe(id) {
+    if (!enlarged) {
+      console.log("enlarged");
+      document.getElementById(id).classList.add("enlarged");
       setEnlarged(true);
-    }else{
-      document.getElementById(id).classList.remove("enlarged")
+    } else {
+      document.getElementById(id).classList.remove("enlarged");
       setEnlarged(false);
     }
   }
 
+  function handleRemoveLocation(selectedMarker) {
+    console.log(selectedMarker);
+    const updatedMarkers = markers.filter(
+      (marker) => marker !== selectedMarker
+    );
+    setMarkers(updatedMarkers);
+    setSelectedMarker(null);
+  }
+
   return (
-    <div id='mapContainer'>
+    <div id="mapContainer">
       <SetRadius />
 
       <GoogleMap
         mapContainerStyle={mapContainerStyle}
-        id='mapMobile'
+        id="mapMobile"
         zoom={10}
         center={center}
         onClick={handleMapClick}
@@ -406,9 +459,12 @@ const Map2 = (props) => {
           mapTypeControl: false,
         }}
       >
-
         {markers.map((marker, index) => (
-          <Marker key={index} position={marker} onClick={() => handleMarkerClick(marker)} />
+          <Marker
+            key={index}
+            position={marker}
+            onClick={() => handleMarkerClick(marker)}
+          />
         ))}
         {selectedMarker && (
           <InfoWindow
@@ -416,103 +472,215 @@ const Map2 = (props) => {
             onCloseClick={handleInfoWindowClose}
           >
             {/*  zIndex does not work ig */}
-            <div style={{ color: 'black', zIndex: 12, paddingRight: "13px", fontWeight: "500" }}>
-              {selectedMarker.serial}.  {selectedMarker.name}
+            <div
+              style={{
+                color: "black",
+                zIndex: 12,
+                paddingRight: "13px",
+                fontWeight: "500",
+                paddingBottom: "30px",
+                display: "flex",
+                gap: "40px",
+                fontSize: "1.3em",
+              }}
+            >
+              {selectedMarker.serial}. <br /> {selectedMarker.name}
+              <div id="selectedMarkersBox">
+                <div>
+                  <Button
+                    variant="destructive"
+                    style={{
+                      FontFace: "Nunito",
+                      gap: "5px",
+                      mariginTop: "10px",
+                    }}
+                    onClick={() => {
+                      handleRemoveLocation(selectedMarker);
+                    }}
+                  >
+                    Remove
+                  </Button>
+                </div>
+                <div>
+                  <Button
+                    variant="secondary"
+                    style={{
+                      FontFace: "Nunito",
+                      gap: "5px",
+                      mariginTop: "10px",
+                    }}
+                    onClick={() => {
+                      handleInfoWindowClose();
+                    }}
+                  >
+                    Cancel
+                  </Button>
+                </div>
+              </div>
             </div>
           </InfoWindow>
         )}
       </GoogleMap>
-      <div id='MapDock'>
-        {resultAvailable ?  
-        <div id='resultContainer'>
-          <p id='resultsHeading'>Results</p>
-          <p id='rankingHeading'>Rankings</p>
-          <div id='rankingHolder'>
-            {results.results.map((l,index)=>{
-                return <div className='resultsChips' key={index} onClick={()=>{openDetailedView(index)}}>
-                  <div id='rankingIndex' >{index + 1}</div>
-                  <div id='rankingImage' >
-                    <img src={results.locationImageUrl[index]}></img>
+      <div id="MapDock">
+        {resultAvailable ? (
+          <div id="resultContainer">
+            <p id="resultsHeading">Results</p>
+            <p id="rankingHeading">Rankings</p>
+            <div id="rankingHolder">
+              {results.results.map((l, index) => {
+                return (
+                  <div
+                    className="resultsChips"
+                    key={index}
+                    onClick={() => {
+                      openDetailedView(index);
+                    }}
+                  >
+                    <div id="rankingIndex">{index + 1}</div>
+                    <div id="rankingImage">
+                      <img src={results.locationImageUrl[index]}></img>
+                    </div>
+                    {l.index}
+                    <div id="rankingScore">{l.value.toFixed(1)}</div>
+                    <div id="rankingClass">{results.locationClass[index]}</div>
                   </div>
-                  {l.index}
-                  <div id='rankingScore'>{l.value.toFixed(1)}</div>
-                  <div id='rankingClass'>{results.locationClass[index]}</div>
-                  </div>
-            })}
-            
-            {/* <ResultMeter /> */}
+                );
+              })}
 
+              {/* <ResultMeter /> */}
 
-            <div className='plotContainers' onClick={()=>{enlargeMe("originalResults")}} id='originalResults'>
-                <p id='rankingHeading'>Result Comparison</p>
-                <ResultHistogram  results={results.results}/>
-            </div>
+              <div
+                className="plotContainers"
+                onClick={() => {
+                  enlargeMe("originalResults");
+                }}
+                id="originalResults"
+              >
+                <p id="rankingHeading">Result Comparison</p>
+                <ResultHistogram results={results.results} />
+              </div>
 
-            <div className='plotContainers' onClick={()=>{enlargeMe("amentitesDestribuition")}} id='amentitesDestribuition'>
-                <p id='rankingHeading'>Ammenities Distribution across locations</p>
+              <div
+                className="plotContainers"
+                onClick={() => {
+                  enlargeMe("amentitesDestribuition");
+                }}
+                id="amentitesDestribuition"
+              >
+                <p id="rankingHeading">
+                  Ammenities Distribution across locations
+                </p>
                 <BarChart data={results} />
-            </div>
-            <div className='plotContainers' onClick={()=>{enlargeMe("weightsOfammenities")}} id='weightsOfammenities'>
-                <p id='rankingHeading'>Weights for Ammenities</p>
-                <RadarChat weights={results.weights} amenityNames={results.namesOfAmmenites} />
-            </div>
-            <div className='plotContainers' onClick={()=>{enlargeMe("airqualityGraphsId")}} id='airqualityGraphsId'>
-                <p id='rankingHeading'>Air Quality for Locations</p>
-                <AirQualityChart airQualityData={results.airQuality} locatoinsNames={results.givenOrder}/>
-            </div>
-            <div className='plotContainers' onClick={()=>{enlargeMe("averageTrafficPlotId")}} id='averageTrafficPlotId'>
-                <p id='rankingHeading'>Average Traffic</p>
-                <TrafficPlot jamFactor={results.avgJamFactor} locatoinsNames={results.givenOrder}/>
-            </div>
-            <div className='plotContainers' onClick={()=>{enlargeMe("realEstatePlotId")}} id='realEstatePlotId'>
-                <p id='rankingHeading'>Average Real Estate Rates</p>
-                <RealEsateRatePlot Rates={results.realEstateRates} locatoinsNames={results.givenOrder} />
-            </div>
+              </div>
+              <div
+                className="plotContainers"
+                onClick={() => {
+                  enlargeMe("weightsOfammenities");
+                }}
+                id="weightsOfammenities"
+              >
+                <p id="rankingHeading">Weights for Ammenities</p>
+                <RadarChat
+                  weights={results.weights}
+                  amenityNames={results.namesOfAmmenites}
+                />
+              </div>
+              <div
+                className="plotContainers"
+                onClick={() => {
+                  enlargeMe("airqualityGraphsId");
+                }}
+                id="airqualityGraphsId"
+              >
+                <p id="rankingHeading">Air Quality for Locations</p>
+                <AirQualityChart
+                  airQualityData={results.airQuality}
+                  locatoinsNames={results.givenOrder}
+                />
+              </div>
+              <div
+                className="plotContainers"
+                onClick={() => {
+                  enlargeMe("averageTrafficPlotId");
+                }}
+                id="averageTrafficPlotId"
+              >
+                <p id="rankingHeading">Average Traffic</p>
+                <TrafficPlot
+                  jamFactor={results.avgJamFactor}
+                  locatoinsNames={results.givenOrder}
+                />
+              </div>
+              <div
+                className="plotContainers"
+                onClick={() => {
+                  enlargeMe("realEstatePlotId");
+                }}
+                id="realEstatePlotId"
+              >
+                <p id="rankingHeading">Average Real Estate Rates</p>
+                <RealEsateRatePlot
+                  Rates={results.realEstateRates}
+                  locatoinsNames={results.givenOrder}
+                />
+              </div>
 
-            <div className='plotContainers' onClick={()=>{enlargeMe("promptResults")}} id='promptResults'>
-              <MarkDownView markdownText={promptResutl}/>
+              <div
+                className="plotContainers"
+                onClick={() => {
+                  enlargeMe("promptResults");
+                }}
+                id="promptResults"
+              >
+                <MarkDownView markdownText={promptResutl} />
+              </div>
+
+              <PoiList />
             </div>
-
-            <PoiList />
-
           </div>
-        </div>
-      :
-      <>
-      <div id='mapDockLocationsContainer'>
-          <MarkerList markers={markers} isLoading={props.isLoading} setIsLoading={props.setIsLoading}/>
+        ) : (
+          <>
+            <div id="mapDockLocationsContainer">
+              <MarkerList
+                markers={markers}
+                isLoading={props.isLoading}
+                setIsLoading={props.setIsLoading}
+              />
+            </div>
+            <div id="mapDockButtonContainer">
+              <div id="buttonHolder">
+                <ButtonMain
+                  text={"Compare"}
+                  disable={isButtonDisabled}
+                  onClick={() => {
+                    handleClick();
+                  }}
+                  style={{
+                    fontSize: "15px",
+                    fontWeight: "600",
+                    width: "90%",
+                  }}
+                />
+              </div>
 
-        </div>
-        <div id='mapDockButtonContainer'>
-          <div id='buttonHolder'>
-            <ButtonMain text={"Compare"}
-            disable={isButtonDisabled}
-            onClick={()=>{handleClick()}}
-            style={{
-              fontSize: '15px',
-              fontWeight: "600",
-              width: "90%"
-            }}
-            />
-          </div>
-
-          <div id='buttonHolder'>
-
-          <ButtonLight text={"Change Preferences"} 
-          onClick={() => {openPreferences()}}
-          style={{
-            fontSize: '15px',
-            fontWeight: "600",
-            width: "90%",
-            paddin : "0px"
-          }}
-          />
-          </div>
-        </div></>
-      
-      }
+              <div id="buttonHolder">
+                <ButtonLight
+                  text={"Change Preferences"}
+                  onClick={() => {
+                    openPreferences();
+                  }}
+                  style={{
+                    fontSize: "15px",
+                    fontWeight: "600",
+                    width: "90%",
+                    paddin: "0px",
+                  }}
+                />
+              </div>
+            </div>
+          </>
+        )}
       </div>
-
     </div>
   );
 };
