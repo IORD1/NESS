@@ -82,7 +82,6 @@ const Map2 = (props) => {
         setMapWdith(window.innerWidth <= 768 ? "100vw" : "75vw");
       }
 
-<<<<<<< HEAD
       const refreshBackend = async () => {
         // const response = await fetch("https://ness-cpww.onrender.com/refreshBackend");
         const response = await fetch("http://localhost:5000/refreshBackend");
@@ -91,20 +90,6 @@ const Map2 = (props) => {
 
       refreshBackend();
 
-||||||| 79f2415
-      const refreshBackend = async () => {
-        const response = await fetch("https://ness-cpww.onrender.com/refreshBackend");
-        console.log(response);
-      }
-
-      refreshBackend();
-
-=======
-      // const refreshBackend = async () => {
-      //   const response = await fetch("https://ness-cpww.onrender.com/refreshBackend");
-      //   console.log(response);
-      // }
->>>>>>> 4ff72edb8210793965de8cc6b16348a937b3890b
 
       // refreshBackend();
     };
@@ -302,17 +287,9 @@ const Map2 = (props) => {
   }
 
   async function saveDataToBackend(data) {
-<<<<<<< HEAD
     // const response = await fetch('https://ness-cpww.onrender.com/append_data', {
     const response = await fetch('http://localhost:5000/append_data', {
       method: 'POST',
-||||||| 79f2415
-    const response = await fetch('https://ness-cpww.onrender.com/append_data', {
-      method: 'POST',
-=======
-    const response = await fetch("https://ness-cpww.onrender.com/append_data", {
-      method: "POST",
->>>>>>> 4ff72edb8210793965de8cc6b16348a937b3890b
       headers: {
         "Content-Type": "application/json",
       },
@@ -382,7 +359,6 @@ const Map2 = (props) => {
   // --------------Change this------------------receive_data---get_json_data_dummy
 
   async function postDataToBackend(data) {
-<<<<<<< HEAD
   // const response = await fetch('https://ness-cpww.onrender.com/receive_data', {
   const response = await fetch('http://localhost:5000/receive_data', {
     method: 'POST',
@@ -392,28 +368,6 @@ const Map2 = (props) => {
       body: JSON.stringify(data),
     });
     
-||||||| 79f2415
-    const response = await fetch('https://ness-cpww.onrender.com/receive_data', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(data),
-    });
-    
-=======
-    const response = await fetch(
-      "https://ness-cpww.onrender.com/receive_data",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
-      }
-    );
-
->>>>>>> 4ff72edb8210793965de8cc6b16348a937b3890b
     const result = await response.json();
     console.log(result);
     setResults(result);

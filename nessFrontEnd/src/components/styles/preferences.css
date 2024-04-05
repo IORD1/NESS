@@ -10,9 +10,11 @@
 }
 
 #Preferences-frirstSection{
-    background-color: rgb(191, 162, 221);
+    background-image: url("../../assets/nessProfile.png");
+    /* background-color: rgb(191, 162, 221); */
     height: 100%;
     width: 63%;
+    background-size: cover;
 
 }
 
