@@ -289,7 +289,7 @@ const Map2 = (props) => {
   async function saveDataToBackend(data) {
     // const response = await fetch('https://ness-cpww.onrender.com/append_data', {
     const token = localStorage.getItem('token')
-    print(token)
+    console.log(token)
     const response = await fetch('http://localhost:5000/append_data', {
       method: 'POST',
       headers: {
