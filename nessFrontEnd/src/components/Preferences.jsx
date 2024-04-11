@@ -10,6 +10,8 @@ import { useState } from 'react';
 const Preferences = (props) => {
     const [userPreferencesList, setUserPreferencesList] = useState([]);
     function submitPreferences(){
+        const token = localStorage.getItem('token');
+        console.log(token)
         console.log(userPreferencesList);
         const preferencesData = { list: userPreferencesList };
         postPrefrencesToBackend(preferencesData)
@@ -27,10 +29,13 @@ const Preferences = (props) => {
 
 
     async function postPrefrencesToBackend(data) {
-        const response = await fetch('https://ness-cpww.onrender.com/receive_preferences', {
+        const token = localStorage.getItem('token');
+        console.log(token)
+        const response = await fetch('http://localhost:5000/receive_preferences', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
+            'Authorization': `Bearer ${JSON.parse(token)}`
           },
           body: JSON.stringify(data),
         });

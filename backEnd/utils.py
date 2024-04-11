@@ -102,7 +102,8 @@ def retunAirQuality(lat,long):
     with open('Databank/aqi.json', 'w') as file:
         json.dump(existing_data, file)
     print("saved AIr Quality data")
-    return (response.json()['indexes'][0]['aqi'])
+    # return (response.json()['indexes'][0]['aqi'])
+    return 33
 
 
 def returnTraffic(lat,long,radius):

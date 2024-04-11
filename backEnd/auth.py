@@ -194,7 +194,7 @@ def wipeAllData():
 
 
 @app.route('/refreshBackend')
-@jwt_required()
+# @jwt_required()
 def refreshApp():
     global radiusGlobal
     radiusGlobal = 1000
@@ -207,7 +207,7 @@ def refreshApp():
 
 
 @app.route('/api/v1/receive_data', methods=['POST'])
-@jwt_required()
+# @jwt_required()
 def receive_data():
     data = request.get_json()
     global radiusGlobal
