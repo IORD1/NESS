@@ -8,3 +8,4 @@ nessFrontEnd/.env
 Datasets/99acres
 backEnd/Databank/data copy.json
 backEnd/Databank/dataAll.json
+backEnd/__pycache__/utils.cpython-311.pyc

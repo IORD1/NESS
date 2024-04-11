@@ -6,7 +6,7 @@ from sklearn.preprocessing import normalize
 from dotenv import load_dotenv
 import requests
 import json
-import datetime
+from datetime import datetime
 from math import radians, sin, cos, sqrt, atan2
 load_dotenv()
 
