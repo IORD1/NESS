@@ -16,6 +16,16 @@ function HomeScreen() {
 
   return (
     <>
+    {/* <div id='Logout-button'>
+        <Button text={"Google"} 
+        onClick={() => loginWithGoogle()}
+        style={{
+            fontSize: '15px',
+            fontWeight: "600",
+            width: "80%",
+        }} />
+
+    </div> */}
     {isLoading ? 
     <div className="isLoading">
         
