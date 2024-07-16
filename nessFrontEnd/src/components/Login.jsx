@@ -38,7 +38,9 @@ const Login = () => {
             window.open(`${window.location.origin}/preferences`, '_self'); 
         }
     }
-
+    function redirectRegister() {
+        window.open(`${window.location.origin}/register`, '_self');
+    }
     return (
         <div id='splash-screen'>
 
@@ -64,24 +66,37 @@ const Login = () => {
 
                             </div>
                             <p>Or</p>
-                            <div id='buttonSplashHolder'>
+                            <div className='login'>
                                 <input
+                                    className='user'
                                     type="text"
                                     placeholder="Username"
                                     value={input.username}
                                     onChange={(e) => setInput({ ...input, username: e.target.value })}
                                 />
                                 <input
+                                    className='user'
                                     type="password"
                                     placeholder="Password"
                                     value={input.password}
                                     onChange={(e) => setInput({ ...input, password: e.target.value })}
                                 />
-                                <ButtonLight text={"Email"} onClick={()=> loginLocal()} style={{
+                                <div className='loginButton'>
+                                <ButtonLight text={"Login"} onClick={()=> loginLocal()} style={{
                                     fontSize: '15px',
                                     fontWeight: "600",
                                     width: "80%",
+                                    padding: '5px',
+                                    height: "80%",
                                 }} />
+                                <ButtonLight text={"Register"} onClick={()=> redirectRegister()} style={{
+                                    fontSize: '15px',
+                                    fontWeight: "600",
+                                    width: "80%",
+                                    padding: '5px',
+                                    height: "80%",
+                                }} />
+                                </div>
 
                             </div>
                         </div>

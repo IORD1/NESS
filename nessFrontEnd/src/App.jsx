@@ -12,7 +12,7 @@ import Splash from "./components/Splash";
 import Login from "./components/Login";
 import HomeScreen from "./components/HomeScreen";
 import Preferences from "./components/Preferences";
-
+import Register from "./components/Register";
 function App() {
   const [isLoading, setIsLoading] = useState(false);
 
@@ -29,6 +29,7 @@ function App() {
         <Route path="/login" element={<Login />}/>
         <Route path="/preferences" element={<Preferences />}/>
         <Route path="/homescreen" element={<HomeScreen />}/>
+        <Route path="/register" element={<Register />}/>
       </Routes>
     </Router>
 

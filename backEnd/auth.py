@@ -103,7 +103,7 @@ ammneitiescopy = {
 
 
 
-@app.route("/api/v1/users", methods=["POST"])
+@app.route("/api/v1/register", methods=["POST"])
 def register():
     try:
         new_user = request.get_json()
@@ -111,9 +111,9 @@ def register():
         doc = users.find_one({"username": new_user["username"]})
         if not doc:
             users.insert_one(new_user)
-            return jsonify({'msg': 'User created successfully'}), 201
+            return jsonify({'msg': 'User created successfully', 'status': 201}), 201
         else:
-            return jsonify({'msg': 'Username already exists'}), 409
+            return jsonify({'msg': 'Username already exists', 'status': 409}), 409
     except Exception as e:
         return {
             "msg": "Something went wrong",
@@ -207,7 +207,7 @@ def refreshApp():
 
 
 @app.route('/api/v1/receive_data', methods=['POST'])
-# @jwt_required()
+@jwt_required()
 def receive_data():
     data = request.get_json()
     global radiusGlobal
