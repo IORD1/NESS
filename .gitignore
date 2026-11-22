@@ -9,3 +9,10 @@ Datasets/99acres
 backEnd/Databank/data copy.json
 backEnd/Databank/dataAll.json
 backEnd/__pycache__/utils.cpython-311.pyc
+
+# Secrets: never commit these
+.env
+*.env
+backEnd/keys.json
+*.jks
+*.keystore
